@@ -11,6 +11,7 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
     And I wait for 3 sec
     Then I click on element with xpath "//button[@type='submit']"
     And I wait for 5 sec
+
     Then element with xpath "//p[contains(text(),'TEACHER')]" should be displayed
     When I click on element with xpath "//h5[contains(text(),'Quizzes')]"
     And I wait for 5 sec
@@ -21,7 +22,7 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
     When I click on element with xpath "//*[@placeholder = 'Title Of The Quiz *']"
     Then I type "Sample Quiz1" into element with xpath "//*[@placeholder = 'Title Of The Quiz *']"
     Then I click on element with xpath "//div[@class='controls ng-star-inserted']//span[@class='mat-button-wrapper']"
-#    And I wait for 1 sec
+
     Then element with xpath "//*[contains(text(), 'Q1')]" should be displayed
     And I click on element with xpath "//*[contains(text(),'Question Type')]/..//*[contains(text(),'Textual')]"
     And I wait for 1 sec
@@ -37,10 +38,8 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
   Scenario: Passing Rate (1st time)
     Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]" with offset 3
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]"
-#    And I wait for 5 sec
     Then element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//td[contains(text(),'75')]" should be displayed
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//span[contains(text(),'Delete')]"
-#    And I wait for 3 sec
     Then element with xpath "//h1[contains(text(),'Confirmation')]" should be displayed
     Then I click on element with xpath "//h1[contains(text(),'Confirmation')]/..//*[contains(text(),'Delete')]"
     And I wait for 5 sec
@@ -49,10 +48,8 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
   Scenario: Passing Rate (after Edit with modification)
     Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]" with offset 3
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]"
-#    And I wait for 3 sec
     Then element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//td[contains(text(),'Total Questions:')]" should be displayed
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//span[contains(text(),'Edit')]"
-#    And I wait for 3 sec
     Then element with xpath "//h3[contains(text(),'Passing Rate')]" should be displayed
     Then I move the slider to rate 80
     Then I click on element with xpath "//span[contains(text(), 'Save')]"
@@ -60,10 +57,8 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
     And element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
     Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]" with offset 3
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]"
-#    And I wait for 5 sec
     Then element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//td[contains(text(),'80')]" should be displayed
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//span[contains(text(),'Delete')]"
-#    And I wait for 1 sec
     Then element with xpath "//h1[contains(text(),'Confirmation')]" should be displayed
     Then I click on element with xpath "//h1[contains(text(),'Confirmation')]/..//*[contains(text(),'Delete')]"
     And I wait for 3 sec
@@ -72,7 +67,6 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
   Scenario: Passing Rate (1st time)
     Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]" with offset 3
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]"
-#    And I wait for 5 sec
     Then element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//td[contains(text(),'Total Questions:')]" should be displayed
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//span[contains(text(),'Edit')]"
     And I wait for 3 sec
@@ -83,10 +77,8 @@ Feature: Automation of Test Case for Quiz-Passing Rate (ASK-242)
     And element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
     Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]" with offset 3
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]"
-#    And I wait for 5 sec
     Then element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//td[contains(text(),'75')]" should be displayed
     Then I click on element with xpath "//mat-panel-title[contains(text(),'Sample Quiz1')]/../../..//span[contains(text(),'Delete')]"
-#    And I wait for 3 sec
     Then element with xpath "//h1[contains(text(),'Confirmation')]" should be displayed
     Then I click on element with xpath "//h1[contains(text(),'Confirmation')]/..//*[contains(text(),'Delete')]"
     And I wait for 5 sec
