@@ -1,6 +1,9 @@
-Feature: Automation of Test Case for Quiz-Delete (Task: ASK-650)
-  #TC: ASK-236
+Feature: Automation of Test Case for Method: Quiz-Delete
+  #Task: ASK-650
+
+  @Test
   Scenario: Log into an existing teacher account
+    #TC: ASK-236
     #Teacher Account 3.1 in Test Data
     Given I open url "http://local.school.portnov.com:4520/#/login"
     And I wait for 3 sec
