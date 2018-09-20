@@ -1,29 +1,17 @@
 // Created by Viacheslav (Slava) Skryabin 04/01/2018
 package study.qa.automation.stepDefinitions;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.But;
-import org.apache.commons.io.FileUtils;
-import org.assertj.core.api.AbstractBooleanAssert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
-import java.io.File;
+
 import java.io.IOException;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.*;
 import static study.qa.automation.utils.TestContext.getDriver;
