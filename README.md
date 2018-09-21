@@ -1,6 +1,6 @@
-#Practical SQA
+****Practical SQA****
 
-##HOW TO PUSH YOUR CHANGES TO GIT HUB
+*HOW TO PUSH YOUR CHANGES TO GIT HUB*
 
 1. Being on `master` branch, make sure you don't have uncommitted changes:
     run `git status` command. If any, they'll appear in red.
