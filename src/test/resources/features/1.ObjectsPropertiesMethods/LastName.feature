@@ -1,11 +1,12 @@
 Feature: Automate TC for User Properties: Last Name
+
   Background: Register as a student
     Given I open url "http://local.school.portnov.com:4520/#/registration"
     And I wait for 3 sec
 
   @Test1
   Scenario: Create a User with alphanumeric and special characters in Last Name
-    #TC: ASK-6 Alphanumerical & Sp char (Happy path)
+    #TC: ASK-6 Alphanumerical & Special char (Happy path)
     And I click on element with xpath "//input[@placeholder ='First Name']"
     Then I type "Ivan" into element with xpath "//input[@placeholder='First Name']"
     And I click on element with xpath "//input[@placeholder='Last Name']"
@@ -106,9 +107,10 @@ Feature: Automate TC for User Properties: Last Name
     Then I type "<ConfirmPassword>" into element with xpath "//input[@placeholder='Confirm Password']"
     Then I click on element with xpath "//button[@type='submit']"
     And I wait for 5 sec
+  Ex
     Examples:
-      | FName | LName         | Email            | GroupCode    | Password | ConfirmPassword |
-      | Ivan  | '  Ivanov'    | ivanov@gmail.com |    A007      | 12345    |    12345        |
-      | Ivan  | 'Ivanov  '    | ivanov@gmail.com |    A007      | 12345    |    12345        |
-      | Ivan  | 'Iva  nov'    | ivanov@gmail.com |    A007      | 12345    |    12345        |
+      | FName | LName      | Email            | GroupCode | Password | ConfirmPassword |
+      | Ivan  | '  Ivanov' | ivanov@gmail.com | A007      | 12345    | 12345           |
+      | Ivan  | 'Ivanov  ' | ivanov@gmail.com | A007      | 12345    | 12345           |
+      | Ivan  | 'Iva  nov' | ivanov@gmail.com | A007      | 12345    | 12345           |
 
