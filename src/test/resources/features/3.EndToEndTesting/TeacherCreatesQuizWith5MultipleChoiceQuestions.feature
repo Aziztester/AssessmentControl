@@ -1,4 +1,4 @@
-FFeature: Automate TC "Teacher Creates Quiz with 5 Multiple Choice Questions" (ASK-765)
+Feature: Automate TC "Teacher Creates Quiz with 5 Multiple Choice Questions" (ASK-765)
     #Test Case: ASK-263 Teacher Creates Quiz with 5 Multiple Choice Questions
 Background: Log into an existing teacher account
 Given I open url "http://local.school.portnov.com:4520/#/login"
