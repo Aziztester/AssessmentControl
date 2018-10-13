@@ -107,7 +107,7 @@ Feature: Automate TC for User Properties: Last Name
     Then I type "<ConfirmPassword>" into element with xpath "//input[@placeholder='Confirm Password']"
     Then I click on element with xpath "//button[@type='submit']"
     And I wait for 5 sec
-  Ex
+
     Examples:
       | FName | LName      | Email            | GroupCode | Password | ConfirmPassword |
       | Ivan  | '  Ivanov' | ivanov@gmail.com | A007      | 12345    | 12345           |
