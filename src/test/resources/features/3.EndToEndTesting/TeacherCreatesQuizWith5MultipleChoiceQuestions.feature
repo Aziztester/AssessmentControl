@@ -104,7 +104,7 @@ Then I click on element with xpath "//span[contains(text(),'Save')]"
 And I wait for 5 sec
 Then element with xpath "//h4[contains(text(),'List of Quizzes')]" should be presented
 And I wait for 5 sec
-Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'ASK-292 Quiz with 5 SingleChoice questions')]" with offset 5
+Then I scroll to the element with xpath "//mat-panel-title[contains(text(),'ASK-263 Teacher Creates Quiz with 5 Multiple Choice Questions')]" with offset 5
 And I wait for 2 sec
-Then element with xpath "//mat-panel-title[contains(text(),'ASK-292 Quiz with 5 SingleChoice questions')]" should be displayed
+Then element with xpath "//mat-list-text[contains(text(),'ASK-263 Teacher Creates Quiz with 5 Multiple Choice Questions')]" should be displayed
 And I wait for 5 sec
