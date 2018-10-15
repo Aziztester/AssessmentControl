@@ -29,6 +29,7 @@ public class slavash2305StepDefs {
                 return;
             }
         }
+        System.out.println("Error! The element with xpath \"" + xpath + "\" containing text \"" + text + "\" has not found!");
     }
 
 }
