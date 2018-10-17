@@ -90,10 +90,10 @@ Scenario: Teacher logout from Home page (ASK-731)
 
   @Test-LogoutFromTeacherSettings
   Scenario: Teacher logout from Settings page (ASK-736)
-    Then I click on element with xpath "//h5[contains(text(),'Settings')]"
+    When I click on element with xpath "//h5[contains(text(),'Settings')]"
     And I wait for 1 sec
     Then element with xpath "//h4[contains(text(),'Settings')]" should be displayed
-    And I click on element with xpath "//h5[contains(text(),'Log Out')]"
+    When I click on element with xpath "//h5[contains(text(),'Log Out')]"
     Then element with xpath "//ac-modal-confirmation[@class='ng-star-inserted']" should be displayed
     And I wait for 1 sec
     When I click on element with xpath "//span[contains(text(),'No, Thanks')]"
@@ -287,24 +287,37 @@ Scenario: Teacher logout from Home page (ASK-731)
     Then element with xpath "//input[@placeholder='Email *']" should be displayed
     And I wait for 2 sec
 
-  @Test-LogoutFromCreateQuizMode
+  @Test-LogoutFromPasswordEditingMode
   Scenario: Teacher logout from CreateQuizMode page (ASK-745)
-    Then I click on element with xpath "//h5[contains(text(),'Quizzes')]"
-    And I wait for 5 sec
-    Then element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
-
+    When I click on element with xpath "//h5[contains(text(),'Settings')]"
+    And I wait for 1 sec
+    Then element with xpath "//h4[contains(text(),'Settings')]" should be displayed
+    When I click on element with xpath "//span[contains(text(),'Change Your Password')]"
+    And I wait for 1 sec
+    Then element with xpath "//h1[contains(text(),'Changing Password')]" should be displayed
+    When I type "12345" into element with xpath "//input[@placeholder='Password']"
+    And I type "abcdef" into element with xpath "//input[@placeholder='New Password']"
+    And I type "abcdef" into element with xpath "//input[@placeholder='Confirm New Password']"
     And I click on element with xpath "//h5[contains(text(),'Log Out')]"
-    Then element with xpath "//ac-modal-confirmation[@class='ng-star-inserted']" should be displayed
-    And I wait for 1 sec
-    When I click on element with xpath "//span[contains(text(),'No, Thanks')]"
-    Then element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
-    And I wait for 1 sec
-    Then I click on element with xpath "//h5[contains(text(),'Log Out')]"
-    And I wait for 1 sec
-    Then element with xpath "//ac-modal-confirmation[@class='ng-star-inserted']" should be displayed
-    And I wait for 2 sec
-    Then I click on element with xpath "//span[contains(text(),'Log Out')]"
-    And I wait for 2 sec
-    Then element with xpath "//input[@placeholder='Email *']" should be displayed
-    And I wait for 2 sec
+    # I stopped here! No messages, no notification that there is unsaved data... I beleive that is a bug
+    Then element with xpath "//h4[contains(text(),'Settings')]" should be displayed
+#    When I click on element with xpath "//*[contains(text(),'Ok')]"
+#    And I click on element with xpath "//*[@placeholder = 'Title Of The Quiz *']"
+#    And I type "Try..." into element with xpath "//*[@placeholder = 'Title Of The Quiz *']"
+#    And I click on element with xpath "//h5[contains(text(),'Log Out')]"
+#    Then element with xpath "//h1[text()='Notification']" should be displayed
+#
+#    Then element with xpath "//ac-modal-confirmation[@class='ng-star-inserted']" should be displayed
+#    And I wait for 1 sec
+#    When I click on element with xpath "//span[contains(text(),'No, Thanks')]"
+#    Then element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
+#    And I wait for 1 sec
+#    Then I click on element with xpath "//h5[contains(text(),'Log Out')]"
+#    And I wait for 1 sec
+#    Then element with xpath "//ac-modal-confirmation[@class='ng-star-inserted']" should be displayed
+#    And I wait for 2 sec
+#    Then I click on element with xpath "//span[contains(text(),'Log Out')]"
+#    And I wait for 2 sec
+#    Then element with xpath "//input[@placeholder='Email *']" should be displayed
+#    And I wait for 2 sec
 
