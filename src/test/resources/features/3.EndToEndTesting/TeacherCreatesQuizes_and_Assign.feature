@@ -27,11 +27,15 @@ Feature: Teacher creates 3quizzes, assign it to student. Student finds all the Q
     And I click on element with xpath "//h5[contains(text(),'Assignments')]"
     And I wait for 6 sec
     And I click on element with xpath "//*[contains(text(),'Create New Assignment')]"
-    And I wait for 2 sec
-    And I click on element with xpath "//*[@class='mat-select-placeholder ng-tns-c30-4670 ng-star-inserted']"
+    And I wait for 3 sec
+    And I click on element with xpath "//*[contains(text(),'Quiz To Assign')]"
     And I wait for 2 sec
     And I click on element with xpath "//*[contains(text(),'$$000SQA1auto_DONT_TOUCH')]"
     And I wait for 6 sec
+    And I click on element with xpath "//mat-selection-list[@class='mat-selection-list ng-pristine ng-invalid ng-touched']//mat-list-option[119]//div[1]//div[2]"
+    And I wait for 6 sec
+
+
 
 
 
