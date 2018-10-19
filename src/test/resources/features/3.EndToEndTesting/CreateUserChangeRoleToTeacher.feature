@@ -22,6 +22,8 @@ Feature: Automate TC for End to End Testing: Create user as a student, change ro
     Then I type "12345" into element with xpath "//input[@placeholder='Confirm Password']"
     Then I click on element with xpath "//button[@type='submit']"
     And I wait for 6 sec
+
+
     #Then element with xpath "//h4[contains(text(),'You have been Registered.')]" should be displayed
     #And I click on element with xpath "//span[@class='mat-button-wrapper']"
     #Then element with xpath "//ac-login-page" should be presented
