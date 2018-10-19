@@ -107,8 +107,8 @@ public class textualQuestionDef {
 
     @Then("^I verify than the trailing spaces was truncated$")
     public void iVerifyThanTheTrailingSpacesWasTruncated() throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1auto_DONT_TOUCH')]")).click();
-        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1auto_DONT_TOUCH')]/../../..//*[contains(text(),'Preview')]")).click();
+        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1_TRAILING_DONT_TOUCH')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1_TRAILING_DONT_TOUCH')]/../../..//*[contains(text(),'Preview')]")).click();
         String text = getDriver().findElement(By.xpath("//h3[contains(text(),'TrailingSpace')]")).getText();
         assertThat(text).isEqualToIgnoringCase("TrailingSpace");
         getDriver().findElement(By.xpath("//*[contains(text(),'Close')]")).click();
@@ -117,7 +117,7 @@ public class textualQuestionDef {
 
     @And("^I delete the truncated quiz$")
     public void iDeleteTheTruncatedQuiz() throws Throwable {
-        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1auto_DONT_TOUCH')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1_TRAILING_DONT_TOUCH')]/../../..//*[contains(text(),'Delete')]")).click();
         getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
         Thread.sleep(4000);
 
@@ -138,7 +138,7 @@ public class textualQuestionDef {
     public void iCreateAQuizWithWhitespacesOnly() throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
         getDriver().findElement(By.xpath("//*[contains(text(),'Create New Quiz')]")).click();
-        getDriver().findElement(By.xpath("//*[@id='mat-input-2']")).sendKeys("$$000SQA1_WHITE_SPACESONLY_DONT_TOUCH");
+        getDriver().findElement(By.xpath("//*[@id='mat-input-2']")).sendKeys("$$000SQA1_WHITE_SPACESONLY");
         getDriver().findElement(By.xpath("//*[@class='mat-icon material-icons']")).click();
         getDriver().findElement(By.xpath("//*[@id='mat-radio-2']//*[@class='mat-radio-label-content']")).click();
         getDriver().findElement(By.xpath("//*[@id='mat-input-3']")).sendKeys("     ");
@@ -148,8 +148,8 @@ public class textualQuestionDef {
 
     @Then("^I verify if the quiz was created$")
     public void iVerifyIfTheQuizWasCreated() throws Throwable {
-        String quiz = getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1_WHITE_SPACESONLY_DONT_TOUCH')]")).getText();
-        assertThat(quiz).isNotEqualToIgnoringCase("$$000SQA1_WHITE_SPACESONLY_DONT_TOUCH");
+        String quiz = getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1_WHITE_SPACESONLY')]")).getText();
+        assertThat(quiz).isNotEqualToIgnoringCase("$$000SQA1_WHITE_SPACESONLY");
     }
 
 
@@ -158,7 +158,7 @@ public class textualQuestionDef {
         String t = "ssoftware quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance software quality assurance s";
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
         getDriver().findElement(By.xpath("//*[contains(text(),'Create New Quiz')]")).click();
-        getDriver().findElement(By.xpath("//*[@id='mat-input-2']")).sendKeys("$$000SQA1auto_1001_DONT_TOUCH");
+        getDriver().findElement(By.xpath("//*[@id='mat-input-2']")).sendKeys("$$000SQA1auto_1001");
         getDriver().findElement(By.xpath("//*[@class='mat-icon material-icons']")).click();
         getDriver().findElement(By.xpath("//*[@id='mat-radio-2']//*[@class='mat-radio-label-content']")).click();
         getDriver().findElement(By.xpath("//*[@id='mat-input-3']")).sendKeys(t);
@@ -168,8 +168,8 @@ public class textualQuestionDef {
 
     @Then("^I verify if quiz with one thousand and one characters was created$")
     public void iVerifyIfQuizWithOneThousandAndOneCharactersWasCreated() throws Throwable {
-        String quiz = getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1auto_1001_DONT_TOUCH')]")).getText();
-        assertThat(quiz).isNotEqualToIgnoringCase("$$000SQA1auto_1001_DONT_TOUCH");
+        String quiz = getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1auto_1001')]")).getText();
+        assertThat(quiz).isNotEqualToIgnoringCase("$$000SQA1auto_1001");
     }
 
     @When("^I create a quiz switching to the next line with Enter$")
@@ -207,6 +207,69 @@ public class textualQuestionDef {
         getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1auto_Enter_DONT_TOUCH')]/../../..//*[contains(text(),'Delete')]")).click();
         getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
         Thread.sleep(4000);
+    }
+
+    @When("^I create a quiz with trailing space$")
+    public void iCreateAQuizWithTrailingSpace() throws Throwable {
+        getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
+        getDriver().findElement(By.xpath("//*[contains(text(),'Create New Quiz')]")).click();
+        getDriver().findElement(By.xpath("//*[@id='mat-input-2']")).sendKeys("$$000SQA1_TRAILING_DONT_TOUCH");
+        getDriver().findElement(By.xpath("//*[@class='mat-icon material-icons']")).click();
+        getDriver().findElement(By.xpath("//*[@id='mat-radio-2']//*[@class='mat-radio-label-content']")).click();
+        getDriver().findElement(By.xpath("//*[@id='mat-input-3']")).sendKeys("TrailingSpace⠀⠀ ");
+        getDriver().findElement(By.xpath("//*[contains(text(),'Save')]")).click();
+        Thread.sleep(6000);
+    }
+
+    @When("^I create a quiz with Whitespaces inside$")
+    public void iCreateAQuizWithWhitespacesInside() throws Throwable {
+        getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
+        getDriver().findElement(By.xpath("//*[contains(text(),'Create New Quiz')]")).click();
+        getDriver().findElement(By.xpath("//*[@id='mat-input-2']")).sendKeys("$$000SQA1_SPACES_inside_TOUCH");
+        getDriver().findElement(By.xpath("//*[@class='mat-icon material-icons']")).click();
+        getDriver().findElement(By.xpath("//*[@id='mat-radio-2']//*[@class='mat-radio-label-content']")).click();
+        getDriver().findElement(By.xpath("//*[@id='mat-input-3']")).sendKeys("TrailingSpace⠀⠀ ");
+        getDriver().findElement(By.xpath("//*[contains(text(),'Save')]")).click();
+        Thread.sleep(6000);
+    }
+
+    @And("^I delete quiz with spaces$")
+    public void iDeleteQuizWithSpaces() throws Throwable {
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1_SPACES_inside_TOUCH')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(4000);;
+    }
+
+    @And("^I delete the quiz with leading spaces$")
+    public void iDeleteTheQuizWithLeadingSpaces() throws Throwable {
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1auto_DONT_TOUCH')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(3000);
+    }
+
+    @When("^I delete quizzes$")
+    public void iDeleteQuizzes() throws Throwable {
+        getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
+        //String quiz = getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1')]")).getText();
+        //if (quiz.equals("$$000SQA1auto_1001")){
+        //}
+        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(4000);
+        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(4000);
+        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(4000);
+        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1')]/../../..//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(4000);
+
     }
 }
 

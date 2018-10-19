@@ -1,9 +1,6 @@
-Feature: Textual Question in JAVA
-  #ASK-132
-  # MAKE SURE quiz  $$000SQA1auto_DONT_TOUCH does not exist in the List f Quizzes !!!!!
-  # MAKE SURE quiz  $$000SQA1auto_1001_DONT_TOUCH does not exist in the List f Quizzes !!!!!
-  # MAKE SURE quiz   $$000SQA1_WHITE_SPACESONLY_DONT_TOUCH does not exist in the List f Quizzes !!!!!
-  # If so delete it before run the tests
+Feature: Textual Question in JAVA ASK-132
+  # MAKE SURE quiz   contains "$$000SQA1" does not exist at the top List of Quizzes!
+  # If so delete those before run the tests
 
   @test1
   Scenario: Alphanumerical and special characters input  - ASK-149
@@ -37,23 +34,21 @@ Feature: Textual Question in JAVA
     Given I go to Login page and login as a teacher
     When I create a quiz with text "   LeadingSpace"
     Then I verify that the leading spaces was truncated
-    And I delete the truncated quiz
+    And  I delete the quiz with leading spaces
 
   @test6
   Scenario:  TrailingSpace ASK-557
     Given I go to Login page and login as a teacher
-    When I create a quiz with text "TrailingSpace⠀⠀ "
+    When I create a quiz with trailing space
     Then I verify than the trailing spaces was truncated
     And I delete the truncated quiz
-    #Could be modified: if not, print and delete
 
   @test7
   Scenario: Whitespaces inside  ASK-558
     Given I go to Login page and login as a teacher
-    When I create a quiz with text "Whitespace  ⠀⠀ character"
+    When I create a quiz with Whitespaces inside
     Then I verify that the whitespaces was truncated
-    And I delete the truncated quiz
-    #Could be modified: if not, print and delete
+    And I delete quiz with spaces
 
   @test8
   Scenario:  Whitespaces only ASK - 560
@@ -67,12 +62,17 @@ Feature: Textual Question in JAVA
     When I create a quiz with one thousand and one characters
     Then I verify if quiz with one thousand and one characters was created
 
-    @test10
-    Scenario: Switching to the next line with Enter ASK - 564
+  @test10
+  Scenario: Switching to the next line with Enter ASK - 564
+    Given I go to Login page and login as a teacher
+    When I create a quiz switching to the next line with Enter
+    Then I verify if text is written in one line
+    And I delete created quiz
+
+    @test11
+    Scenario: Deleting quizzes
       Given I go to Login page and login as a teacher
-      When I create a quiz switching to the next line with Enter
-      Then I verify if text is written in one line
-      And I delete created quiz
+      When I delete quizzes
 
 
 
