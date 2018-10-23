@@ -1,7 +1,9 @@
 package study.qa.automation.stepDefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 import static study.qa.automation.utils.TestContext.getDriver;
 
@@ -16,4 +18,7 @@ public class PredefinedStepDefs {
     public void iWaitForSec(int sec) throws Exception {
         Thread.sleep(sec * 1000);
     }
-}
+
+
+    }
+
