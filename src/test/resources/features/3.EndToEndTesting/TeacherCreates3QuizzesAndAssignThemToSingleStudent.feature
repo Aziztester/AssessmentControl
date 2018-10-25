@@ -86,8 +86,8 @@ Feature: Automate TC "Teacher creates 3 quizzes, assign it to student. Student f
     Then element with xpath "//mat-panel-title[contains(text(),'ASK-777 ASK-362 Quiz 3')]" should be displayed
     And I wait for 1 sec
 
-#  @Test-Assign3QuizzesToSingleStudent
-#  Scenario: Teacher assigns 3 quizzes to a single student
+  @Test-Assign3QuizzesToSingleStudent
+  Scenario: Teacher assigns 3 quizzes to a single student
     When I click on element with xpath "//h5[contains(text(),'Assignments')]"
     And I wait for 5 sec
     Then element with xpath "//h4[contains(text(),'List of Assignments')]" should be displayed
