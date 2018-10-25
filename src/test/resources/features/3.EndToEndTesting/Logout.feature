@@ -203,34 +203,7 @@ Feature: Automate TC Logout for Teacher (ASK-677)
       | lfelipe@gag16dotw7t.tk  | 12345 | Olga Petrova  | //span[contains(text(),'Change Your Name')]     | //h1[contains(text(), 's Name')]    |
       | lfelipe@gag16dotw7t.tk  | 12345 | Olga Petrova  | //span[contains(text(),'Change Your Password')] | //h1[contains(text(), 'Changing Password')]  |
 
-  @Test-LogoutFromTeacherSubmissionsReviewedReview
-  Scenario: Teacher logout from Submissions page - Reviewed Tab Review Form (ASK-744)
-    Given I login with E-mail "lfelipe@gag16dotw7t.tk" and Password "12345"
-    Then "Olga Petrova" should display at the left top corner
-    When I click Menu Item "Submissions" and wait for 3 sec
-    Then element with xpath "//h4[contains(text(),'Submissions')]" should be displayed
-    When I click on element with xpath "//div[contains(text(),'Reviewed')]"
-    And I wait for 1 sec
-    Then element with xpath "//th[contains(text(),'Submitted At')]" should be displayed
-    When I wait for 1 sec
-    And I click on element with xpath "//span[contains(text(), 'Review')]"
-    Then element with xpath "//textarea[@placeholder='Teacher Summary']" should be displayed
-    When I wait for 1 sec
-    And I click on element with xpath "//h5[contains(text(),'Log Out')]"
-    Then element with xpath "//h1[contains(text(),'Confirmation')]" should be displayed
-    When I wait for 1 sec
-    And I click on element with xpath "//span[contains(text(),'No, Thanks')]"
-    Then element with xpath "//textarea[@placeholder='Teacher Summary']" should be displayed
-    When I click Logout
-    Then Confirmation pop-up window should display
-    When I decline to Logout
-    Then element with xpath "//textarea[@placeholder='Teacher Summary']" should be displayed
-    When I click Logout
-    Then Confirmation pop-up window should display
-    When I confirm Logout
-    Then element with xpath "//button[@type='submit']" should be displayed
-
-  @Test-LogoutFromCreateQuizMode
+ @Test-LogoutFromCreateQuizMode
   Scenario: Teacher cannot logout from Create Quiz mode (ASK-745)
     Given I login with E-mail "lfelipe@gag16dotw7t.tk" and Password "12345"
     Then "Olga Petrova" should display at the left top corner
@@ -280,11 +253,7 @@ Feature: Automate TC Logout for Teacher (ASK-677)
     Then I wait for 1 sec
     When I click on element with xpath "//span[contains(text(),'Preview')]/.."
     Then element with xpath "//h3[contains(text(),'PREVIEW MODE')]" should be displayed
-    When I click Logout
-    Then I wait for 1 sec
-    Then element with xpath "//h3[contains(text(),'PREVIEW MODE')]" should be displayed
-    When I type "a" into element with xpath "//textarea[@placeholder='Enter your answer']"
-    And I click Logout
+    When I try to click on element with xpath "//h5[contains(text(),'Log Out')]"
     Then I wait for 1 sec
 
   @Test-LogoutFromGoToAssignment
@@ -305,7 +274,7 @@ Feature: Automate TC Logout for Teacher (ASK-677)
     When I confirm Logout
     Then element with xpath "//button[@type='submit']" should be displayed
 
-  @Test-StudentLogoutFromGradesSetails
+  @Test-StudentLogoutFromGradesDetails
   Scenario: Student logout from Grade Details Page
     Given I login with E-mail "umoha@jerapah993r.gq" and Password "12345"
     Then "Peter Ivanov" should display at the left top corner
@@ -316,7 +285,7 @@ Feature: Automate TC Logout for Teacher (ASK-677)
     When I click Logout
     Then Confirmation pop-up window should display
     When I decline to Logout
-    Then element with xpath "//textarea[@placeholder='Enter your answer']" should be displayed
+    Then element with xpath "//button[@type='button']" should be displayed
     When I click Logout
     Then Confirmation pop-up window should display
     When I confirm Logout
