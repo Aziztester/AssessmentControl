@@ -286,9 +286,6 @@ Feature: Automate TC Logout for Teacher (ASK-677)
     When I type "a" into element with xpath "//textarea[@placeholder='Enter your answer']"
     And I click Logout
     Then I wait for 1 sec
-    When I click on element with xpath "//span[contains(text(),'Close')]/.."
-    Then element with xpath "//h3[contains(text(),'PREVIEW MODE')]" should not be displayed
-    And I wait for 2 sec
 
   @Test-LogoutFromGoToAssignment
   Scenario: Student logout from Go To Assignment mode (ASK-756)
