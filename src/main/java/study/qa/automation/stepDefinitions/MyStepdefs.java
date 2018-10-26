@@ -1,18 +1,24 @@
 // Created by Viacheslav (Slava) Skryabin 04/01/2018
 package study.qa.automation.stepDefinitions;
 
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
+
 import java.io.IOException;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static study.qa.automation.utils.TestContext.getDriver;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.Alert;
 
 public class MyStepdefs {
 
@@ -175,6 +181,5 @@ public class MyStepdefs {
         }
         return stringClipboard;
     }
-
 
 }
