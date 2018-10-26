@@ -1,7 +1,5 @@
 package study.qa.automation.stepDefinitions;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 
@@ -14,4 +12,4 @@ public class UserEdit {
         getDriver().findElement(By.xpath(xpath)).clear();
     }
 
- }
+}
