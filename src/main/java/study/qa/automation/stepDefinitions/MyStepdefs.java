@@ -6,17 +6,13 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
-
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
-
 import java.io.IOException;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static study.qa.automation.utils.TestContext.getDriver;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.Alert;
 
 public class MyStepdefs {
 
@@ -179,4 +175,6 @@ public class MyStepdefs {
         }
         return stringClipboard;
     }
+
+
 }
