@@ -8,8 +8,6 @@ Feature: Teacher Create a Quiz, Assign it to a Single Student, and Student Get t
     Given I login with E-mail "lfelipe@gag16dotw7t.tk" and Password "12345"
     Then "Olga Petrova" should display at the left top corner
     When I click Menu Item "Quizzes" and wait for 5 sec
-    When I click on element with xpath "//h5[contains(text(),'Quizzes')]"
-    And I wait for 5 sec
     Then element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
     When I click on element with xpath "//span[contains(text(),'Create New Quiz')]"
     And I wait for 1 sec

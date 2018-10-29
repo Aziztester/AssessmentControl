@@ -1,5 +1,6 @@
 package study.qa.automation.stepDefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -100,4 +101,10 @@ public class slavash2305StepDefs {
         Thread.sleep(1000);
     }
 
+    @Then("^Element with xpath \"([^\"]*)\" should contain text \"([^\"]*)\"$")
+    public void elementWithXpathShouldContainText(String xpath, String text) throws Throwable {
+        WebElement element = getDriver().findElement(By.xpath(xpath));
+        String foundText = element.getText();
+        assertThat(foundText.contains(text)).isTrue();
+    }
 }
