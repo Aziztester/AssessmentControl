@@ -1,5 +1,6 @@
-package study.qa.automation.stepDefinitions;
+package definitions;
 
+import com.gargoylesoftware.htmlunit.Page;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -269,6 +270,11 @@ public class textualQuestionDef {
         getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1')]/../../..//*[contains(text(),'Delete')]")).click();
         getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
         Thread.sleep(4000);
+
+    }
+
+    @Given("^I open urllll$")
+    public void iOpenUrllll() throws Throwable {
 
     }
 }

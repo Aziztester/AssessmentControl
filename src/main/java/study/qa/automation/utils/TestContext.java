@@ -15,6 +15,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class TestContext {
 
@@ -100,6 +101,7 @@ public class TestContext {
                 default:
                     throw new RuntimeException("Driver is not implemented for: " + browser);
             }
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             return driver;
         } catch (IllegalArgumentException ex) {
             return null;
