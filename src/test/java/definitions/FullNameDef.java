@@ -1,22 +1,23 @@
 package definitions;
 
+//<<<<<<< HEAD:src/test/java/definitions/FullNameDef.java
 import com.gargoylesoftware.htmlunit.Page;
 import cucumber.api.PendingException;
+//=======
+//>>>>>>> master:src/main/java/study/qa/automation/stepDefinitions/FullNameDef.java
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import study.qa.automation.utils.TestContext;
 
-import javax.swing.*;
 import java.util.concurrent.TimeUnit;
 
-import static study.qa.automation.utils.TestContext.getDriver;
 import static org.assertj.core.api.Assertions.assertThat;
+import static study.qa.automation.utils.TestContext.getDriver;
 
 public class FullNameDef {
     @When("^I change name to \"([^\"]*)\"$")
@@ -218,11 +219,14 @@ public class FullNameDef {
         getDriver().findElement(By.xpath("//div[@class='mat-input-infix mat-form-field-infix']//input")).sendKeys(Keys.TAB);
     }
 
-
-    @Given("^I open url and login$")
-    public void iOpenUrlAndLogin() throws Throwable {
-
-    }
-
-
+//<<<<<<< HEAD:src/test/java/definitions/FullNameDef.java
+//
+//    @Given("^I open url and login$")
+//    public void iOpenUrlAndLogin() throws Throwable {
+//
+//    }
+//
+//
+//=======
+//>>>>>>> master:src/main/java/study/qa/automation/stepDefinitions/FullNameDef.java
 }

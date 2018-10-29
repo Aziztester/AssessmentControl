@@ -28,61 +28,59 @@ Feature: Full Name ASK - 622
     Then  I verify that the name was changed to the name with Max Characters Last Name
     And I change name back to "Olga Petrova"
 
-  @test5
+  @test4
   Scenario: Single character input ASK - 628
     Given I go to Login page and login as a teacher
     When I change name to "I " and press Tab
     And I verify that there is an error message
 
-  @test6
+  @test5
   Scenario: Zero character input / Required field ASK - 629
     Given I go to Login page and login as a teacher
     When I change name to Zero character input and press Tab
     And I verify that there is an error msg
 
-  @test7
+  @test6
   Scenario: First Name (Max character +1) + Last Name (1 char) ASK - 632
     Given I go to Login page and login as a teacher
     When I change name to First Name Max character plus one  and Last Name one char and press Tab
     And I verify that there is an error msg Too long
 
-  @test8
+  @test6
   Scenario: First Name (1 char) + Last Name (Max character +1) ASK - 633
     Given I go to Login page and login as a teacher
     When I change name to First name one character and Last Name Max char plus one and press Tab
     And I verify that there is an error msg Too long
 
-  @test9
+  @test7
   Scenario: First Name - Leading space ASK - 634
     Given I go to Login page and login as a teacher
     When I change name to the name with leading space
     And I verify that there is an error message
 
-  @test10
+  @test8
   Scenario: Last Name - Trailing spaces ASK - 635
     Given I go to Login page and login as a teacher
     When I change name to the name with trailing space
     And I verify that there is an error message
 
-  @test11
+  @test9
   Scenario: Full Name - Three parts ASK - 636
     Given I go to Login page and login as a teacher
     When I change name to the name with Three parts
     And I verify that there is an error message
 
-  @test12
+  @test10
   Scenario: Two spaces between First and Last Names ASK - 641
     Given I go to Login page and login as a teacher
     When I change name to the name with Two spaces between
     And I verify that there is an error message
 
-  @test13
-  Scenario: Spaces ASK - 640
-    Given I go to Login page and login as a teacher
-    When I change name to the name with space
-    And I verify that there is an error message
-
-
+    @test11
+    Scenario: Spaces ASK - 640
+      Given I go to Login page and login as a teacher
+      When I change name to the name with space
+      And I verify that there is an error message
 
 
 
