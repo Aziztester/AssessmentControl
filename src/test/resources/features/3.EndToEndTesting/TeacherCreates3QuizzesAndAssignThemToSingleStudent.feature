@@ -5,7 +5,7 @@ Feature: Automate TC "Teacher creates 3 quizzes, assign it to student. Student f
     And I wait for 3 sec
 
   @Test-3Quizzes
-  Scenario: Teacher creates 3 quizzes and assign them to a single student
+  Scenario: Teacher creates 3 quizzes
     When I click on element with xpath "//input[@placeholder='Email *']"
     And I type "lfelipe@gag16dotw7t.tk" into element with xpath "//input[@placeholder='Email *']"
     And I click on element with xpath "//input[@placeholder='Password *']"
