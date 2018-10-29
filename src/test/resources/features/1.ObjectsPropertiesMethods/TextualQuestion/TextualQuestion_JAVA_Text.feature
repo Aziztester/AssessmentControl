@@ -74,6 +74,10 @@ Feature: Textual Question in JAVA ASK-132
       Given I go to Login page and login as a teacher
       When I delete quizzes
 
+      @testPOPP
+      Scenario: Popp
+        Given I open urllll
+
 
 
 

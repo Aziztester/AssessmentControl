@@ -1,6 +1,12 @@
-package study.qa.automation.stepDefinitions;
+package definitions;
 
+//<<<<<<< HEAD:src/test/java/definitions/FullNameDef.java
+import com.gargoylesoftware.htmlunit.Page;
+import cucumber.api.PendingException;
+//=======
+//>>>>>>> master:src/main/java/study/qa/automation/stepDefinitions/FullNameDef.java
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
@@ -112,6 +118,7 @@ public class FullNameDef {
     public void iChangeNameToZeroCharacterInputAndPressTab() throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Settings')]")).click();
         getDriver().findElement(By.xpath("//*[contains(text(),'Change Your Name')]")).click();
+        //By matSelect = By.xpath("//*[contains(text(),'Change Your Name')]");
         Thread.sleep(3000);
         //getDriver().findElement(By.xpath("//div[@class='mat-input-infix mat-form-field-infix']//input")).clear();
         By matSelector = By.xpath("//div[@class='mat-input-infix mat-form-field-infix']//input");
@@ -212,4 +219,14 @@ public class FullNameDef {
         getDriver().findElement(By.xpath("//div[@class='mat-input-infix mat-form-field-infix']//input")).sendKeys(Keys.TAB);
     }
 
+//<<<<<<< HEAD:src/test/java/definitions/FullNameDef.java
+//
+//    @Given("^I open url and login$")
+//    public void iOpenUrlAndLogin() throws Throwable {
+//
+//    }
+//
+//
+//=======
+//>>>>>>> master:src/main/java/study/qa/automation/stepDefinitions/FullNameDef.java
 }

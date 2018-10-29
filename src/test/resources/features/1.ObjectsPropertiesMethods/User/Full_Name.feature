@@ -76,7 +76,7 @@ Feature: Full Name ASK - 622
     When I change name to the name with Two spaces between
     And I verify that there is an error message
 
-    @test10
+    @test11
     Scenario: Spaces ASK - 640
       Given I go to Login page and login as a teacher
       When I change name to the name with space
