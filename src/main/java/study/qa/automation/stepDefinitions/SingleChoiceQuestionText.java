@@ -26,6 +26,7 @@ public class SingleChoiceQuestionText {
         getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("lfelipe@gag16dotw7t.tk");
         getDriver().findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("12345");
         getDriver().findElement(By.xpath("//span[contains(text(),'Sign In')]")).click();
+        Thread.sleep(2000);
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')] ")).click();
     }
 
