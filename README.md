@@ -44,7 +44,10 @@
 
 11. If there is no conflicts, you can push to github.
     Being on your branch, type `git push`
+    
+12. Once you collected all the changes on your remote branch, 
+    you can go ahead and create Pull request in GitHub.    
 
-12. Repeat steps 3-11 for each change
+13. Repeat steps 3-12 for each complete task
 
 
