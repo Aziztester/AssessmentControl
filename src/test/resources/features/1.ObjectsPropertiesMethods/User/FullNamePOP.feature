@@ -1,7 +1,7 @@
 Feature: Full Name ASK - 622 Page Object
 
   @testPOP1
-    Scenario: First_Name - Leading space ASK 622 POP
+    Scenario: First_Name - Leading space ASK 625 POP
     Given I go to Login page and login as a teacher POP
     When I change name to "Ivan*? Iv@n0v" POP
     Then I verify that the name was changed POP
