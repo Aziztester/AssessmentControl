@@ -43,7 +43,7 @@
 10. Type `git merge master` to make sure there won't be any conflicts in your future PR.
 
 11. If there is no conflicts, you can push to github.
-    Being on your branch, type `git pushh`
+    Being on your branch, type `git push`
     
 12. Once you collected all the changes on your remote branch, 
     you can go ahead and create Pull request in GitHub.    
