@@ -1,0 +1,2 @@
+git status
+hjfjhfjhgfhjfgit add
