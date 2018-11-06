@@ -25,7 +25,7 @@ public class MyStepdefs {
     @Then ("^I click on element with xpath \"([^\"]*)\"$")
     public void iClickOnElementWithXpath(String xpath) {
 
-        getDriver().findElement(By.xpath(xpath)).click();
+        getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).click();
     }
 
     @When("^I type \"([^\"]*)\" into element with xpath \"([^\"]*)\"$")
