@@ -285,7 +285,7 @@ public class AssignedQuizViewedAfterStudentSubmission {
 
         List<WebElement> ans2 = getDriver().findElements(By.xpath("//div[@class='mat-checkbox-inner-container']"));
         ans2.get(0).click();
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         getDriver().findElement(By.xpath("//button[@type='button']")).click();
         getDriver().findElement(By.xpath("//span[contains(text(),'Ok')]")).click();
     }
@@ -295,7 +295,7 @@ public class AssignedQuizViewedAfterStudentSubmission {
     @Then("^also answered \"([^\"]*)\"$")
     public void alsoAnswered(String arg0) throws Throwable {
         //2nd assessment completing by student
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         List<WebElement> assess1 = getDriver().findElements(By.xpath("//tr[@class='ng-star-inserted']/td/a/button/span"));
         assess1.get(1).click();
 
@@ -415,4 +415,142 @@ public class AssignedQuizViewedAfterStudentSubmission {
         }
     }
 
+    @Then("^delete all the \"([^\"]*)\" that teacher created$")
+    public void deleteAllTheThatTeacherCreated(String arg0) throws Throwable {
+        //finding the quizzes
+        Thread.sleep(3000);
+        List<WebElement> quizz=getDriver().findElements(By.xpath("//div[@class='mat-list-text']"));
+        quizz.get(3).click();
+
+        Thread.sleep(2000);
+        //deleting first quiz "losaltos1"
+        List<WebElement> lsaltos1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title"));
+        for(int i=0;i<lsaltos1.size();i++) {
+            WebElement qzlst1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title")).get(i);
+            String quizlst1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title")).get(i).getText();
+            if(quizlst1.contains("losaltos1")) {
+                qzlst1.click();
+                break;
+            }
+        }
+        getDriver().findElement(By.xpath("//div[@class='mat-expansion-panel-content ng-trigger ng-trigger-bodyExpansion mat-expanded']/div/div/div/button[2]/span")).click();
+        Thread.sleep(2000);
+        getDriver().findElement(By.xpath("//ac-modal-confirmation[@class='ng-star-inserted']/div[2]/button[2]/span")).click();
+
+        Thread.sleep(2000);
+
+        //deleting second quiz "losaltos2"
+
+        List<WebElement> lsaltos2=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title"));
+        for(int i=0;i<lsaltos2.size();i++) {
+            WebElement qzlst1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title")).get(i);
+            String quizlst1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title")).get(i).getText();
+            if(quizlst1.contains("losaltos2")) {
+                qzlst1.click();
+                break;
+            }
+        }
+        getDriver().findElement(By.xpath("//div[@class='mat-expansion-panel-content ng-trigger ng-trigger-bodyExpansion mat-expanded']/div/div/div/button[2]/span")).click();
+        Thread.sleep(2000);
+        getDriver().findElement(By.xpath("//ac-modal-confirmation[@class='ng-star-inserted']/div[2]/button[2]/span")).click();
+
+        Thread.sleep(2000);
+
+        //deleting third quiz "losaltos3"
+        List<WebElement> lsaltos3=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title"));
+        for(int i=0;i<lsaltos3.size();i++) {
+            WebElement qzlst1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title")).get(i);
+            String quizlst1=getDriver().findElements(By.xpath("//span[@class='mat-content']/mat-panel-title")).get(i).getText();
+            if(quizlst1.contains("losaltos3")) {
+                qzlst1.click();
+                break;
+            }
+        }
+        Thread.sleep(2000);
+        getDriver().findElement(By.xpath("//div[@class='mat-expansion-panel-content ng-trigger ng-trigger-bodyExpansion mat-expanded']/div/div/div/button[2]/span")).click();
+        Thread.sleep(2000);
+        getDriver().findElement(By.xpath("//ac-modal-confirmation[@class='ng-star-inserted']/div[2]/button[2]/span")).click();
+
+
+    }
+
+    @Then("^deleting all of the \"([^\"]*)\" teacher created$")
+    public void deletingAllOfTheTeacherCreated(String arg0) throws Throwable {
+        //deleting the assignments
+        Thread.sleep(2000);
+        List<WebElement> assign=getDriver().findElements(By.xpath("//div[@class='mat-list-text']"));
+        assign.get(2).click();
+
+
+        //deleting the third assignment  "losaltos3"
+
+        Thread.sleep(2000);
+        List<WebElement> quiznme2 = getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]"));
+        for (int j = 0; j < quiznme2.size(); j++) {
+            WebElement qznme =getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]")).get(j);
+
+            String quizznme = getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]")).get(j).getText();
+            Thread.sleep(2000);
+            if (quizznme.contains("losaltos3")) {
+                qznme.click();
+                getDriver().findElement(By.xpath(" //*[contains(text(),'more_vert')]")).click();
+                getDriver().findElement(By.xpath("//span[contains(text(),'Delete Assignment')]")).click();
+                Thread.sleep(2000);
+                getDriver().findElement(By.xpath("//span[contains(text(),'Delete')]")).click();
+                Thread.sleep(1000);
+                break;
+            }
+        }
+        Thread.sleep(3000);
+
+        //deleting the second assignment  "losaltos2"
+        List<WebElement> assign1=getDriver().findElements(By.xpath("//div[@class='mat-list-text']"));
+        assign1.get(2).click();
+
+
+
+        List<WebElement> quiznme3 = getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]"));
+        for (int j = 0; j < quiznme3.size(); j++) {
+            WebElement qznme =getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]")).get(j);
+
+            String quizznme = getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]")).get(j).getText();
+            Thread.sleep(2000);
+            if (quizznme.contains("losaltos2")) {
+                qznme.click();
+                getDriver().findElement(By.xpath(" //*[contains(text(),'more_vert')]")).click();
+                getDriver().findElement(By.xpath("//span[contains(text(),'Delete Assignment')]")).click();
+                Thread.sleep(2000);
+                getDriver().findElement(By.xpath("//span[contains(text(),'Delete')]")).click();
+                Thread.sleep(1000);
+                break;
+            }
+        }
+
+        Thread.sleep(3000);
+        //deleting the first assignment  "losaltos1"
+
+        List<WebElement> assign3=getDriver().findElements(By.xpath("//div[@class='mat-list-text']"));
+        assign3.get(2).click();
+
+
+
+        List<WebElement> quiznme4 = getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]"));
+        for (int j = 0; j < quiznme4.size(); j++) {
+            WebElement qznme =getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]")).get(j);
+
+            String quizznme = getDriver().findElements(By.xpath("//*[@class='mat-accordion']/mat-expansion-panel/mat-expansion-panel-header/span/mat-panel-title[3]")).get(j).getText();
+            Thread.sleep(2000);
+            if (quizznme.contains("losaltos1")) {
+                qznme.click();
+                getDriver().findElement(By.xpath(" //*[contains(text(),'more_vert')]")).click();
+                getDriver().findElement(By.xpath("//span[contains(text(),'Delete Assignment')]")).click();
+                Thread.sleep(2000);
+                getDriver().findElement(By.xpath("//span[contains(text(),'Delete')]")).click();
+                Thread.sleep(1000);
+                break;
+            }
+        }
+
+
+    }
 }
