@@ -1,7 +1,7 @@
 Feature: Create User as a Student
 
   @test1
-  Scenario: Create User
+  Scenario: Create User and login as student
     Given I go to Registration page
     Then I type First name
     Then I type Last name,

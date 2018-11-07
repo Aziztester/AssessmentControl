@@ -1,5 +1,6 @@
 package study.qa.automation.stepDefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -64,5 +65,10 @@ public class CreateUser {
     }
 
 
+    @And("^I open Email$")
+    public void iOpenEmail() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
 }
 
