@@ -31,7 +31,7 @@ public class StudentAssignmentBeingSeen {
 
     @And("^create quiz with \"([^\"]*)\" question$")
     public void createQuizWithQuestion(String arg0) throws Throwable {
-        getDriver().manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')] ")).click();
         //teacher Create quiz
         getDriver().findElement(By.xpath("//span[contains(text(),'Create New Quiz')]")).click();
