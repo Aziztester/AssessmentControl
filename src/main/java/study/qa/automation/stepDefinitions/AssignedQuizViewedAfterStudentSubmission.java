@@ -23,7 +23,7 @@ public class AssignedQuizViewedAfterStudentSubmission {
 
         getDriver().manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         TestContext.getDriver().get("http://local.school.portnov.com:4520/#/login");
-        getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("lfelipe@gag16dotw7t.tk");
+        getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("umoha@jerapah993r.gq");
         getDriver().findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("12345");
         getDriver().findElement(By.xpath("//span[contains(text(),'Sign In')]")).click();
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')] ")).click();
@@ -300,10 +300,21 @@ Thread.sleep(2000);
     public void studentAnswer(String arg0) throws Throwable {
         //Student Check the first Assignment
         Thread.sleep(3000);
-         getDriver().findElement(By.xpath("//h5[contains(text(),'My Assignments')]")).click();
+        List<WebElement> assign= getDriver().findElements(By.xpath("//div[@class='mat-list-text']"));
+        assign.get(1).click();
+
         //1st Assessment completing for student
-        List<WebElement> assess=getDriver().findElements(By.xpath("//span[contains(text(),'Go To Assessment')]"));
-        assess.get(2).click();
+        List<WebElement> assess=getDriver().findElements(By.xpath("//button[@class='mat-raised-button mat-primary']/span"));
+        for(int i=0;i<assess.size();i++){
+            String assess1=getDriver().findElements(By.xpath("//button[@class='mat-raised-button mat-primary']/span")).get(i).getText();
+            if(assess1.contains("losaltos1")){
+                getDriver().findElements(By.xpath("//button[@class='mat-raised-button mat-primary']/span")).get(i).click();
+                break;
+
+            }
+        }
+
+        Thread.sleep(2000);
         getDriver().findElement(By.xpath("//div[@class='mat-input-infix mat-form-field-infix']/textarea")).sendKeys("xxxer");
         List<WebElement> ans=getDriver().findElements(By.xpath("//div[@class='mat-radio-outer-circle'] "));
         ans.get(0).click();
