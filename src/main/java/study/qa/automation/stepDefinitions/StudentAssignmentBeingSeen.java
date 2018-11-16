@@ -21,17 +21,17 @@ public class StudentAssignmentBeingSeen {
     @Given("^navigate to teacher \"([^\"]*)\" page$")
     public void navigateToTeacherPage(String arg0) throws Throwable {
 
-        getDriver().manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         TestContext.getDriver().get("http://local.school.portnov.com:4520/#/login");
         getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("lfelipe@gag16dotw7t.tk");
         getDriver().findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("12345");
         getDriver().findElement(By.xpath("//span[contains(text(),'Sign In')]")).click();
-        getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')] ")).click();
     }
 
     @And("^create quiz with \"([^\"]*)\" question$")
     public void createQuizWithQuestion(String arg0) throws Throwable {
-        getDriver().manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        Thread.sleep(5000);
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')] ")).click();
         //teacher Create quiz
         getDriver().findElement(By.xpath("//span[contains(text(),'Create New Quiz')]")).click();
