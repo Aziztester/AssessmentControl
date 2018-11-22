@@ -14,6 +14,7 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 import static study.qa.automation.utils.TestContext.getDriver;
@@ -24,13 +25,17 @@ public class MyStepdefs {
 
     @Then ("^I click on element with xpath \"([^\"]*)\"$")
     public void iClickOnElementWithXpath(String xpath) {
-
         getDriver().findElement(By.xpath(xpath)).click();
     }
 
     @When("^I type \"([^\"]*)\" into element with xpath \"([^\"]*)\"$")
     public void iTypeIntoElementWithXpath(String text, String xpath) {
         getDriver().findElement(By.xpath(xpath)).sendKeys(text);
+        getDriver().findElement(By.xpath("//textarea[@placeholder='Question *']")).sendKeys("What is Priority?");
+        List<WebElement> frstopans1 = getDriver().findElements(By.xpath("//div[@class='mat-radio-outer-circle']"));
+
+        frstopans1.get(3).click();
+
     }
 
     @Then("^element with xpath \"([^\"]*)\" should be displayed$")
