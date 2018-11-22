@@ -2,8 +2,8 @@
 Feature: Teacher create 3 quizzes and assign to single student
   and teacher see the history of quizzes that performed by student.
 
-  Scenario: teacher creates three quizzes(Single-choice and Multiple Choice)
-    Given  Navigate to the login page  "login"
+    Scenario: teacher creates three quizzes(Single-choice and Multiple Choice)
+    Given  Navigate to login page "login"
     Then teacher create  "firstquiz"
     Then teacher also create "secondquiz"
     And then last "thirdquiz"
@@ -17,9 +17,17 @@ Feature: Teacher create 3 quizzes and assign to single student
     And student answered "thirdassignment"
     And student able "logout"
 
-  Scenario: teacher view the results
-    Given  Navigate to the login page  "login"
+    Scenario: teacher view the results
+    Given  Navigate to login page  "login"
     And teacher login and view the student's "assignments"
     And teacher "logout"
+
+      Scenario: Deleting the quiz
+       Given  Navigate to login page  "login"
+       Then delete all the "threequizzes" that teacher created
+
+      Scenario: Deleting the assignments
+        Given  Navigate to login page  "login"
+        Then deleting all of the "assignments" teacher created
 
 

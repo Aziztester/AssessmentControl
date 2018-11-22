@@ -5,7 +5,7 @@ Feature: Automation of Test Case for Quiz Method: Quiz - Create At
     Given I open url "http://local.school.portnov.com:4520/#/login"
     And I wait for 3 sec
     Then I click on element with xpath "//input[@placeholder='Email *']"
-    And I type "lfelipe@gag16dotw7t.tk" into element with xpath "//input[@placeholder='Email *']"
+    And I type "vexuwymorre-4432@yopmail.com" into element with xpath "//input[@placeholder='Email *']"
     Then I click on element with xpath "//input[@placeholder='Password *']"
     Then I type "12345" into element with xpath "//input[@placeholder='Password *']"
     And I wait for 3 sec
