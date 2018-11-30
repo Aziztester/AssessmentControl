@@ -18,9 +18,9 @@ public class CreateUser {
     @Given("^I go to Registration page$")
     public void iGoToRegistrationPage() throws Throwable {
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        TestContext.getDriver().get("http://local.school.portnov.com:4520/#/login");
+        TestContext.getDriver().get("http://local.school.portnov.com:4520/#/reset-password/1206/127210d235fc63d1f53f1f9ef7c59fc090a4b5c6");
         Thread.sleep(5000);
-        getDriver().findElement(By.xpath("//span[contains(text(),'Register Now')]")).click();
+        getDriver().findElement(By.xpath("//h4[contains(text(),'Reset Password')]/..//*[@placeholder='New Password']")).sendKeys("Anna");
 
     }
 
