@@ -1,13 +1,17 @@
 package definitions;
 
-import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.assertj.core.api.Assertions;
+import org.openqa.selenium.By;
 import pages.RegistrationPage;
+import study.qa.automation.utils.TestContext;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static study.qa.automation.utils.TestContext.getDriver;
 
 public class UserEmailDefPOP {
     @Given("^I open registration page$")
@@ -180,5 +184,20 @@ public class UserEmailDefPOP {
         page.fillEmail("Firstname.Lastname.domain.name");
         page.fillGroupcode("A01");
         page.clickRegisterMe();
+    }
+
+    public static class userPassword {
+
+        @Given("^I open a registration page$")
+        public void iOpenARegistrationPage() throws Throwable {
+            getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            TestContext.getDriver().get("http://local.school.portnov.com:4520/#/login");
+            Thread.sleep(5000);
+        }
+
+        @And("^click on forgot password link$")
+        public void clickOnForgotPasswordLink() throws Throwable {
+            getDriver().findElement(By.xpath("//a[contains(text(),'I forgot my password')]")).click();
+        }
     }
 }
