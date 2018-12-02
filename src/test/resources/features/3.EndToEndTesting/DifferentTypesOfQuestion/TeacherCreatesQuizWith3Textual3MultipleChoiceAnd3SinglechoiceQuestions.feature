@@ -1,4 +1,4 @@
-Feature: Teacher Creates Quiz with 3 Textual Questions (ASK-591)
+Feature: Teacher Creates Quiz with 3 Textual 3 multiple choice and 3 Single choice Questions
 
   @Test-5TextualQuestions
   Scenario: Create a Quiz with 3 Textual, 3 Single- Choice, 3 Multiple-Choice question + Show Stopper
