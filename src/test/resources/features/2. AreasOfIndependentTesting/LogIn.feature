@@ -1,4 +1,4 @@
-Feature: Automate TC for User Properties: Group code
+Feature: Login
   Background: Register as a student
     Given I open url "http://local.school.portnov.com:4520/#/login"
     And I wait for 5 sec
