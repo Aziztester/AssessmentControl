@@ -20,5 +20,15 @@ public class PredefinedStepDefs {
     }
 
 
+//    @When("^I open urlv$")
+//    public void iOpenUrlv() throws Throwable {
+//        getDriver().get(url);
+//    }
+
+    @When("^I open urlvv$")
+    public void iOpenUrlvv() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
+}
 
