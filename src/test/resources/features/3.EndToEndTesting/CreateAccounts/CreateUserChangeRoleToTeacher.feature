@@ -49,11 +49,3 @@ Feature: Automate TC for End to End Testing: Create user as a student, change ro
     And  I click on element with xpath "//span[contains(text(),'Change Role')]"
     And I wait for 2 sec
     Then element with xpath "//td[contains(text(),'TEACHER')]" should be displayed
-
-    #The User's role must be changed back to Student in order to run the Test Case Automation again
-    Then I click on element with xpath "//span[@class='mat-button-wrapper']"
-    And I click on element with xpath "//div[@class='mat-menu-content ng-trigger ng-trigger-fadeInItems']//button[2]"
-    Then element with xpath "//h1[contains(text(), 'Confirmation')]" should be displayed
-    And  I click on element with xpath "//span[contains(text(),'Change Role')]"
-    And I wait for 2 sec
-    Then element with xpath "//td[contains(text(),'STUDENT')]" should be displayed
