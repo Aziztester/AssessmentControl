@@ -1,6 +1,5 @@
 package definitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -276,7 +275,7 @@ public class VStepsDefs {
     }
 
     @And("V assign quiz {string} to student {string}")
-    public void vAssignQuizToStudent(String quizName, String studentName) {
+    public void vAssignQuizToStudent(String quizName, String studentName) throws InterruptedException {
         Boolean found = false;
         int i;
         String pathStudents = "//div[@class='mat-list-text']";
@@ -300,7 +299,9 @@ public class VStepsDefs {
             }
         }
         assertThat(found).isTrue();
+        Thread.sleep(1000);
         getDriver().findElement(By.xpath("("+"//mat-option" + ")[" + (i+1) + "]")).click();
+        Thread.sleep(1000);
         getDriver().findElement(By.xpath("//*[@type='submit']")).click();
     }
 
@@ -427,11 +428,6 @@ public class VStepsDefs {
             }
         }
         assertThat(found).isFalse();
-    }
-
-    @And("^V wait for (\\d+) msec$")
-    public void vWaitForMsec(int arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+//
     }
 }
