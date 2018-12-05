@@ -78,5 +78,7 @@ Feature: Assignment - Create (ASK-966)
     Then V verify that student "Vladimir TestActivation" is not in the list
 
 
+
+
     And I wait for 3 sec
 
