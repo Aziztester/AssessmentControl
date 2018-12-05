@@ -1,5 +1,6 @@
 package definitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -426,5 +427,11 @@ public class VStepsDefs {
             }
         }
         assertThat(found).isFalse();
+    }
+
+    @And("^V wait for (\\d+) msec$")
+    public void vWaitForMsec(int arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }
