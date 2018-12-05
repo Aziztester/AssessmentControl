@@ -11,6 +11,7 @@ Feature: Automate test cases for multiple-choice question
   Given  Navigate to login page  "login"
   Then I create the quiz with "singlecharacter" option
   And I verify the quiz present in "QUIZLIST" and delete
+    And I verify rewrthe quiz present in "QUIZLIST" and delete
 
   Scenario: mutiple-choice question  - option - zero Character
     Given  Navigate to login page  "login"
