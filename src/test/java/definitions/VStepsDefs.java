@@ -181,7 +181,8 @@ public class VStepsDefs {
         b = assertThat(getDriver().findElement(By.xpath(s)).isDisplayed()).isFalse();
     }
 
-    @Then("V in question {string} option {string} should be {string}")
+//    @Then("V in question {string} option {string} should be {string}")
+    @Then("^V in question \"([^\"]*)\" option \"([^\"]*)\" should be \"([^\"]*)\"$")
     public void vInQuestionOptionShouldBe(String questionNumber, String optionNumber, String option) {
         String s;
         s = "//h3[text()='Question " + questionNumber + "']/..//*[contains(text(),'" + option + "')]";
@@ -414,7 +415,8 @@ public class VStepsDefs {
         Thread.sleep(1000);
     }
 
-    @Then("V verify that student {string} is not in the list")
+//    @Then("V verify that student {string} is not in the list")
+    @Then("^V verify that student \"([^\"]*)\" is not in the list$")
     public void vVerifyThatStudentIsNotInTheList(String studentName) {
         boolean found = false;
         int i;
