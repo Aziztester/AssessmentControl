@@ -8,7 +8,6 @@ Feature: The teacher creates a quiz with 3 textual, 3 multiple-choice, 3 single-
       And create three single-choice questions
       And create three multiple-choice questions
       Then verified that passing rate is 75%
-
       When we save quiz
       Then verify that quiz with name "New quiz with 3 text,3 multiple, 3 single" exist
 
