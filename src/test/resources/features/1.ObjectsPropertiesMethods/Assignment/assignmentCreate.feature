@@ -83,4 +83,3 @@ Feature: Assignment - Create (ASK-966)
 
 
 #    And I wait for 3 sec
-
