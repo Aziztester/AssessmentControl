@@ -8,7 +8,7 @@ Feature: Assignment - Create (ASK-966)
     Then V verify "//p[contains(text(),'TEACHER')]" is displayed
     When V open Assignments list
     And V wait for "//*[contains(text(),'List of Assignments')]"
-    And V wait for 700 msec
+    And V wait for 1000 msec
     And V click on element with xpath "//*[contains(text(),'Create New Assignment')]"
     And V assign quiz "Q" to student "Vladimir Student"
     And V wait for "//*[contains(text(),'List of Assignments')]"
