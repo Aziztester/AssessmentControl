@@ -189,13 +189,13 @@ public class VStepsDefs {
         b = assertThat(getDriver().findElement(By.xpath(s)).isDisplayed()).isTrue();
     }
 
-    @And("$V select Include other text area option for Question \"([^\"]*)\"$")
+    @And("^V select Include other text area option for Question \"([^\"]*)\"$")
     public void vSelectIncludeOtherTextAreaOptionForQuestion(String questionNumber) {
         String s = "//*[contains(text(),'Include')]/..";
         getDriver().findElement(By.xpath(s)).click();
     }
 
-    @And("$V add option \"([^\"]*)\" to question \"([^\"]*)\"$")
+    @And("^V add option \"([^\"]*)\" to question \"([^\"]*)\"$")
     public void vAddOptionToQuestion(String optionNumber, String questionNumber) {
         getDriver().findElement(By.xpath("//*[contains(text(),'Add Option')]$")).click();
     }
@@ -205,7 +205,7 @@ public class VStepsDefs {
         assertThat(getDriver().findElement(By.xpath("//*[@placeholder='Option " + optionNumber + "*']")).isDisplayed()).isTrue();
     }
 
-    @And("$V add options to make \"([^\"]*)\" options in question \"([^\"]*)\"$")
+    @And("^V add options to make \"([^\"]*)\" options in question \"([^\"]*)\"$")
     public void vAddOptionsToMakeOptionsInQuestion(String totalOptions, String questionNumber) {
         int num;
         do {
@@ -221,7 +221,7 @@ public class VStepsDefs {
         assertThat(num).isEqualTo(Integer.valueOf(totalOptions));
     }
 
-    @And("$V delete option \"([^\"]*)\" in question \"([^\"]*)\"$")
+    @And("^V delete option \"([^\"]*)\" in question \"([^\"]*)\"$")
     public void vDeleteOptionInQuestion(String optionNumber, String questionNumber) {
         String s = "//*[@placeholder='Option " + optionNumber + "*']/../../../../..//button/span";
         getDriver().findElement(By.xpath(s)).click();
@@ -231,7 +231,7 @@ public class VStepsDefs {
         getDriver().findElement(By.xpath(s)).click();
     }
 
-    @Then("$V verify that option \"([^\"]*)\" does not present in question \"([^\"]*)\"$")
+    @Then("^V verify that option \"([^\"]*)\" does not present in question \"([^\"]*)\"$")
     public void vVerifyThatOptionDoesNotPresentInQuestion(String optionNumber, String questionNumber) throws Throwable {
         String s = "//*[contains(@placeholder,'Option ')]";
         List<WebElement> e = getDriver().findElements(By.xpath(s));
@@ -240,7 +240,7 @@ public class VStepsDefs {
         assertThat(cnt).isNotEqualTo(3);
     }
 
-    @And("$V move option \"([^\"]*)\" in question \"([^\"]*)\" up$")
+    @And("^V move option \"([^\"]*)\" in question \"([^\"]*)\" up$")
     public void vMoveOptionInQuestionUp(String optionNumber, String questionNumber) throws Exception{
         String s = "//*[@placeholder='Option " + optionNumber + "*']/../../../../..//button/span";
         getDriver().findElement(By.xpath(s)).click();
@@ -249,7 +249,7 @@ public class VStepsDefs {
         getDriver().findElement(By.xpath(s)).click();
     }
 
-    @Then("$V verify if in option \"([^\"]*)\" text \"([^\"]*)\" should be present$")
+    @Then("^V verify if in option \"([^\"]*)\" text \"([^\"]*)\" should be present$")
     public void vVerifyIfInOptionTextShouldBePresent(String optionNumber, String expectedOptionText) {
         String s;
         s = "//*[contains(@placeholder,'Option ')]";
@@ -258,27 +258,27 @@ public class VStepsDefs {
         assertThat(actualOptionText).isEqualTo(expectedOptionText);
     }
 
-    @When("$V open Assignments list$")
+    @When("^V open Assignments list$")
     public void vOpenAssignmentsList() {
         getDriver().findElement(By.xpath("//*[contains(text(),'Assignments')]")).click();
         vWaitFor("//*[contains(text(),'List of Assignments')]");
     }
 
-    @And("$V click on element with xpath \"([^\"]*)\"$")
+    @And("^V click on element with xpath \"([^\"]*)\"$")
     public void vClickOnElementWithXpath(String xpath) {
         getDriver().findElement(By.xpath(xpath)).click();
     }
 
-    //    @And("$V wait for {int} msec")
+    //    @And("^V wait for {int} msec")
     @And("^V wait for (\\d+) msec$")
     public void vWaitForMsec(int time) throws Exception {
         Thread.sleep(time);
     }
 
-    //    @And("$V assign quiz \"([^\"]*)\" to student \"([^\"]*)\"")
+    //    @And("^V assign quiz \"([^\"]*)\" to student \"([^\"]*)\"")
     @And("^V assign quiz \"([^\"]*)\" to student \"([^\"]*)\"$")
     public void vAssignQuizToStudent(String quizName, String studentName) throws InterruptedException {
-        Boolean found = false;
+        boolean found = false;
         int i;
         String pathStudents = "//div[@class='mat-list-text']";
         List<WebElement> studentList = getDriver().findElements(By.xpath(pathStudents));
@@ -307,7 +307,7 @@ public class VStepsDefs {
         getDriver().findElement(By.xpath("//*[@type='submit']")).click();
     }
 
-    @Then("$V verify if quiz \"([^\"]*)\" assigned to student \"([^\"]*)\" in the List of Assignments$")
+    @Then("^V verify if quiz \"([^\"]*)\" assigned to student \"([^\"]*)\" in the List of Assignments$")
     public void vVerifyIfQuizAssignedToStudentInTheListOfAssignments(String quizName, String studentName) throws Exception {
         int i;
         String s, path;
@@ -334,7 +334,7 @@ public class VStepsDefs {
         assertThat(isAssignmeentExist).isTrue();
     }
 
-    @And("$V create {int} textual question \"([^\"]*)\"$")
+    @And("^V create (\\d+) textual question \"([^\"]*)\"$")
     public void vCreateTextualQuestion(int numbersOfQuestions, String questionText) throws InterruptedException {
         String path;
         int questionNumber = 1;
@@ -346,12 +346,12 @@ public class VStepsDefs {
         getDriver().findElement(By.xpath(path)).sendKeys(questionText);
     }
 
-    @And("$V verify \"([^\"]*)\" is not displayed$")
+    @And("^V verify \"([^\"]*)\" is not displayed$")
     public void vVerifyIsNotDisplayed(String path) {
         assertThat(getDriver().findElements(By.xpath(path))).hasSize(0);
     }
 
-    @And("$V type \"([^\"]*)\" into the element with xpath \"([^\"]*)\"$")
+    @And("^V type \"([^\"]*)\" into the element with xpath \"([^\"]*)\"$")
     public void vTypeIntoTheElementWithXpath(String text, String xpath) {
         getDriver().findElement(By.xpath(xpath)).sendKeys(text);
     }
@@ -365,13 +365,15 @@ public class VStepsDefs {
         getDriver().switchTo().window(newWindow);
     }
 
-    @And("$V login to yandex mail with login \"([^\"]*)\" and password \"([^\"]*)\" and activate account$")
-    public void vLoginToYandexMailWithLoginAndPasswordAndActivateAccount(String login, String password) {
+    @And("^V login to yandex mail with login \"([^\"]*)\" and password \"([^\"]*)\" and activate account$")
+    public void vLoginToYandexMailWithLoginAndPasswordAndActivateAccount(String login, String password) throws Exception {
         getDriver().findElement(By.xpath("//*[@name='login']")).sendKeys(login);
         String passwordPath = "//*[@name='passwd']";
         List<WebElement> el = getDriver().findElements(By.xpath(passwordPath + "[@class='passport-Input-Controller']"));
         if ( el.size() == 0){
+            vWaitForMsec(1000);
             getDriver().findElement(By.xpath("//*[@type='submit']")).click();
+            vWaitForMsec(1000);
         }
         vWaitFor(passwordPath);
         getDriver().findElement(By.xpath(passwordPath)).sendKeys(password);
@@ -384,19 +386,19 @@ public class VStepsDefs {
         vVerifyIsDisplayed("//h4[contains(text(),'Account was Activated')]");
     }
 
-    @And("$V delete account \"([^\"]*)\", if exist$")
+    @And("^V delete account \"([^\"]*)\", if exist$")
     public void vDeleteAccountIfExist(String account) throws Exception {
-        vLoginAsTeacherWithPassword("VladimirTeacher.test@gmail.com","12345");
-        vWaitFor("//p[contains(text(),'TEACHER')]");
-        vVerifyIsDisplayed("//p[contains(text(),'TEACHER')]");
         String path = "//*[contains(text(),\"User's Management\")]";
         vWaitFor(path);
         getDriver().findElement(By.xpath(path)).click();
         vWaitFor(path);
-        List<WebElement> student = getDriver().findElements(By.xpath("//*[contains(text(),'" + account + "')]"));
+        path = "//*[contains(text(),'" + account + "')]";
+        List<WebElement> student = getDriver().findElements(By.xpath(path));
         if (student.size() > 0){
             for (int i=0; i < student.size(); i++){
-                student.get(i).click();
+                vWaitForMsec(1000);
+                path = "//*[contains(text(),'" + account + "')]/../..";
+                getDriver().findElements(By.xpath(path)).get(i).click();
                 vWaitForMsec(1000);
                 getDriver().findElement(By.xpath("//span[@class='mat-button-wrapper']/..")).click();
                 vWaitForMsec(1000);
@@ -408,7 +410,7 @@ public class VStepsDefs {
         }
     }
 
-    @And("$V logout$")
+    @And("^V logout$")
     public void vLogout() throws InterruptedException {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Log Out')]")).click();
         Thread.sleep(1000);
@@ -416,7 +418,7 @@ public class VStepsDefs {
         Thread.sleep(1000);
     }
 
-    @Then("$V verify that student \"([^\"]*)\" is not in the list$")
+    @Then("^V verify that student \"([^\"]*)\" is not in the list$")
     public void vVerifyThatStudentIsNotInTheList(String studentName) {
         boolean found = false;
         int i;
@@ -432,4 +434,6 @@ public class VStepsDefs {
         assertThat(found).isFalse();
 //
     }
+
+
 }
