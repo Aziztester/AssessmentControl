@@ -27,7 +27,7 @@ public class teacherCreateQuiz {
 
     @When("I register as a teacher")
     public void iRegisterAsATeacher() throws InterruptedException {
-       getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("VasyaPetrovTeacher@gmail.com");
+        getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("VasyaPetrovTeacher@gmail.com");
 
         getDriver().findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("123456");
         getDriver().findElement(By.xpath("//button[@type='submit']")).click();
@@ -105,7 +105,7 @@ public class teacherCreateQuiz {
     @And("create three single-choice questions")
     public void createThreeSingleChoiceQuestions() throws InterruptedException {
 
-    //first single
+        //first single
 
         List<WebElement> fouthradio = getDriver().findElements(By.xpath("//div[@class='mat-radio-outer-circle']"));
         fouthradio.get(10).click();
@@ -251,14 +251,11 @@ public class teacherCreateQuiz {
 
 
         /*Thread.sleep(1000);  New quiz with 3 text,3 multiple, 3 single
-
         //WebElement passingRate = getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1"));//windows with rate
         String currentPassRate=getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1")).getText();
         System.out.println(currentPassRate);
-
         WebElement buttonPlus = getDriver().findElement(By.xpath("//span[contains(text(), '+')]"));
         WebElement buttonMinus=getDriver().findElement(By.xpath("//span[text()='-']"));
-
         do {buttonMinus.click();} while (currentPassRate.equals(""))
         if (!currentPassRate.equals("75%")){
         buttonPlus.click();
@@ -277,9 +274,5 @@ public class teacherCreateQuiz {
 
 
 
-    }
-
-
-
-
+}
 
