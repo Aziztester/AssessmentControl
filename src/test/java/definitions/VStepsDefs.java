@@ -1,5 +1,6 @@
 package definitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -47,23 +48,30 @@ public class VStepsDefs {
     }
 
     @When("^V create quiz \"([^\"]*)\"$")
-    public void vCreateQuiz(String quizName) {
+    public void vCreateQuiz(String quizName) throws Exception {
         getDriver().findElement(By.xpath("//*[contains(text(),'Create New Quiz')]")).click();
         vVerifyIsDisplayed("//*[contains(text(),'Title Of The Quiz *')]");
+        vWaitForMsec(300);
         getDriver().findElement(By.xpath("//input[@placeholder='Title Of The Quiz *']")).sendKeys(quizName);
         getDriver().findElement(By.xpath("//*[contains(text(),'add_circle')]")).click();
     }
 
     @And("^V create textual question \"([^\"]*)\" number \"([^\"]*)\"$")
     public void vCreateTextualQuestionNumber(String question, String questionNumber) throws Throwable {
+        vCreateLastTextualQuestionNumber(question, questionNumber);
+        getDriver().findElement(By.xpath("//*[contains(text(),'add_circle')]")).click();
+        vWaitFor("//*[contains(text(),'new empty question')]");
+    }
+
+    @And("^V create last textual question \"([^\"]*)\" number \"([^\"]*)\"$")
+    public void vCreateLastTextualQuestionNumber(String question, String questionNumber) throws Throwable {
         String s;
         s = "//*[contains(text(), 'Q" + questionNumber + ":')]/../../..//div[contains(text(), 'Textual')]";
         Thread.sleep(300);
         getDriver().findElement(By.xpath(s)).click();
         s = "//*[contains(text(), 'Q" + questionNumber + ":')]/../../..//*[@placeholder='Question *']";
         getDriver().findElement(By.xpath(s)).sendKeys(question);
-        getDriver().findElement(By.xpath("//*[contains(text(),'add_circle')]")).click();
-        vWaitFor("//*[contains(text(),'new empty question')]");
+        Thread.sleep(500);
     }
 
     @Then("^V create single-option question \"([^\"]*)\" number \"([^\"]*)\" with options \"([^\"]*)\", \"([^\"]*)\"$")
@@ -118,6 +126,7 @@ public class VStepsDefs {
     @And("^V save$")
     public void vSave() throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(),'Save')]/..")).click();
+        vWaitFor("//*[contains(text(),'Create New Quiz')]");
     }
 
     @When("^V choose Multiple-Choice type to create Question \"([^\"]*)\"$")
@@ -269,13 +278,11 @@ public class VStepsDefs {
         getDriver().findElement(By.xpath(xpath)).click();
     }
 
-    //    @And("^V wait for {int} msec")
     @And("^V wait for (\\d+) msec$")
     public void vWaitForMsec(int time) throws Exception {
         Thread.sleep(time);
     }
 
-    //    @And("^V assign quiz \"([^\"]*)\" to student \"([^\"]*)\"")
     @And("^V assign quiz \"([^\"]*)\" to student \"([^\"]*)\"$")
     public void vAssignQuizToStudent(String quizName, String studentName) throws InterruptedException {
         boolean found = false;
@@ -435,5 +442,117 @@ public class VStepsDefs {
 //
     }
 
+    @And("^V choose textual question type for question \"([^\"]*)\"$")
+    public void vChooseTextualQuestionTypeForQuestion(String questionNumber) throws Throwable {
+        String s;
+        s = "//*[contains(text(), 'Q" + questionNumber + ":')]/../../..//div[contains(text(), 'Textual')]";
+        Thread.sleep(300);
+        getDriver().findElement(By.xpath(s)).click();
+    }
 
+    @When("^V delete quiz \"([^\"]*)\", if present$")
+    public void vDeleteQuizIfPresent(String quizName) throws Throwable {
+        String path = "//*[contains(text(),'" + quizName + "')]";
+        List<WebElement> quizzes = getDriver().findElements(By.xpath(path));
+        if (quizzes.size() > 0){
+            for (int i=0; i < quizzes.size(); i++){
+                quizzes.get(i).click();
+                vWaitForMsec(500);
+                getDriver().findElement(By.xpath("(" + path + ")[1]/../../..//*[contains(text(),'Delete')]/..")).click();
+                vWaitForMsec(500);
+                getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]/..")).click();
+            }
+        }
+    }
+
+    @And("^V login as student \"([^\"]*)\" with password \"([^\"]*)\"$")
+    public void vLoginAsStudentWithPassword(String userName, String password) throws Throwable {
+        getDriver().findElement(By.xpath("//*[@formcontrolname='email']")).sendKeys(userName);
+        getDriver().findElement(By.xpath("//*[@type='password']")).sendKeys(password);
+        getDriver().findElement(By.xpath("//button[@type='submit']")).click();
+        assertThat(getDriver().findElements(By.xpath("//*[contains(text(),'STUDENT')]")).size()).isEqualTo(1);
+    }
+
+    @And("^V go to assessment, quiz \"([^\"]*)\"$")
+    public void vGoToAssessmentQuiz(String quizName) throws Throwable {
+//        mat-card[@class='page mat-card']//table
+        vWaitForMsec(1000);
+        getDriver().findElement(By.xpath("(//*[contains(text(),'" + quizName + "')])[1]/..//button")).click();
+    }
+
+    @And("^V type text answer \"([^\"]*)\" for question \"([^\"]*)\"$")
+    public void vTypeTextAnswerForQuestion(String answer, String questionNumber) throws Throwable {
+        getDriver().findElement(By.xpath("(//textarea[@formcontrolname='textAnswer'])[" + questionNumber + "]")).sendKeys(answer);
+    }
+
+    @And("^V open Submissions list$")
+    public void vOpenSubmissionsList() {
+        getDriver().findElement(By.xpath("//h5[contains(text(),'Submissions')]")).click();
+        vWaitFor("//h4[contains(text(),'Submissions')]");
+    }
+
+    @And("^V go to first Grade of Quiz \"([^\"]*)\" of Student \"([^\"]*)\" and put the comments$")
+    public void vGoToFirstGradeOfQuizOfStudentAndPutTheComments(String quizName, String studentName) throws Throwable {
+        String path = "(//*[contains(text(),'" + studentName + "')]/..//*[contains(text(),'" + quizName + "')])[1]/..//button";
+        vWaitForMsec(1000);
+        getDriver().findElement(By.xpath(path)).click();
+        vWaitForMsec(1000);
+        getDriver().findElement(By.xpath("(//textarea[@placeholder='Teacher Comment'])[1]")).sendKeys("Teacher comment 1");
+        getDriver().findElement(By.xpath("(//textarea[@placeholder='Teacher Comment'])[2]")).sendKeys("Teacher comment 2");
+        getDriver().findElement(By.xpath("//*[@placeholder='Teacher Summary']")).sendKeys("Teacher summary");
+        getDriver().findElement(By.xpath("//*[contains(text(),'Save')]/..")).click();
+        vWaitForMsec(1000);
+    }
+
+    @And("^V go to last Grade of Quiz \"([^\"]*)\" of Student \"([^\"]*)\" and put the comments$")
+    public void vGoToLastGradeOfQuizOfStudentAndPutTheComments(String quizName, String studentName) throws Throwable {
+        String path = "(//*[contains(text(),'" + studentName + "')]/..//*[contains(text(),'" + quizName + "')])";
+        vWaitForMsec(1000);
+        int q = getDriver().findElements(By.xpath(path)).size();
+        path = "(//*[contains(text(),'" + studentName + "')]/..//*[contains(text(),'" + quizName + "')])[" + q + "]/..//button";
+        getDriver().findElement(By.xpath(path)).click();
+        vWaitForMsec(1000);
+        getDriver().findElement(By.xpath("(//textarea[@placeholder='Teacher Comment'])[1]")).sendKeys("Teacher comment 1");
+        getDriver().findElement(By.xpath("(//textarea[@placeholder='Teacher Comment'])[2]")).sendKeys("Teacher comment 2");
+        getDriver().findElement(By.xpath("//*[@placeholder='Teacher Summary']")).sendKeys("Teacher summary");
+        getDriver().findElement(By.xpath("//*[contains(text(),'Save')]/..")).click();
+        vWaitForMsec(2000);
+    }
+
+    @Then("^V go to details of my last Grade of Quiz \"([^\"]*)\" and verify Teacher's comments$")
+    public void vGoToDetailsOfMyLastGradeOfQuizAndVerifyTeacherSComments(String quizName) throws Throwable {
+        String path, s;
+        vWaitForMsec(1000);
+        path = "(//*[contains(text(),'" + quizName + "')])/..//button";
+        int q = getDriver().findElements(By.xpath(path)).size();
+        path = "((//*[contains(text(),'" + quizName + "')])/..//button)[" + q + "]";
+        getDriver().findElement(By.xpath(path)).click();
+        path = "(//*[contains(text(),'Teacher Comment')])[1]/..";
+        s = getDriver().findElement(By.xpath(path)).getText();
+        assertThat(s).contains("Teacher comment 1");
+        path = "(//*[contains(text(),'Teacher Comment')])[2]/..";
+        s = getDriver().findElement(By.xpath(path)).getText();
+        assertThat(s).contains("Teacher comment 2");
+        path = "//*[contains(text(),'Summary')]/..";
+        s = getDriver().findElement(By.xpath(path)).getText();
+        assertThat(s).contains("Teacher summary");
+    }
+
+    @And("^V delete all assignments of quiz \"([^\"]*)\" for student \"([^\"]*)\", if exist$")
+    public void vDeleteAllAssignmentsOfQuizForStudentIfExist(String quizName, String studentName) throws Throwable {
+        String path = "//mat-panel-title[contains(text(),'Software Testing 1')]/../../..//td[@class='name'][contains(text(),'Sophia Jones')]/../../../../../..//button[@aria-haspopup='true']";
+        List<WebElement> assignments = getDriver().findElements(By.xpath(path));
+        if (assignments.size() > 0){
+            for (int i = 0; i < assignments.size(); i++){
+                getDriver().findElement(By.xpath("(" + path + ")[1]")).click();
+                vWaitFor("//*[contains(text(),'Delete Assignment')]/..");
+                getDriver().findElement(By.xpath("//*[contains(text(),'Delete Assignment')]/..")).click();
+                vWaitFor("//*[contains(text(),'Delete')]/..");
+                Thread.sleep(1000);
+                getDriver().findElement(By.xpath("//*[contains(text(),'Delete')]/..")).click();
+            }
+
+        }
+//        System.out.println("\nAll assignments was deleted.\n");
+    }
 }
