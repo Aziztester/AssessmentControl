@@ -1,5 +1,6 @@
 package study.qa.automation.stepDefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,13 +18,13 @@ import static study.qa.automation.utils.TestContext.getDriver;
 
 public class teacherCreateQuiz {
 
-
-    @Given("I Navigate to login page {string}")
-    public void iNavigateToLoginPage(String arg0) throws InterruptedException {
+    @Given("^I navigate to login pages \"([^\"]*)\"$")
+    public void iNavigateToLoginPages(String arg0) throws Throwable {
         getDriver().manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         TestContext.getDriver().get("http://local.school.portnov.com:4520/#/login");
         Thread.sleep(1000); //alt enter to call the bulb
     }
+
     @When("I register as a teacher")
     public void iRegisterAsATeacher() throws InterruptedException {
        getDriver().findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("VasyaPetrovTeacher@gmail.com");
@@ -222,13 +223,13 @@ public class teacherCreateQuiz {
         Thread.sleep(1000);
     }
 
-    @Then("verified that passing rate is {int}%")
+  /*  @Then("verified that passing rate is {int}%")
     public void verifiedThatPassingRaseIs(int arg0) {
         String currentPassRate=getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1")).getText();
 
         assertThat(currentPassRate).isEqualTo("75%");
 
-    }
+    }*/
 
     @When("we save quiz")
     public void weSaveQuiz() {
@@ -236,41 +237,26 @@ public class teacherCreateQuiz {
         getDriver().findElement(By.xpath("//span[contains(text(), 'Save')]")).click();
     }
 
-    @Then("verify that quiz with name {string} exist")
+    /* @Then("verify that quiz with name {string} exist")
     public void verifyThatQuizWithNameExist(String arg0) {
         int a=getDriver().findElements(By.xpath("//*[contains(text(), 'New quiz with 3 text,3 multiple, 3 single')]")).size();
         if (a==0){System.out.println("not exist");} else {System.out.println("Quiz exist");}
         //assertThat(getDriver().findElement(By.xpath("//*[contains(text(), 'New quiz with 3 text,3 multiple, 3 single')]"))).
     }
-
-
-
-        /*Thread.sleep(1000);  New quiz with 3 text,3 multiple, 3 single
-
-        //WebElement passingRate = getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1"));//windows with rate
+*/
+    @Then("^verified that passing rate is \"([^\"]*)\"$")
+    public void verifiedThatPassingRateIs(String arg0) throws Throwable {
         String currentPassRate=getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1")).getText();
-        System.out.println(currentPassRate);
 
-        WebElement buttonPlus = getDriver().findElement(By.xpath("//span[contains(text(), '+')]"));
-        WebElement buttonMinus=getDriver().findElement(By.xpath("//span[text()='-']"));
+        assertThat(currentPassRate).isEqualTo("75%");
+        throw new PendingException();
+    }
 
-        do {buttonMinus.click();} while (currentPassRate.equals(""))
-        if (!currentPassRate.equals("75%")){
-        buttonPlus.click();
-        }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Then("^verify that quiz with name \"([^\"]*)\" exist$")
+    public void verifyThatQuizWithNameExist(String arg0) throws Throwable {
+        int a=getDriver().findElements(By.xpath("//*[contains(text(), 'New quiz with 3 text,3 multiple, 3 single')]")).size();
+        if (a==0){System.out.println("not exist");} else {System.out.println("Quiz exist");}
+    }
 
     }
 
