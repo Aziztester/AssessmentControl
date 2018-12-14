@@ -273,9 +273,5 @@ public class textualQuestionDef {
 
     }
 
-    @Given("^I open urllll$")
-    public void iOpenUrllll() throws Throwable {
-
-    }
 }
 
