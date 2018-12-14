@@ -5,8 +5,8 @@ Feature: Teacher Create a Quiz, Assign it to a Single Student, and Student Get t
 
   @Test-CreateQuiz
   Scenario: Teacher Creates a Quiz
-    Given I login with E-mail "lfelipe@gag16dotw7t.tk" and Password "12345"
-    Then "Olga Petrova" should display at the left top corner
+    Given I login with E-mail "umoha@jerapah993r.gq" and Password "12345"
+    Then "Anna Ivanova" should display at the left top corner
     When I click Menu Item "Quizzes" and wait for 5 sec
     Then element with xpath "//h4[contains(text(),'List of Quizzes')]" should be displayed
     When I click on element with xpath "//span[contains(text(),'Create New Quiz')]"
@@ -30,6 +30,7 @@ Feature: Teacher Create a Quiz, Assign it to a Single Student, and Student Get t
     And I wait for 1 sec
 
   @Test-AssignQuiz
+
   Scenario: Teacher Gives an Assignment
     Given I login with E-mail "lfelipe@gag16dotw7t.tk" and Password "12345"
     Then "Olga Petrova" should display at the left top corner
