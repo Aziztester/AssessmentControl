@@ -32,7 +32,7 @@ Feature: Automate TC for End to End Testing: Create user as a student, change ro
   Scenario: Login as a Teacher and change Student's role to Teacher
     And I click on element with xpath "//input[@placeholder='Email *']"
     Then I type "lfelipe@gag16dotw7t.tk" into element with xpath "//input[@placeholder='Email *']"
-    And I click on element with xpath "//input[@placeholder='Password *']"
+    And I type password "//input[@placeholder='Password *']"
     Then I type "12345" into element with xpath "//input[@placeholder='Password *']"
     And I wait for 3 sec
     Then I click on element with xpath "//*[contains(text(), 'Sign In')]"
