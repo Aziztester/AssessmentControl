@@ -14,6 +14,14 @@ Feature: TextualQuestion-Showstopper (ASK-395)
     And Click checkbox "Is "Show-Stopper"question?" with path "//*[@class='mat-checkbox-inner-container']"
     Then Click button "Save"  with path "//*[contains(text(),'Save')]"
     Then Verify the quiz "Textual Question: With Show-stopper" with path "//*[@id='mat-expansion-panel-header-440']" is displayed
+    When Choose the Quiz "//*[contains(text(), 'List of Quizzes')]/..//*[contains(text(),'Textual Question: With Show-stopper')]"
+    And Click Delete with path "//*[contains(text(),'Textual Question: With Show-stopper')]/../../..//*[contains(text(),'Delete')]"
+    Then Click the Confirmation with path "//div[@class='mat-dialog-actions']//button[2]"
+
+
+
+
+
 
 
 

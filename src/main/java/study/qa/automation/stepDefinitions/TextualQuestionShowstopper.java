@@ -81,4 +81,26 @@ public class TextualQuestionShowstopper {
         getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'Textual Question: With Show-stopper')]")).isDisplayed();
         Thread.sleep(1000);
     }
-}
+
+
+    @When("Choose the Quiz {string}")
+    public void chooseTheQuiz(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//*[contains(text(), 'List of Quizzes')]/..//*[contains(text(),'Textual Question: With Show-stopper')]")).click();
+        Thread.sleep(1000);
+    }
+
+
+
+    @And("Click Delete with path {string}")
+    public void clickDeleteWithPath(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//*[contains(text(),'Textual Question: With Show-stopper')]/../../..//*[contains(text(),'Delete')]")).click();
+        Thread.sleep(5000);
+    }
+
+    @And("Click the Confirmation with path {string}")
+    public void clickTheConfirmationWithPath(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//button[2]")).click();
+        Thread.sleep(5000);
+    }
+
+    }

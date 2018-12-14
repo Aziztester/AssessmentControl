@@ -1,193 +1,110 @@
-// Created by Viacheslav (Slava) Skryabin 04/01/2018
 package study.qa.automation.stepDefinitions;
 
-import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.By;
+import study.qa.automation.utils.TestContext;
 
-
-import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.UnsupportedFlavorException;
-
-import java.io.IOException;
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.*;
+import static java.lang.Thread.sleep;
 import static study.qa.automation.utils.TestContext.getDriver;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.Alert;
 
 public class MyStepdefs {
-
-    @Then ("^I click on element with xpath \"([^\"]*)\"$")
-    public void iClickOnElementWithXpath(String xpath) {
-        getDriver().findElement(By.xpath(xpath)).click();
-
-
-        getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).click();
+    @Given("Open url {string}")
+    public void openUrl(String arg0) throws InterruptedException {
+        TestContext.getDriver().get("http://local.school.portnov.com:4520/#/login");
+        Thread.sleep(1000);
     }
 
-    @When("^I type \"([^\"]*)\" into element with xpath \"([^\"]*)\"$")
-    public void iTypeIntoElementWithXpath(String text, String xpath) {
-        getDriver().findElement(By.xpath(xpath)).sendKeys(text);
-        getDriver().findElement(By.xpath("//textarea[@placeholder='Question *']")).sendKeys("What is Priority?");
-        List<WebElement> frstopans1 = getDriver().findElements(By.xpath("//div[@class='mat-radio-outer-circle']"));
-
-        frstopans1.get(3).click();
-
+    @When("I click on element with xpath {string}")
+    public void iClickOnElementWithXpath(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//span[contains(text(),'Register Now')]")).click();
+        Thread.sleep(1000);
     }
 
-    @Then("^element with xpath \"([^\"]*)\" should be displayed$")
-    public void elementWithXpathShouldBeDisplayed(String xpath) {
-        assertThat(getDriver().findElement(By.xpath(xpath)).isDisplayed()).isTrue();
+    @And("I click element with xpath {string}")
+    public void iClickElementWithXpath(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//input[@placeholder ='First Name']")).click();
+        Thread.sleep(1000);
     }
 
-    @Then("^I type quote \"([^\"]*)\" into element with xpath \"([^\"]*)\"$")
-    public void iTypeQuoteIntoElementWithXpath(String text, String xpath)  {
-        text = text.replace("'", "");
-        getDriver().findElement(By.xpath(xpath)).sendKeys(text);
+    @Then("I type {string} with xpath {string}")
+    public void iTypeWithXpath(String arg0, String arg1) throws InterruptedException {
+        getDriver().findElement(By.xpath("//input[@id='mat-input-2']")).sendKeys("Ivan");
+        Thread.sleep(1000);
     }
 
-    @Then("^I should see element with xpath \"([^\"]*)\" should be masked$")
-    public void iShouldSeeElementWithXpathShouldBeMasked(String xpath) throws
-            NoAlertPresentException,InterruptedException  {
-        WebElement input = getDriver().findElement(By.xpath(xpath));
-        boolean isEncrypted = input.getAttribute("type").equals("password");
-        if (isEncrypted)
-            System.out.println("The password is masked!");
-        else {
-            System.out.println("Warning! The password is not masked!");
-            // Switching to Alert
-            Alert alert = getDriver().switchTo().alert();
-            // Capturing alert message.
-            String alertMessage= getDriver().switchTo().alert().getText();
-            // Displaying alert message
-            System.out.println(alertMessage);
-            Thread.sleep(5000);
-            // Accepting alert
-            alert.accept();
-        }
-    }
+    @And("I type Last name, Email, Group Code")
+    public void iTypeLastNameEmailGroupCode() throws InterruptedException {
+        getDriver().findElement(By.xpath("//input[@id='mat-input-3']")).sendKeys("Ivanov");
+        getDriver().findElement(By.xpath("//input[@id='mat-input-4']")).sendKeys("usergalina1@gmail.com");
+        getDriver().findElement(By.xpath("//input[@id='mat-input-5']")).sendKeys("A001");
+        Thread.sleep(1000);
 
-    @Then("^element with xpath \"([^\"]*)\" should be presented$")
-    public void elementWithXpathShouldBePresented(String xpath) {
-        assertThat(getDriver().findElements(By.xpath(xpath))).hasSize(1);
-    }
-
-    @Then("^I should see element with xpath \"([^\"]*)\" should be disabled$")
-    public void iShouldSeeElementWithXpathShouldBeDisabled(String xpath) {
-        // Write code here that turns the phrase above into concrete actions
-        assertThat(getDriver().findElement(By.xpath(xpath)).isEnabled()).isFalse();
-    }
-
-    @Then("^element with xpath \"([^\"]*)\" should not be selected$")
-    public void elementWithXpathShouldNotBeSelected(String xpath) {
-        assertThat(getDriver().findElement(By.xpath(xpath)).isSelected()).isFalse();
-    }
-
-    @Then("^element with xpath \"([^\"]*)\" should be selected$")
-    public void elementWithXpathShouldbeSelected(String xpath) {
-        assertThat(getDriver().findElement(By.xpath(xpath)).isSelected()).isTrue();
-    }
-
-    @Then("^I scroll to the element with xpath \"([^\"]*)\" with offset (\\d+)$")
-    public void iScrollToTheElementWithXpathWithOffset(String xpath, int offset) throws Exception {
-        WebElement element = getDriver().findElement(By.xpath(xpath));
-        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
-        executor.executeScript("arguments[0].scrollIntoView(true);", element);
-        executor.executeScript("window.scrollBy(0, " + offset + ");", element);
-        Thread.sleep(500);
-    }
-
-    @Then("^I cut \"([^\"]*)\" into element with xpath \"([^\"]*)\"$")
-    public void iCutIntoElementWithXpath(String text, String xpath)  {
-        // Write code here that turns the phrase above into concrete actions
-        WebElement key1 = getDriver().findElement(By.xpath(xpath));
-        key1.sendKeys(text);
-        System.out.println("*** " + key1 + " text ");
-
-        Actions oAction = new Actions(getDriver());
-        oAction.moveToElement(key1);
-        oAction.contextClick(key1).sendKeys(key1, Keys.ARROW_DOWN).sendKeys(key1, Keys.ARROW_DOWN).build().perform();
-
-        key1.sendKeys(Keys.CONTROL, "A");
-        System.out.println("*** " + key1 + " sent select key");
-        String clipboardInitial = getClipboardText();
-        System.out.println("Starting clipboard: " + clipboardInitial);
-        key1.sendKeys(Keys.CONTROL, "X");
-//        key1.sendKeys(Keys.SHIFT, Keys.DELETE);
-        String clipboardCopy = getClipboardText();
-        System.out.println("Copy clipboard: " + clipboardCopy);
-        assertThat(clipboardInitial != clipboardCopy && !clipboardInitial.equals(clipboardCopy));
-        System.out.println("I am trying to check if CUT key is working");
-    }
-
-    @Then("^I copy \"([^\"]*)\" from element with xpath \"([^\"]*)\"$")
-    public void iCopyFromElementWithXpath(String text, String xpath) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        WebElement key1 = getDriver().findElement(By.xpath(xpath));
-        key1.sendKeys(text);
-        System.out.println("*** " + key1 + " text ");
-
-        // try to make right context menu pop up
-        Actions oAction = new Actions(getDriver());
-        oAction.moveToElement(key1);
-        oAction.contextClick(key1).sendKeys(key1, Keys.ARROW_DOWN).sendKeys(key1, Keys.ARROW_DOWN).build().perform();
-
-        key1.sendKeys(Keys.CONTROL, "A");
-        System.out.println("*** " + key1 + " sent select key");
-        String clipboardInitial = getClipboardText();
-        System.out.println("Starting clipboard: " + clipboardInitial);
-        key1.sendKeys(Keys.CONTROL, "C");
-//        key1.sendKeys(Keys.SHIFT, Keys.INSERT);
-        String clipboardCopy = getClipboardText();
-        System.out.println("Copy clipboard: " + clipboardCopy);
-        assertThat(clipboardInitial != clipboardCopy && !clipboardInitial.equals(clipboardCopy));
-        System.out.println("I am trying to check if COPY key is working");
-        System.out.println("key1.isSelected() -- " + key1.isSelected() + '\n');
-    }
-
-    @Then("^\"([^\"]*)\" should be disabled for in pop-up menu on element with xpath \"([^\"]*)\"$")
-    public void shouldBeDisabledForInPopUpMenuOnElementWithXpath(String key, String xpath) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        WebElement key1 = getDriver().findElement(By.xpath(xpath));
-        String type = key1.getAttribute("type");
-        System.out.println("type=" + type);
-
-        Actions oAction = new Actions(getDriver());
-        oAction.moveToElement(key1);
-        oAction.contextClick(key1).sendKeys(key1, Keys.ARROW_DOWN).sendKeys(key1, Keys.ARROW_DOWN).build().perform();
-//        oAction.contextClick(key1).moveToElement().build().perform();
-
-        key1.sendKeys(Keys.CONTROL, "A");
-        String clipboardInitial = getClipboardText();
-        System.out.println("Starting clipboard: " + clipboardInitial);
-//        key1.sendKeys(Keys.CONTROL, "C");
-        key1.sendKeys(Keys.CONTROL, Keys.INSERT);
-        String clipboardCopy = getClipboardText();
-        System.out.println("Copy clipboard: " + clipboardCopy);
-        assertThat(clipboardInitial != clipboardCopy && !clipboardInitial.equals(clipboardCopy));
-//        key1.sendKeys(Keys.CONTROL, "V");
-        key1.sendKeys(Keys.SHIFT, Keys.INSERT);
 
     }
 
-    String getClipboardText() {
-        String stringClipboard = null;
-        try {
-            stringClipboard = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
-        } catch (HeadlessException ex) {
+    @When("I type password and confirm password")
+    public void iTypePasswordAndConfirmPassword() throws InterruptedException {
+        getDriver().findElement(By.xpath("//input[@id='mat-input-6']")).sendKeys("12345");
+        getDriver().findElement(By.xpath("//input[@id='mat-input-7']")).sendKeys("12345");
+        Thread.sleep(1000);
 
-        } catch (UnsupportedFlavorException ex) {
 
-        } catch (IOException ex) {
-
-        }
-        return stringClipboard;
     }
 
+    @Then("I click {string}")
+    public void iClick(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//span[contains(text(),'Register Me')]")).click();
+        Thread.sleep(1000);
+    }
+
+    @When("I Open url{string}")
+    public void iOpenUrl(String arg0) throws InterruptedException {
+        getDriver().get("http://local.school.portnov.com:4520/#/login");
+        Thread.sleep(1000);
+    }
+
+    @Then("I type email address, password")
+    public void iTypeEmailAddressPassword() {
+        getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).sendKeys("umoha@jerapah993r.gq");
+        getDriver().findElement(By.xpath("//input[@placeholder='Password *']")).sendKeys("12345");
+    }
+
+    @Then("I Click button {string}")
+    public void iClickButton(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(1000);
+    }
+
+    @When("I Click on {string}")
+    public void iClickOn(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//h5[contains(text(),\"User's Management\")]")).click();
+        Thread.sleep(1000);
+    }
+
+    @And("I Find Student")
+    public void iFindStudent() throws InterruptedException {
+        getDriver().findElement(By.xpath("//*[contains(text(),\"User's Management\")]/../..//*[contains(text(),\"Group: A001\")]/../..//*[contains(text(),'Ivan Ivanov')]")).click();
+        Thread.sleep(1000);
+    }
+
+    @And("I click {string} button")
+    public void iClickButtonOption(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//span[@class='mat-button-wrapper']")).click();
+        Thread.sleep(1000);
+    }
+
+    @Then("I click  on {string}")
+    public void iClickOnDelete(String arg0) throws InterruptedException {
+        getDriver().findElement(By.xpath("//div[@class='mat-menu-content ng-trigger ng-trigger-fadeInItems']//button[4]")).click();
+        Thread.sleep(1000);
+    }
+
+    @Then("I click {string} {string}")
+    public void iClick(String arg0, String arg1) throws InterruptedException {
+        getDriver().findElement(By.xpath("//span[contains(text(),'Delete')]")).click();
+        Thread.sleep(1000);
+    }
 }
