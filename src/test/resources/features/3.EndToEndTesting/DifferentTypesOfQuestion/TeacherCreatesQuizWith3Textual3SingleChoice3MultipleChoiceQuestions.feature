@@ -1,4 +1,4 @@
-Feature: Teacher creates Quiz with 3 Textual, 3 Single Choice and 3 Multiple Choice questions
+ Feature: Teacher creates Quiz with 3 Textual, 3 Single Choice and 3 Multiple Choice questions
 
 Scenario: Login to Teacher's account
   Given I Opened url "http://local.school.portnov.com:4520/#/login"
