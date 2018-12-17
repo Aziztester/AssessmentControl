@@ -7,7 +7,7 @@ Feature: Automate test cases for multiple-choice question
 
 
 
-  Scenario: mutiple-choice question  - option - Single Character
+  Scenario: mutiple-choice question  - option - Single Character checkout master
   Given  Navigate to login page  "login"
   Then I create the quiz with "singlecharacter" option
   And I verify the quiz present in "QUIZLIST" and delete

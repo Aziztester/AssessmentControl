@@ -55,9 +55,9 @@ public class textualQuestionDef {
          //DELETING
     @And("^I delete the quiz$")
     public void iDeleteTheQuiz() throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(),'$$000SQA1auto_DONT_TOUCH')]")).click();
-        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'$$000SQA1auto_DONT_TOUCH')]/../../..//*[contains(text(),'Delete')]")).click();
-        getDriver().findElement(By.xpath("//div[@class='mat-dialog-actions']//*[contains(text(),'Delete')]")).click();
+        getDriver().findElement(By.xpath("//mat-panel-title[contains(text(),'Textual Question: With Show-stopper')]")).click();
+        getDriver().findElement(By.xpath("/span[@class='mat-expansion-indicator ng-tns-c23-432 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']")).click();
+        getDriver().findElement(By.xpath("//div[@id='cdk-accordion-child-205']//span[@class='mat-button-wrapper'][contains(text(),'Delete')]")).click();
         Thread.sleep(3000);
 
 
@@ -273,9 +273,5 @@ public class textualQuestionDef {
 
     }
 
-    @Given("^I open urllll$")
-    public void iOpenUrllll() throws Throwable {
-
-    }
 }
 
