@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         tags = {"@EndToEnd"}
 )
 
-public class AllRunner {
+public class Test1_Runner {
 }

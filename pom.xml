@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.skryabin.webdriver.java</groupId>
-    <artifactId>javaWebdriverCucumber</artifactId>
+    <groupId>com.sofia.webdriver.java</groupId>
+    <artifactId>javaWeDdriverCucumber</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <java.version>8</java.version>
-        <selenium-java-version>3.14.0</selenium-java-version>
+        <selenium-java-version>3.141.59</selenium-java-version>
         <cucumber-java-version>2.4.0</cucumber-java-version>
         <forkCount>3</forkCount>
         <tag1>@victor</tag1>
@@ -22,60 +22,53 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.1.0</version>
+            <version>5.3.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.14.0</version>
+            <version>${selenium-java-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>3.14.0</version>
+            <version>${selenium-java-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>3.14.0</version>
+            <version>${selenium-java-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.14.0</version>
+            <version>${selenium-java-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>3.14.0</version>
+            <version>${selenium-java-version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-htmlunit-driver</artifactId>
             <version>2.52.0</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>io.cucumber</groupId>-->
-        <!--<artifactId>cucumber-java</artifactId>-->
-        <!--<version>${cucumber-java-version}</version>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java8</artifactId>
-            <version>3.0.2</version>
+            <version>${cucumber-java-version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>3.0.2</version>
+            <version>${cucumber-java-version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>3.0.2</version>
+            <version>${cucumber-java-version}</version>
         </dependency>
 
         <dependency>
@@ -83,14 +76,12 @@
             <artifactId>assertj-core</artifactId>
             <version>3.8.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.22</version>
+            <version>1.18.4</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -164,5 +155,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

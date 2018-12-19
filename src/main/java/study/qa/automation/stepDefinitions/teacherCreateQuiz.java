@@ -226,14 +226,11 @@ public class teacherCreateQuiz {
     @Then("^verified that passing rate is (\\d+)%$")
     public void verifiedThatPassingRateIs(int arg0) throws Throwable {
         String currentPassRate=getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1")).getText();
-
         assertThat(currentPassRate).isEqualTo("75%");
-
     }
 
     @When("we save quiz")
     public void weSaveQuiz() {
-
         getDriver().findElement(By.xpath("//span[contains(text(), 'Save')]")).click();
     }
 
@@ -243,36 +240,5 @@ public class teacherCreateQuiz {
         if (a==0){System.out.println("not exist");} else {System.out.println("Quiz exist");}
         //assertThat(getDriver().findElement(By.xpath("//*[contains(text(), 'New quiz with 3 text,3 multiple, 3 single')]"))).
     }
-
-
-
-
-
-
-
-        /*Thread.sleep(1000);  New quiz with 3 text,3 multiple, 3 single
-        //WebElement passingRate = getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1"));//windows with rate
-        String currentPassRate=getDriver().findElement(By.xpath("//*[contains(text(), 'Passing Rate')]/../h1")).getText();
-        System.out.println(currentPassRate);
-        WebElement buttonPlus = getDriver().findElement(By.xpath("//span[contains(text(), '+')]"));
-        WebElement buttonMinus=getDriver().findElement(By.xpath("//span[text()='-']"));
-        do {buttonMinus.click();} while (currentPassRate.equals(""))
-        if (!currentPassRate.equals("75%")){
-        buttonPlus.click();
-        }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 

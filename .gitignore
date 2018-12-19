@@ -5,7 +5,7 @@ chromedriver.exe
 geckodriver
 geckodriver.exe
 javaWebdriverCucumber.iml
-
+pom.xml
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
