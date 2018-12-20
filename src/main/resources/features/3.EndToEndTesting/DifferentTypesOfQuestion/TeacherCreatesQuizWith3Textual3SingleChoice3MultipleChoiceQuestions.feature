@@ -1,8 +1,8 @@
 Feature: Teacher creates Quiz with 3 Textual, 3 Single Choice and 3 Multiple Choice questions
   @EndToEnd
   Scenario: Login to Teacher's account
-    Given I Opened url "http://local.school.portnov.com:4520/#/login"
-    Then I logged in with Email "umoha@jerapah993r.gq" and password "12345"
+    Given Navigate to Web Page "URL"
+    And I login as a teacher with email "umoha@jerapah993r.gq" and password "12345"
     Then I click on Quizzes
     Then I click on Create Quizzes
     Then I clicked on Submit button
