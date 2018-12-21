@@ -1,7 +1,5 @@
 Feature:Automate TC for Single Choice Question
 
-  Background:Teacher account must exist
-
   Scenario: Single Choice Question - Text - Alphanumerical & Sp. char. (Happy path)
     Given  Navigate to login page  "login"
     Then I create quiz with Alphanumerical and special character "happy" path

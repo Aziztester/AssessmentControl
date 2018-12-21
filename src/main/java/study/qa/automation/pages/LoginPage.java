@@ -24,7 +24,4 @@ public class LoginPage extends Page {
     public void clickSignIn(){
         signInButton.click();
     }
-
-
-
 }
