@@ -1,4 +1,4 @@
-Feature: To Automate testcase for User-Email
+Feature: User - Email
 
   Scenario:Email-Alphanumerical&Special char
     Given Navigate to registration page"http://local.school.portnov.com:4520/#/registration"
@@ -198,7 +198,7 @@ Feature: To Automate testcase for User-Email
     Then Push Register Me button with xpath"//button[@type='submit']"
     Then Verify if "Should be a valid email address" message appears with xpath"//*[@class='mat-error ng-star-inserted']"
 
-
+  @ObjectPropertiesMethods
   Scenario Outline:User-Email
     Given Navigate to registration page"http://local.school.portnov.com:4520/#/registration"
     Then Type FirstName "Andrew" into firstname field with xpath"//input[@placeholder='First Name']"

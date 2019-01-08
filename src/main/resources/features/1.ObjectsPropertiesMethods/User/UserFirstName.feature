@@ -81,6 +81,7 @@ Feature: User - First name ASK-1306
     And Click on Last Name field with x-path "//input[@placeholder='Last Name']"
     Then Verify the message "Whitespaces are not allowed" with path "//*[@class='mat-error ng-star-inserted']" is displayed
 
+  @ObjectPropertiesMethods
   Scenario Outline: User First Name Outline
     When Navigate to registration page "http://local.school.portnov.com:4520/#/login"
     And Click on "Register Now" with xpath"//span[contains(text(),'Register Now')]"

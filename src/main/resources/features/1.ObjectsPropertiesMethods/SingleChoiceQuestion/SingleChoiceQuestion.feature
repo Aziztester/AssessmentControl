@@ -1,4 +1,5 @@
-Feature:Automate TC for Single Choice Question
+@ObjectPropertiesMethods
+Feature: Single Choice Question - Text
 
   Scenario: Single Choice Question - Text - Alphanumerical & Sp. char. (Happy path)
     Given  Navigate to login page  "login"

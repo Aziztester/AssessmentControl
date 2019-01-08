@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         tags = {"@ObjectPropertiesMethods"}
 )
 
-public class AllRunner {
+public class ObjecrPropertiesMethods {
 }
