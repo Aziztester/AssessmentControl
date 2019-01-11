@@ -19,7 +19,7 @@ public class UserFirstName {
     @And("^Click on \"([^\"]*)\" with xpath\"([^\"]*)\"$")
     public void clickOnWithXpath(String arg0, String arg1) throws Throwable {
         getDriver().findElement(By.xpath(arg1)).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
     @And("^Type First name \"([^\"]*)\" into First name field with x-path \"([^\"]*)\"$")
     public void typeFirstNameIntoFirstNameFieldWithXPath(String First, String arg1) throws Throwable {
@@ -59,5 +59,41 @@ public class UserFirstName {
     @And("^Click on Last Name field with x-path \"([^\"]*)\"$")
     public void clickOnLastNameFieldWithXPath(String arg0) throws Throwable {
         getDriver().findElement(By.xpath(arg0)).click();
+        Thread.sleep(3000);
+    }
+
+    @And("^I clicked on \"([^\"]*)\" with x-path\"([^\"]*)\"$")
+    public void iClickedOnWithXpath(String arg0, String arg1) throws Throwable {
+        getDriver().findElement(By.xpath(arg1)).click();
+        Thread.sleep(5000);
+    }
+
+
+    @And("^I clicked on User's Management with x-path\"([^\"]*)\"$")
+    public void iClickedOnUserSManagementWithXpath(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath(arg0)).click();
+        Thread.sleep(3000);
+
+    }
+
+
+    @And("^I find User with x-path \"([^\"]*)\"$")
+    public void iFindUserWithXPath(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath(arg0)).click();
+        Thread.sleep(1000);
+
+    }
+
+    @Then("^I delete User with x-path \"([^\"]*)\"$")
+    public void iDeleteUserWithXPath(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath(arg0)).click();
+        Thread.sleep(1000);
+    }
+
+
+    @And("^I find \"([^\"]*)\" with x-path \"([^\"]*)\"$")
+    public void iFindWithXPath(String arg0, String arg1) throws Throwable {
+        getDriver().findElement(By.xpath(arg1)).click();
+        Thread.sleep(1000);
     }
 }
