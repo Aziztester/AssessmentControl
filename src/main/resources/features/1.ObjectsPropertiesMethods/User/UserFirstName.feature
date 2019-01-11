@@ -108,7 +108,8 @@ Feature: User - First name ASK-1306
     And Click on Last Name field with x-path "//input[@placeholder='Last Name']"
     Then Verify the message "Whitespaces are not allowed" with path "//*[@class='mat-error ng-star-inserted']" is displayed
 
-  Scenario Outline: User First Name - positive test cases Outline
+  @ObjectPropertiesMethods
+  Scenario Outline: User First Name Outline
     When Navigate to registration page "http://local.school.portnov.com:4520/#/login"
     And Click on "Register Now" with xpath"//span[contains(text(),'Register Now')]"
     And Type First name "<First>" into First name field with x-path "//input[@placeholder='First Name']"
@@ -134,4 +135,3 @@ Feature: User - First name ASK-1306
       |  iV@#7  |Ivanova  |iV@#7 Ivanova|//h4[contains(text(),'Management')]/..//*[contains(text(),'Group: A007')]/..//*[contains(text(),'iV@#7 Ivanova')]|
       |  I      | Ivanova |I Ivanova    |//h4[contains(text(),'Management')]/..//*[contains(text(),'Group: A007')]/..//*[contains(text(),'I Ivanova')]|
       |Ivanivan912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912| I |Ivanivan912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912 I|//h4[contains(text(),'Management')]/..//*[contains(text(),'Group: A007')]/..//*[contains(text(),'Ivanivan912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912 I')]|
-
