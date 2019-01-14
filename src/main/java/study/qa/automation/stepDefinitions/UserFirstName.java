@@ -80,7 +80,7 @@ public class UserFirstName {
     @And("^I find User with x-path \"([^\"]*)\"$")
     public void iFindUserWithXPath(String arg0) throws Throwable {
         getDriver().findElement(By.xpath(arg0)).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
     }
 
