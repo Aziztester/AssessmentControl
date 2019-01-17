@@ -1,23 +1,51 @@
-Feature: Teacher creates Quiz with 3 Textual, 3 Single Choice and 3 Multiple Choice questions
-  @EndToEnd
-  Scenario: Login to Teacher's account
-    Given Navigate to Web Page "URL"
-    And I login as a teacher with email "umoha@jerapah993r.gq" and password "12345"
-    Then I click on Quizzes
-    Then I click on Create Quizzes
-    Then I clicked on Submit button
-    Then I verify url "http://local.school.portnov.com:4520/#/quiz-builder"
-    Then I write the Quiz title as "Mathematics"
-    Then I click on Add Question
-    Then I choose type of question as "Textual"
-    Then I typed Question "What is 2 X 2 ?"
-  #  And I clicked on Show Stopper check box
-    Then I click on Add Question
-    Then I choose type of question as "Textual"
-    Then I typed Question "What is 3 X 3 ?"
-    Then I click on Add Question
-    Then I choose type of question as "Textual"
-    Then I typed Question "What is 4 X 4 ?"
-    Then I click on Add Question
-    Then I choose type of question as "Single-Choice"
-    Then I typed Question "What is 2 + 4 ?"
+Feature: Teacher creates quiz with 3 Textual Questions, 3 Single Choice Qyestions, and 3 Multiple Choice Questions.
+  @EndtoEnd
+  Scenario:Login to Teacher's Account
+    Given Navigate to web page (URL)
+    When URL is "http://www.local.portnov.com:4520/api/v1/login"
+    And I type email: "eami@lkoqmcvtjbq.gq"
+    Then I type password "12345"
+    Then I push "Sign In"
+    Then I click on "Quizzes" in the left navigation panel
+    Then I click on "Create New Quizzes"
+    Then I click "Submit" button
+    Then I verify URL is "http://www.local.portnov.com:4520/api/v1/quiz-builder"
+    Then I write the Quiz Title as "Mathematics: Arithmetic"
+    Then I click "Add Question"
+    Then I choose "Type of Question" as "Textual"
+    Then I typed in "Question*" Record "What is 2 x 2?"
+    Then I click on "Add Question"
+    Then I choose "Type of Question" as "Textual"
+    Then I typed in "Question*" Record "What s 3 x 3?"
+    Then I click "Add Question"
+    Then I choose "Type of Question" as "Textual"
+    Then I typed in "Question*" Record "What is 4 x 4?"
+    Then I click on "Add Question"
+    Then I choose "Type of Question" as "Single Choice"
+    Then I type in "Questions*" Record " What is "2 + 4"?
+    Then I click "Add Question"
+    Then I choose "Type of Question" as "Single Choice"
+    Then I type in "Questions*" Record "What is 2+6"?
+    Then I click "Add Question"
+    Then I choose "Type of Question" as "Single Choice"
+    Then I type in "Questions*" Record "What is 2+8?"
+    Then I click "Add Question"
+    Then I choose "Type of Question" as "Multiple Choice Question"
+    Then I type in "Questions*" Record "What is 2 + 10?"
+    Then I select answers for A. "2"
+    Then I select answers for B. "4"
+    Then I select answers for C. "6"
+    Then I select answers for D. "12"
+    Then I click "Add Question"
+    Then I choose "Type of Question" as Multiple Choice Question"
+    Then I type in "Questions*" Record "What is "2+12?"
+    Then I select answers for A. "6"
+    Then I select answers for B. "8"
+    Then I select answers for C. "10"
+    Then I select answers for D. "14"
+    Then I choose "Type of Question" as "Multiple Choice Question"
+    Then I type in "Questions*" Record "What is 2+14?"
+    Then I select answers for A. "10"
+    Then I select answers for B. "12"
+    Then I select answers for C. "14"
+    Then I select answers for D. "16"
