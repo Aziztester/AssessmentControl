@@ -1,0 +1,103 @@
+package study.qa.automation.stepDefinitions;
+//Feature: Teacher creates quiz with 3 Textual Questions, 3 Single Choice Qyestions, and 3 Multiple Choice Questions.
+   // @EndtoEnd
+   
+   //in progress
+
+import...
+
+public class TextualQuestion {
+@Then I create quiz with 3 Textual Questions
+
+public void getDriver.manage(timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+    for ( i); {
+            QuizCreatedWith3TextuaQuestions(String arg0) throws Throwable {
+                getDriver.findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
+
+            getDriver().manage().timeouts().implicitlywait(10.TimeUnit.SECONDS);
+
+            getDriver.findElement(By.xpath("//span[contains(text(),'Create New Quiz')]")).click()
+
+            getDriver.findElement(By.xpath("//input[@placeholder='Title Of the Quiz*')]")).sendKeys("Question 1");
+
+            getDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+            getDriver.findElement(By.xpath("//div[@class='controls ng-star-inserted']//span[@class='mat-button-wrapper')]")).click();
+
+            getDriver.findElement(By.xpath(mat-radio-button[@type='radio']//div[@class='mat-radio-label-content')]")).size();
+
+            List <WebElement> y = getDriver.findElement(By.xpath(mat-radio-button[@type='radio']//div[@class='mat-radio-label-content')]"));
+                i=0;
+        if  i<y.size());{
+            i=i+1;
+            WebElement z=y.get(i);
+        else {
+            getDriver.manage(timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+    }}}
+
+    Thread.sleep(1000);
+
+        @textual question
+                for (z<=3, m, n);{
+                    z=1;
+                    m=1;
+                    n=1;
+
+                    getDriver.findElement(By.xpath("//input[@palceholder='Question *')]")).sendKeys("Quiz Question" + z);
+
+                    List <WebElement> n = getDriver.findElement(By.xpath("//div[@class=mat-radio-outer-circle']"));
+
+                    getDriver.findElement(By.xpath("mat-radio-button[@type='radio']//div[@class='mat-radio-label-content')]")).sendKeys("Textual Question");
+
+                    z=z+1;
+
+                    }
+
+
+    @single choice question
+            for (z<=3, m, n);{
+                z=1;
+                m=1;
+                n=1;
+
+                getDriver.findElement(By.xpath("//input[@palceholder='Question *')]")).sendKeys("Quiz Question" + z);
+
+                getDriver.findElement(By.xpath("mat-radio-button[@type='radio']//div[@class='mat-radio-label-content')]")).sendKeys("Textual Question");
+
+                getDriver.findElement(By.xpath("//input[@placeholder='Option' + m)]")).sendKeys("Option"+m);
+
+                getDriver.findElement(By.xpath("//input[label@class='mat-checkbox-layout' + m)]"/div)).click();
+
+                List <WebElement> n = getDriver.findElement(By.xpath("//div[@class=mat-radio-outer-circle']"));
+                z=z+1;
+                }
+
+    @multiple choice question
+        for (z<=3,m<=3);{
+            z=1;
+            m=1;
+            n=1;
+
+            getDriver.findElement(By.xpath("//input[@palceholder='Question *')]")).sendKeys("Quiz Question" + z);
+
+            getDriver.findElement(By.xpath("mat-radio-button[@type='radio']//div[@class='mat-radio-label-content')]")).sendKeys("Textual Question");
+
+            getDriver.findElement(By.xpath("//input[@placeholder='Option' + m)]")).sendKeys("Option"+m);
+
+            getDriver.findElement(By.xpath("//input[label@class='mat-checkbox-layout' + m)]"/div)).click();
+
+            List <WebElement> n = getDriver.findElement(By.xpath("//div[@class=mat-radio-outer-circle']"));
+            m=m+1;
+            n;
+            if m==3{
+            z=z+1;
+            )
+        }
+
+
+    getDriver.findElement(By.xpath("//*contains[(text(), 'Save']"));
+}
+}
+
+
