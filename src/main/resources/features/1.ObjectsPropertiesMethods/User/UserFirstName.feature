@@ -20,6 +20,7 @@ Feature: User - First name ASK-1306
     And I clicked on "Options" with x-path"//span[@class='mat-button-wrapper']"
     And I delete User with x-path "//div[@class='mat-menu-content ng-trigger ng-trigger-fadeInItems']//button[4]"
     Then I clicked on "Delete" with x-path"//span[contains(text(),'Delete')]"
+    Then I find bug
 
   Scenario: Single character
     When Navigate to registration page "http://local.school.portnov.com:4520/#/login"
