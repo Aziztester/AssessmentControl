@@ -140,7 +140,6 @@ public class AssignmentForFiveStudents {
             Thread.sleep(1000);
             getDriver().findElement(By.xpath("//*[contains(text(), 'quiz for assignment for 5 students')]/../../..//*[contains(text(), 'Delete')]")).click();
             Thread.sleep(1000);
-
             getDriver().findElement(By.xpath("//*[contains(text(), 'Confirmation')]/../../..//*[contains(text(), 'Delete')]")).click();
         }*/
         /*while(quizzes!=0){
@@ -148,7 +147,6 @@ public class AssignmentForFiveStudents {
             Thread.sleep(1000);
             getDriver().findElement(By.xpath("//*[contains(text(), 'quiz for assignment for 5 students')]/../../..//*[contains(text(), 'Delete')]")).click();
             Thread.sleep(1000);
-
             getDriver().findElement(By.xpath("//*[contains(text(), 'Confirmation')]/../../..//*[contains(text(), 'Delete')]")).click();
         }*/
         for (int i = 0; i < quizzes; i++) {
@@ -173,12 +171,12 @@ public class AssignmentForFiveStudents {
         Thread.sleep(1000);
 
         if (countAssignments!=0){
-        getDriver().findElement(By.xpath("//*[contains(text(), 'quiz for assignment for 5 students')]/..//*[contains(text(), 'more_vert')]")).click();
+            getDriver().findElement(By.xpath("//*[contains(text(), 'quiz for assignment for 5 students')]/..//*[contains(text(), 'more_vert')]")).click();
             Thread.sleep(1000);
 
             getDriver().findElement(By.xpath("//span[contains(text(),'Delete Assignment')]")).click();
-        Thread.sleep(3000);
-        getDriver().findElement(By.xpath("//*[contains(text(), 'Confirmation')]/../../..//*[contains(text(), 'Delete')]")).click();
+            Thread.sleep(3000);
+            getDriver().findElement(By.xpath("//*[contains(text(), 'Confirmation')]/../../..//*[contains(text(), 'Delete')]")).click();
             Thread.sleep(3000);
 
 
