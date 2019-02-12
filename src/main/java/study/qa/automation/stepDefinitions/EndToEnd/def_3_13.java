@@ -19,6 +19,7 @@ public class def_3_13 {
     public void typeEmail(String email) throws Throwable {
         Thread.sleep(3000);
         getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).sendKeys(email);
+        Thread.sleep(3000);
     }
 
     @And("^Type Password \"([^\"]*)\"$")
