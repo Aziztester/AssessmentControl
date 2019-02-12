@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sofia.webdriver.java</groupId>
-    <artifactId>javaWeDdriverCucumber</artifactId>
+    <groupId>ASK</groupId>
+    <artifactId>ASK</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <java.version>8</java.version>
         <selenium-java-version>3.141.59</selenium-java-version>
         <cucumber-java-version>2.4.0</cucumber-java-version>
-        <forkCount>3</forkCount>
-        <tag1>@victor</tag1>
+        <forkCount>4</forkCount>
+        <tag1>~@</tag1>
         <tag2>~@</tag2>
         <tag3>~@</tag3>
     </properties>
@@ -24,6 +24,7 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.3.2</version>
         </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -54,6 +55,7 @@
             <artifactId>selenium-htmlunit-driver</artifactId>
             <version>2.52.0</version>
         </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java8</artifactId>
@@ -72,11 +74,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.8.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
@@ -86,12 +83,20 @@
 
     <build>
         <plugins>
+            <!--<plugin>-->
+            <!--<groupId>io.qameta.allure</groupId>-->
+            <!--<artifactId>allure-maven</artifactId>-->
+            <!--<version>2.9</version>-->
+            <!--<configuration>-->
+            <!--<reportVersion>2.3.1</reportVersion>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -105,13 +110,38 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
+                <version>3.0.0-M3</version>
                 <configuration>
                     <forkCount>${forkCount}</forkCount>
-                    <reuseForks>false</reuseForks>
+                    <reuseForks>true</reuseForks>
+                    <testFailureIgnore>true</testFailureIgnore>
+
+                    <testSourceDirectory>src/test/java</testSourceDirectory>
+
                     <includes>
                         <include>**/Parallel*.class</include>
                     </includes>
+                    <parallel>all</parallel>
+                    <!--<includes>-->
+                    <!--<include>Sample.java</include>-->
+                    <!--</includes>-->
+
+                    <threadCount>1</threadCount>
+                    <redirectTestOutputToFile>false</redirectTestOutputToFile>
+
+                    <!--<properties>-->
+                    <!--<property>-->
+                    <!--<name>listener</name>-->
+                    <!--<value>io.qameta.allure.junit4.AllureJunit4</value>-->
+                    <!--</property>-->
+                    <!--</properties>-->
+                    <!--<systemProperties>-->
+                    <!--<property>-->
+                    <!--<name>allure.results.directory</name>-->
+                    <!--<value>target/allure-results</value>-->
+                    <!--</property>-->
+                    <!--</systemProperties>-->
+
                 </configuration>
             </plugin>
 
@@ -138,7 +168,7 @@
                                 </plugin>
                                 <plugin>
                                     <name>html</name>
-                                    <outputDirectory>${project.build.directory}/cucumber_results_html</outputDirectory>
+                                    <outputDirectory>target/cucumber_results_html</outputDirectory>
                                 </plugin>
                             </plugins>
                             <strict>true</strict>
@@ -155,4 +185,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
