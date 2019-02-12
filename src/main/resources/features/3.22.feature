@@ -2,8 +2,8 @@ Feature: 3.22
   @EndToEnd_3
   Scenario: 3.22 Teacher assign Quiz to single student. Student completes Quiz and it automatically graded as Failed. Teacher reviews the assignment and change the grade to Passed.
     When Navigate to login page
-    And Type email "tanyasptest+8@gmail.com"
-    And Type Password "winter2018"
+    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel
 # // Create Qui
@@ -37,8 +37,8 @@ Feature: 3.22
     When Click Logout on left navigational panel
 #  // Login as teacher and review the assignment and change the grade to Passed
     When Navigate to login page
-    And Type email "tanyasptest+8@gmail.com"
-    And Type Password "winter2018"
+    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Click Assignments on left navigational panel
     And Click quiz "Testing Assignment/Failed change to Passed Yulia" on List of Assignments window

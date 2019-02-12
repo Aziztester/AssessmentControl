@@ -2,8 +2,8 @@ Feature: 3.13
   @EndToEnd_3
   Scenario: Teacher creates Quiz and assign it for 5 individual students
     When  Navigate to login page
-    And Type email "tanyasptest+6@gmail.com"
-    And Type Password "winter2018"
+    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel
 #  // Create Quiz
@@ -19,51 +19,51 @@ Feature: 3.13
     And Click Assignments on left navigational panel
     And Push Create new Assignment button
     And Select Quiz "Testing Assignment Sofia"
-    And Select Student "Anna Petrova"
-    And Select Student "Hanah Svatsin"
-    And Select Student "Bob@ Spanch"
-    And Select Student "Bob Shvats"
-    And Select Student "Olga Stavina"
+    And Select Student "Peter Petrov"
+    And Select Student "Ivan Ivanov"
+    And Select Student "Elena Talley"
+    And Select Student "Emma Smith"
+    And Select Student "Sophia Jones"
     And Push Give Assignment button
     And Click Logout on left navigational panel
-#  // Student 1 "Anna Petrova"
-    And Type email "xmu-housej@jhow.ml"
-    And Type Password "Test123*"
-    And Push Sign In button
-    And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment Sofia" was assign
-    And Click Logout on left navigational panel
-#  // Student 2 "Hanah Svatsin"
-    And Type email "tx.vats+6@gmail.com"
+#  // Student 1 "Peter Petrov"
+    And Type email "8demoo.ccd@mqkivwkhyfz9v4.ga"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz "Testing Assignment Sofia" was assign
     And Click Logout on left navigational panel
-#  // Student 3 "Bob@ Spanch"
-    And Type email "olin@bbreghodogx83cuh.ml"
-    And Type Password "Test123*"
-    And Push Sign In button
-    And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment Sofia" was assign
-    And Click Logout on left navigational panel
-#  // Student 4 "Bob Shvats"
-    And Type email "tx.vats+3@gmail.com"
+#  // Student 2 "Ivan Ivanov"
+    And Type email "gtahermememeh@nhifswkaidn4hr0dwf4.ga"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz "Testing Assignment Sofia" was assign
     And Click Logout on left navigational panel
-#  // Student 5 "Olga Stavina"
-    And Type email "tx.vats+5@gmail.com"
+#  // Student 3 "Elena Talley"
+    And Type email "lzakaria.saou@twlcd4i6jad6.ml"
+    And Type Password "12345"
+    And Push Sign In button
+    And Click My Assignments on left navigational panel
+    Then Verify that quiz "Testing Assignment Sofia" was assign
+    And Click Logout on left navigational panel
+#  // Student 4 "Emma Smith"
+    And Type email "7imane.jarfi.18c@igvaku.gq"
+    And Type Password "12345"
+    And Push Sign In button
+    And Click My Assignments on left navigational panel
+    Then Verify that quiz "Testing Assignment Sofia" was assign
+    And Click Logout on left navigational panel
+#  // Student 5 "Sophia Jones"
+    And Type email "gminhee.par@ttt72pfc0g.tk"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz "Testing Assignment Sofia" was assign
     And Click Logout on left navigational panel
 #  // Login as teacher and delete Assignment
-    And Type email "tanyasptest+6@gmail.com"
-    And Type Password "winter2018"
+    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Delete quiz with name "Testing Assignment Sofia"
     And Delete assignments with name "Testing Assignment Sofia"

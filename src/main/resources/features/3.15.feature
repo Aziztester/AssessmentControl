@@ -2,8 +2,8 @@ Feature: 3.15
   @EndToEnd_3
   Scenario: Teacher creates Quiz. Student completes Quiz. Teacher gets submission.
     When  Navigate to login page
-    And Type email "tanyasptest+6@gmail.com"
-    And Type Password "winter2018"
+    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel
  #  // Create Quiz
@@ -35,8 +35,8 @@ Feature: 3.15
     And Click Ok on Success pop-up message
     And Click Logout on left navigational panel
  # // Teacher gets submission and deletes assignment
-    And Type email "tanyasptest+6@gmail.com"
-    And Type Password "winter2018"
+    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Click Submissions on left navigational panel
     And Click Automatically Graded tab
