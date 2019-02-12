@@ -1,4 +1,4 @@
-package study.qa.automation.stepDefinitions;
+package study.qa.automation.stepDefinitions.EndToEnd;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
