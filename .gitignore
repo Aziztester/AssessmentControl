@@ -1,8 +1,3 @@
 target/
 .idea/
 
-javaWebdriverCucumber.iml
-ASK.iml
-workspace.xml
-dependency-reduced-pom.xml
-pom.xml
