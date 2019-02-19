@@ -9,7 +9,7 @@ Feature: Textual Question - Text
     And Push Create new Quiz button
     And Type Title of the Quiz "Alphanumeric and Special Characters"
     And Click Add Question
-    And Select "Textual" radio button
+    And Select textual radio button
     And Type in Question "Az#@$%*!"
     And Push Save button
     Then Verify if Quiz "Alphanumeric and Special Characters" appears in the List of Quizzes

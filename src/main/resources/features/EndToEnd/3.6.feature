@@ -1,5 +1,5 @@
 Feature: 3.6
-  @EndToEnd_1
+  @EndToEnd
   Scenario: Teacher creates Quiz with 3 Textual, 3 Single- Choice, 3 Multiple-Choice questions
     When  Navigate to login page
     And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
