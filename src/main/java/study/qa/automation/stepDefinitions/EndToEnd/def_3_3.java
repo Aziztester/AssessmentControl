@@ -66,7 +66,7 @@ public class def_3_3 {
     @Then("^Verify that this quiz \"([^\"]*)\" was created$")
     public void verifyThatThisQuizWasCreated(String arg0) throws Throwable {
         getDriver().findElement(By.xpath("//div[@class='quizzes']//*[contains(text(),'Testing Assignment Aziz')]")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         System.out.println("Verify that quiz was created");;
     }
 }
