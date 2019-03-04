@@ -2,7 +2,7 @@ Feature: 3.13
   @EndToEnd_3
   Scenario: Teacher creates Quiz and assign it for 5 individual students
     When  Navigate to login page
-    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type email "qa.sofi@gmail.com"
     And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel

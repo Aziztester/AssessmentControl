@@ -22,7 +22,7 @@ public class def_3_13 {
         Thread.sleep(3000);
     }
 
-    @And("^Type Password \"([^\"]*)\"$")
+    @Then("^Type Password \"([^\"]*)\"$")
     public void typePassword(String pass) throws Throwable {
         Thread.sleep(3000);
         getDriver().findElement(By.xpath("//input[@placeholder='Password *']")).sendKeys(pass);
