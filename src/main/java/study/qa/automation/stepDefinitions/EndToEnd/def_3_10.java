@@ -17,7 +17,7 @@ public class def_3_10 {
     @And("^Type text of Q1 \"([^\"]*)\"$")
     public void typeTextOfQ1(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q1:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Select Textual Type of Q2$")
@@ -28,7 +28,7 @@ public class def_3_10 {
     @And("^Type text of Q2 \"([^\"]*)\"$")
     public void typeTextOfQ2(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q2:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Select Textual Type of Q3$")
@@ -39,7 +39,7 @@ public class def_3_10 {
     @And("^Type text of Q3 \"([^\"]*)\"$")
     public void typeTextOfQ3(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q3:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Select Single-Choice Type of Q4$")
@@ -50,7 +50,7 @@ public class def_3_10 {
     @And("^Type text of Q4 \"([^\"]*)\"$")
     public void typeTextOfQ4(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q4:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options Q4 \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -74,7 +74,7 @@ public class def_3_10 {
     @And("^Type text of Q5 \"([^\"]*)\"$")
     public void typeTextOfQ5(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q5:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options Q5 \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -98,7 +98,7 @@ public class def_3_10 {
     @And("^Type text of Q6 \"([^\"]*)\"$")
     public void typeTextOfQ6(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q6:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options Q6 \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -122,7 +122,7 @@ public class def_3_10 {
     @And("^Type text of Q7 \"([^\"]*)\"$")
     public void typeTextOfQ7(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q7:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options Q7 \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -147,7 +147,7 @@ public class def_3_10 {
     @And("^Type text of Q8 \"([^\"]*)\"$")
     public void typeTextOfQ8(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q8:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options Q8 \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -172,7 +172,7 @@ public class def_3_10 {
     @And("^Type text of Q9 \"([^\"]*)\"$")
     public void typeTextOfQ9(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q9:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options Q9 \"([^\"]*)\" and \"([^\"]*)\"$")
