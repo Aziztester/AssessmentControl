@@ -12,7 +12,7 @@ public class def_3_22 {
     @When("^Push Go To Assessment button$")
     public void pushGoToAssessmentButton() throws InterruptedException {
         getDriver().findElement(By.xpath("//tbody//tr[1]//button[@class='mat-raised-button mat-primary']")).click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @And("^Select second option as correct answer$")
@@ -44,13 +44,13 @@ public class def_3_22 {
     @And("^Click quiz \"([^\"]*)\" on List of Assignments window$")
     public void clickQuizOnListOfAssignmentsWindow(String arg0) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(),'Yulia')]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Push Review button$")
     public void pushReviewButton() throws InterruptedException {
         getDriver().findElement(By.xpath("//*[contains(text(),'Yulia')]/../../..//*[contains(text(),'Review')]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @When("^Push Total points \"([^\"]*)\" button (\\d+) times$")
@@ -66,7 +66,7 @@ public class def_3_22 {
     @When("^Push Save button Q$")
     public void pushSaveButtonQ() throws InterruptedException {
         getDriver().findElement(By.xpath("//*[contains(text(),'Save')]")).click();
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
 
     @Then("^Verify that Quiz \"([^\"]*)\" Status changed to \"([^\"]*)\"$")
