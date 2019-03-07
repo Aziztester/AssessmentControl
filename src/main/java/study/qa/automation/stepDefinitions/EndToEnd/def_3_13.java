@@ -17,39 +17,38 @@ public class def_3_13 {
 
     @And("^Type email \"([^\"]*)\"$")
     public void typeEmail(String email) throws Throwable {
-        Thread.sleep(3000);
         getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).sendKeys(email);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
-    @And("^Type Password \"([^\"]*)\"$")
+    @Then("^Type Password \"([^\"]*)\"$")
     public void typePassword(String pass) throws Throwable {
-        Thread.sleep(3000);
         getDriver().findElement(By.xpath("//input[@placeholder='Password *']")).sendKeys(pass);
+        Thread.sleep(1000);
     }
 
     @And("^Push Sign In button$")
     public void pushSignInButton() throws Throwable {
         getDriver().findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @And("^Click on Quizzes on left navigational panel$")
     public void clickOnQuizzesOnLeftNavigationalPanel() throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
-        Thread.sleep(2000);                 //2000 milliseconds is two second.
+        Thread.sleep(1000);                 //2000 milliseconds is two second.
     }
 
     @And("^Push Create new Quiz button$")
     public void pushCreateNewQuizButton() throws Throwable {
         getDriver().findElement(By.xpath("//span[contains(text(),'Create New Quiz')]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type Title of the Quiz \"([^\"]*)\"$")
     public void typeTitleOfTheQuiz(String title) throws Throwable {
         getDriver().findElement(By.xpath("//*[@placeholder='Title Of The Quiz *']")).sendKeys(title);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Click Add Question$")
@@ -66,7 +65,7 @@ public class def_3_13 {
     @And("^Type text of Question \"([^\"]*)\"$")
     public void typeTextOfQuestion(String text) throws Throwable {
         getDriver().findElement(By.xpath("//*[contains(text(), 'Q1:')]/../../..//*[@placeholder='Question *']")).sendKeys(text);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Type text in Options \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -91,13 +90,13 @@ public class def_3_13 {
     @And("^Click Assignments on left navigational panel$")
     public void clickAssignmentsOnLeftNavigationalPanel() throws Throwable {
         getDriver().findElement(By.xpath("//h5[text()='Assignments']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
     }
 
     @And("^Push Create new Assignment button$")
     public void pushCreateNewAssignmentButton() throws Throwable {
         getDriver().findElement(By.xpath("//span[contains(text(), 'Create New Assignment')]")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
     }
 
     @And("^Select Quiz \"([^\"]*)\"$")
@@ -127,9 +126,9 @@ public class def_3_13 {
 
     @And("^Push Give Assignment button$")
     public void pushGiveAssignmentButton() throws Throwable {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         getDriver().findElement(By.xpath("//span[contains(text(),'Give Assignment')]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("^Click Logout on left navigational panel$")
@@ -160,7 +159,7 @@ public class def_3_13 {
     @And("^Delete quiz with name \"([^\"]*)\"$")
     public void deleteQuizWithName(String quiz) throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         int quizzes = getDriver().findElements(By.xpath("//*[contains(text(), 'Testing Assignment Sofia')]")).size();
         for (int i = 0; i < quizzes; i++) {
@@ -170,7 +169,7 @@ public class def_3_13 {
             Thread.sleep(1000);
 
             getDriver().findElement(By.xpath("//*[contains(text(), 'Confirmation')]/../../..//*[contains(text(), 'Delete')]")).click();
-            Thread.sleep(5000);
+            Thread.sleep(1000);
 
         }
     }
@@ -188,9 +187,9 @@ public class def_3_13 {
             Thread.sleep(1000);
 
             getDriver().findElement(By.xpath("//span[contains(text(),'Delete Assignment')]")).click();
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             getDriver().findElement(By.xpath("//*[contains(text(), 'Confirmation')]/../../..//*[contains(text(), 'Delete')]")).click();
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         }
     }
 }

@@ -64,7 +64,7 @@ public class def_3_15 {
     @And("^Click My Assignments on the left navigational panel$")
     public void clickMyAssignmentsOnTheLeftNavigationalPanel() throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'My Assignments')]")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
     }
 
     @Then("^Verify that Quiz \"([^\"]*)\" was submitted$")
