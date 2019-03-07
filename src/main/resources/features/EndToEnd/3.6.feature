@@ -2,7 +2,7 @@ Feature: 3.6
   @EndToEnd
   Scenario: Teacher creates Quiz with 3 Textual, 3 Single- Choice, 3 Multiple-Choice questions
     When  Navigate to login page
-    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type email "5cam@bskyb.ml"
     And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel

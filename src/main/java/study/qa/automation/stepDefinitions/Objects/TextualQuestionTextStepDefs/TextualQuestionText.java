@@ -1,9 +1,7 @@
-package study.qa.automation.TextualQuestionTextStepDefs;
+package study.qa.automation.stepDefinitions.Objects.TextualQuestionTextStepDefs;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -14,15 +12,14 @@ import static study.qa.automation.utils.TestContext.getDriver;
 
 public class TextualQuestionText {
     @Then("^Select textual radio button$")
-    public void selectTextualRadioButton() throws InterruptedException { //throws Throwable ?!
-        getDriver().findElement(By.xpath("//*[@id='mat-radio-2']//*[@class='mat-radio-outer-circle']")).click();
+    public void selectTextualRadioButton() throws InterruptedException {
+        getDriver().findElement(By.xpath("//*[contains(text(),'Q1:')]/../../..//div[contains(text(),'Textual')]")).click();
         Thread.sleep(1000);
     }
 
     @And("^Type text in Question \"([^\"]*)\"$")
     public void typeTextInQuestion(String questionTitle) throws Throwable {
-//        getDriver().findElement(By.xpath("//*[@id='mat-input-3']")).sendKeys(questionTitle);
-        getDriver().findElement(By.xpath("//*[@placeholder='Question *']")).sendKeys(questionTitle);
+        getDriver().findElement(By.xpath("//*[contains(text(), 'Q1:')]/../../..//*[@placeholder='Question *']")).sendKeys(questionTitle);
         Thread.sleep(1000);
     }
 
