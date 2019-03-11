@@ -26,35 +26,35 @@ Feature: 3.14
     And Click Select All button at the right bottom
     And Push Give Assignment button
     And Click Logout on left navigational panel
-#  // Student 1 "Peter Petrov" in Group "ABC"
+#  // Student 1 "Dmitry Dmitriev" in Group "CAB"
     And Type email "enoreddineelarror@ccgtoxu3wtyhgmgg6.cf"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
-#  // Student 2 "Ivan Ivanov"in Group "ABC"
+#  // Student 2 "Vladimir Vladimirov"in Group "CAB"
     And Type email "ftopboytop-boy8@1euqhmw9xmzn.gq"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
-#  // Student 3 "Elena Talley"in Group "ABC"
+#  // Student 3 "David Davidov"in Group "CAB"
     And Type email "7said.elyamani.5x@payforclick.net"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
-#  // Student 4 "Emma Smith"in Group "ABC"
+#  // Student 4 "Vasiliy Vasilievna"in Group "CAB"
     And Type email "kaha.king@lqghzkal4gr.ml"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
     Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
-#  // Student 5 "Sophia Jones"in Group "ABC"
+#  // Student 5 "Mickhail Portnov"in Group "CAB"
     And Type email "0tlemceni_redav@gzvmwiqwycv8topg6zx.cf"
     And Type Password "12345"
     And Push Sign In button
