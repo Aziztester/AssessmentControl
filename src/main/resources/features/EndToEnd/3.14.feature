@@ -8,7 +8,7 @@ Feature: 3.14
     And Click on Quizzes on left navigational panel
 #  // Create Quiz with 1 Single-Chioce question and 1 Textual question
     And Push Create new Quiz button
-    And Type Title of the Quiz "Testing Assignment 11"
+    And Type Title of the Quiz "Testing Assignment current date time 0310/10:28"
     And Click Add Question
     And Select Single-Choice Type of question
     And Type text of Question "What is SQA?"
@@ -21,49 +21,49 @@ Feature: 3.14
 #  // Assign Quiz to group students
     And Click Assignments on left navigational panel
     And Push Create new Assignment button
-    And Select Group "ABC"
-    And Select "Testing Assignment 11" in Select Quiz to Assign dropdown list
+    And Select Group "CAB"
+    And Select "Testing Assignment current date time 0310/10:28" in Select Quiz to Assign dropdown list
     And Click Select All button at the right bottom
     And Push Give Assignment button
     And Click Logout on left navigational panel
 #  // Student 1 "Peter Petrov" in Group "ABC"
-    And Type email "8demoo.ccd@mqkivwkhyfz9v4.ga"
+    And Type email "enoreddineelarror@ccgtoxu3wtyhgmgg6.cf"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment 11" was assigned
+    Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
 #  // Student 2 "Ivan Ivanov"in Group "ABC"
-    And Type email "gtahermememeh@nhifswkaidn4hr0dwf4.ga"
+    And Type email "ftopboytop-boy8@1euqhmw9xmzn.gq"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment 11" was assigned
+    Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
 #  // Student 3 "Elena Talley"in Group "ABC"
-    And Type email "lzakaria.saou@twlcd4i6jad6.ml"
+    And Type email "7said.elyamani.5x@payforclick.net"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment 11" was assigned
+    Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
 #  // Student 4 "Emma Smith"in Group "ABC"
-    And Type email "7imane.jarfi.18c@igvaku.gq"
+    And Type email "kaha.king@lqghzkal4gr.ml"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment 11" was assigned
+    Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
 #  // Student 5 "Sophia Jones"in Group "ABC"
-    And Type email "gminhee.par@ttt72pfc0g.tk"
+    And Type email "0tlemceni_redav@gzvmwiqwycv8topg6zx.cf"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
-    Then Verify that quiz "Testing Assignment 11" was assigned
+    Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
 #  // Login as teacher and delete Assignment
-    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type email "uproxy-stil503@8t0sznngp6aowxsrj.ml"
     And Type Password "12345"
     And Push Sign In button
-    And Delete quiz with name "Testing Assignment 11"
-    And Delete assignments that assigned to Group "ABC" with quiz name "Testing Assignment 11"
+    And Delete the quiz with name "Testing Assignment current date time 0310/10:28"
+    And Delete assignment with quiz name "Testing Assignment current date time 0310/10:28"
