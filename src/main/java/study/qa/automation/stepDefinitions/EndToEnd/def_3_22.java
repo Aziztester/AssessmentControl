@@ -1,6 +1,8 @@
 package study.qa.automation.stepDefinitions.EndToEnd;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
@@ -75,5 +77,13 @@ public class def_3_22 {
         String textFromQuiz = quiz.getText();
         String name = getDriver().findElement(By.xpath("//*[contains(text(),'Yulia')]/../../..//*[contains(text(),'PASSED')]")).getText();
         System.out.println(" Verified that Quiz Status is " + name);
+    }
+
+    public static class webdriverdefs {
+        @Given("^I go to \"([^\"]*)\" page and print details$")
+        public void iGoToPageAndPrintDetails(String arg0) throws Throwable {
+            // Write code here that turns the phrase above into concrete actions
+            throw new PendingException();
+        }
     }
 }
