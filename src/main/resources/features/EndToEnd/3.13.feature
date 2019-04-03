@@ -22,8 +22,6 @@ Feature: 3.13
     And Select Student "Peter Petrov"
     And Select Student "Ivan Ivanov"
     And Select Student "Elena Talley"
-    And Select Student "Emma Smith"
-    And Select Student "Sophia Jones"
     And Push Give Assignment button
     And Click Logout on left navigational panel
 #  // Student 1 "Peter Petrov"
