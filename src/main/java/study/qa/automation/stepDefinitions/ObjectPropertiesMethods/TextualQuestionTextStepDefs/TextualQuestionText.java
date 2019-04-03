@@ -1,9 +1,7 @@
-package study.qa.automation.TextualQuestionTextStepDefs;
+package study.qa.automation.stepDefinitions.ObjectPropertiesMethods.TextualQuestionTextStepDefs;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
