@@ -53,3 +53,4 @@ Feature: 3.10
     Then Verify that quiz "Quiz-3T/3S/3M-90%PR" appears in the list of Quizzes with passing rate 90%
 #  Delete Quiz
     And Delete created quiz "Quiz-3T/3S/3M-90%PR"
+
