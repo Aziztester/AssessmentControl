@@ -1,7 +1,5 @@
-@textual
 Feature: Textual Question - Text
 
-  @textual1
   Scenario: Text - Alphanumeric and Special Characters
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -11,13 +9,12 @@ Feature: Textual Question - Text
     And Push Create new Quiz button
     And Type Title of the Quiz "Alphanumeric and Special Characters"
     And Click Add Question
-    Then Select textual radio button
+    Then Select Textual Type of question One
     And Type text in Question "Az#@$%*!"
     And Push Save button
     Then Verify if Quiz "Alphanumeric and Special Characters" appears in the List of Quizzes
     And Delete this quiz "Alphanumeric and Special Characters"
 
-  @textual2
   Scenario: Text - Required Field
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -31,7 +28,6 @@ Feature: Textual Question - Text
     And Push Save button
     Then Error messages "This field is required" and "Quiz is not completed. Check highlighted with "red" areas" appear
 
-  @textual2
   Scenario: Text - Leading Spaces Leading Spaces
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -47,7 +43,6 @@ Feature: Textual Question - Text
     Then Verify if Quiz "Leading Spaces" appears in the List of Quizzes
     And Delete this quiz "Leading Spaces"
 
-  @textual3
   Scenario: Text - Trailing Spaces
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -63,7 +58,6 @@ Feature: Textual Question - Text
     Then Verify if Quiz "Trailing Spaces" appears in the List of Quizzes
     And Delete this quiz "Trailing Spaces"
 
-  @textual4
   Scenario: Text - Whitespaces Characters Inside
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -79,7 +73,6 @@ Feature: Textual Question - Text
     Then Verify if Quiz "Whitespaces Characters" appears in the List of Quizzes
     And Delete this quiz "Whitespaces Characters"
 
-  @textual5
   Scenario: Text - Whitespaces Only
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -93,7 +86,6 @@ Feature: Textual Question - Text
     And Push space bar five times "     " in Question
 #   And Push Save button give an errors messages "This field is required" and "Quiz is not completed. Check highlighted with "red" areas"
 
-  @textual6
   Scenario: Text - Max char 1000
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -109,7 +101,6 @@ Feature: Textual Question - Text
     Then Verify if Quiz "Max char 1000" appears in the List of Quizzes
     And Delete this quiz "Max char 1000"
 
-  @textual7
   Scenario: Text - Single Character
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -125,7 +116,6 @@ Feature: Textual Question - Text
     Then Verify if Quiz "Single Character" appears in the List of Quizzes
     And Delete this quiz "Single Character"
 
-  @textual8
   Scenario: Text - Max char+1 (1001)
     When Navigate to login page
     And Type email "5cam@bskyb.ml"
@@ -141,7 +131,6 @@ Feature: Textual Question - Text
     Then Verify if Quiz "Max char+1 (1001)" appears in the List of Quizzes
     And Delete this quiz "Max char+1 (1001)"
 
-  @textual9
   Scenario: Text - Switching to the next line with Enter
     When Navigate to login page
     And Type email "5cam@bskyb.ml"

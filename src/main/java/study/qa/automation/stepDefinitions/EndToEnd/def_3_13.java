@@ -54,7 +54,7 @@ public class def_3_13 {
     @And("^Click Add Question$")
     public void clickAddQuestion() throws Throwable {
         getDriver().findElement(By.xpath("//*[text()='add_circle']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     @And("^Select Single-Choice Type of question$")
