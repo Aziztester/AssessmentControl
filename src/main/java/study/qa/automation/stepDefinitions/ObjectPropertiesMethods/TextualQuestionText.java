@@ -1,4 +1,4 @@
-package study.qa.automation.stepDefinitions.Objects.TextualQuestionTextStepDefs;
+package study.qa.automation.stepDefinitions.ObjectPropertiesMethods;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
