@@ -29,7 +29,7 @@ public class sergBellsStepDefs {
         Thread.sleep(seconds*1000);
     }
 
-    @And("^\"([^\"]*)\"$")
+    @And("^Delete SergBells TestQuiz with name \"([^\"]*)\"$")
     public void deleteSergBellsTestQuizWithName(String sergBellsquiz) throws Throwable {
         String xpathVar = "//*[contains(text(), '" + sergBellsquiz + "')]";
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
