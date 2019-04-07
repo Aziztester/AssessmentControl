@@ -1,7 +1,5 @@
-@sergBellsFeature
 Feature: Serg Bells automated TCs
 
-  @sergBellsFeature1
   Scenario: EndToEndTesting_3_17
     Given Navigate to login page
     When Type email "1suj@testerino.tk"
