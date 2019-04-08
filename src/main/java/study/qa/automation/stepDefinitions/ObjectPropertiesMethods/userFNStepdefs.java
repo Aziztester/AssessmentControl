@@ -12,7 +12,7 @@ import static study.qa.automation.utils.TestContext.getDriver;
 
 public class userFNStepdefs {
 
-//    private String arg0;
+
 
     @Given("^I open url \"([^\"]*)\"$")
     public void iOpenUrl(String url) throws Throwable {
@@ -63,7 +63,7 @@ public class userFNStepdefs {
 
     @Then("^\"([^\"]*)\" is displayed$")
     public void isDisplayed(String Dis) throws Throwable {
-        getDriver().findElement(By.xpath("//mat-icon[contains(text(),'done')]")).sendKeys(Dis);
+        assert (getDriver().findElement(By.xpath("//h4[contains(text(),'Registered')]"))).isDisplayed();
         System.out.println("You have been registered");
         Thread.sleep(1000);
     }
@@ -71,7 +71,6 @@ public class userFNStepdefs {
 
     @Then("^\"([^\"]*)\" message is displayed under \"([^\"]*)\"$")
     public void messageIsDisplayedUnder(String dis, String FN) throws Throwable {
-        //getDriver().findElement(By.xpath("//input[@id='mat-input-18']")).sendKeys(dis,FN);
         assert(getDriver().findElement(By.xpath("//input[@id='mat-input-18']"))).isDisplayed();
         System.out.println("This field is required");
         Thread.sleep(1000);
@@ -79,14 +78,14 @@ public class userFNStepdefs {
 
     @Then("^\"([^\"]*)\" message appears$")
     public void messageAppears(String Data) throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(), 'Data too long')]")).sendKeys(Data);
+        assert (getDriver().findElement(By.xpath("//*[contains(text(), 'visually-hidden')]"))).isDisplayed();
         System.out.println("Data too long for column 'name' at row 1");
         Thread.sleep(1000);
     }
 
     @Then("^I enter FirstName:\"([^\"]*)\"$")
     public void iEnterFirstName(String fn) throws Throwable {
-        getDriver().findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(fn);
+       getDriver().findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(fn);
         Thread.sleep(1000);
     }
 
@@ -98,11 +97,13 @@ public class userFNStepdefs {
 
     @Then("^\"([^\"]*)\" message appears under the \"([^\"]*)\"$")
     public void messageAppearsUnderThe(String White, String space) throws Throwable {
-       getDriver().findElement(By.xpath("//mat-error[contains(text(),'Whitespaces are not allowed')]")).sendKeys(White,space);
+       assert (getDriver().findElement(By.xpath("//mat-error[contains(text(),'Whitespaces are not allowed')]"))).isDisplayed();
+        Thread.sleep(1000);
     }
 
     @Then("^I type \"([^\"]*)\"$")
     public void iType(String First) throws Throwable {
         getDriver().findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(First);
+        Thread.sleep(1000);
     }
 }

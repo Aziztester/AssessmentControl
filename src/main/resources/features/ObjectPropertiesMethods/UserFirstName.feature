@@ -3,9 +3,9 @@ Feature: User-First Name
 
   Scenario: User-First Name - AlphaNumeric and sp char
     Given I open url "http://local.school.portnov.com:4520/#/registration"
-    Then  I type First Name: "Diana+@-&1"
+    Then  I type First Name: "Dian+@-&1"
     And   I type Last Name: "Brown"
-    And   I type Email: "1suj@testerino.tk"
+    And   I type Email: "1suj@testerin.tk"
     And   I type Group Code: "001"
     And   I type Password:"12345"
     And   I type Confirm Password: "12345"
@@ -14,8 +14,8 @@ Feature: User-First Name
 
   Scenario: User-First Name - Required field
     Given  I open url "http://local.school.portnov.com:4520/#/registration"
-    Then   I type Last Name: "Brown"
-    And    I type Email: "1suj@testerino.tk"
+    Then   I type Last Name: "Brow"
+    And    I type Email: "1suj@testerio.tk"
     And    I type Group Code: "001"
     And    I type Password:"12345"
     And    I type Confirm Password: "12345"
@@ -26,7 +26,7 @@ Feature: User-First Name
     Given  I open url "http://local.school.portnov.com:4520/#/registration"
     Then   I type First Name: "A"
     And    I type Last Name: "I"
-    And    I type Email: "1suj@testerino.tk"
+    And    I type Email: "1suj@testerno.tk"
     And    I type Group Code: "001"
     And    I type Password:"12345"
     And    I type Confirm Password: "12345"
@@ -36,9 +36,9 @@ Feature: User-First Name
 
   Scenario: User-First Name - Max characters
     Given  I open url "http://local.school.portnov.com:4520/#/registration"
-    Then   I type First Name: "Diana+@-&1.......(254)"
+    Then   I type First Name: "Diana+@&1ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp"
     And    I type Last Name: "Brown"
-    And    I type Email: "1suj@testerino.tk"
+    And    I type Email: "1suj@teterino.tk"
     And    I type Group Code: "001"
     And    I type Password:"12345"
     And    I type Confirm Password: "12345"
@@ -48,7 +48,7 @@ Feature: User-First Name
 
   Scenario: User-First Name - Max+1 characters
     Given  I open url "http://local.school.portnov.com:4520/#/registration"
-    Then   I type First Name: "Diana+@-&1.......(255)"
+    Then   I type First Name: "Diana+@-&pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp"
     And    I type Last Name: "Brown"
     And    I type Email: "1suj@testerino.tk"
     And    I type Group Code: "001"
