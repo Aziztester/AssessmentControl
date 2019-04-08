@@ -11,7 +11,7 @@ Feature: 1
     And   I type Password:"12345"
     And   I type Confirm Password: "12345"
     And   Push "Register Me" button
-    Then "You have been registered" is displayed
+    Then  "You have been registered" is displayed
    
 
 
