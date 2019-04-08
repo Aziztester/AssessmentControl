@@ -12,14 +12,14 @@ import org.openqa.selenium.WebElement;
 import static study.qa.automation.utils.TestContext.getDriver;
 
 public class sergBellsStepDefs {
-    @Then("^Verify that SergBells TestQuiz \"([^\"]*)\" was assigned$")
-    public void verifyThatSergBellsTestQuizWasAssigned(String sergBellsquiz) throws Throwable {
-        String xpathVar = "//h4[contains(text(), 'My Assignment')]/..//*[contains(text(), '" + sergBellsquiz + "')]";
+    @Then("^Verify that my Quiz \"([^\"]*)\" was assigned$")
+    public void verifyThatMyQuizWasAssigned(String quiz) throws Throwable {
+        String xpathVar = "//h4[contains(text(), 'My Assignment')]/..//*[contains(text(), '" + quiz + "')]";
         WebElement quiz = getDriver().findElement(By.xpath(xpathVar));
         String textFromQuiz = quiz.getText();
-        Assert.assertTrue(textFromQuiz.contains(sergBellsquiz));
+        Assert.assertTrue(textFromQuiz.contains(quiz));
         String name = getDriver().findElement(By.xpath("//div[@class='info']//h3")).getText();
-        if (textFromQuiz.contains(sergBellsquiz)) {
+        if (textFromQuiz.contains(quiz)) {
             System.out.println(name + " get assignment. ");
         }
     }
@@ -29,9 +29,9 @@ public class sergBellsStepDefs {
         Thread.sleep(seconds*1000);
     }
 
-    @And("^\"([^\"]*)\"$")
-    public void deleteSergBellsTestQuizWithName(String sergBellsquiz) throws Throwable {
-        String xpathVar = "//*[contains(text(), '" + sergBellsquiz + "')]";
+    @And("^Delete my Quiz with name \"([^\"]*)\"$")
+    public void deleteMyQuizWithName(String quiz) throws Throwable {
+        String xpathVar = "//*[contains(text(), '" + quiz + "')]";
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
         Thread.sleep(1000);
 
@@ -47,9 +47,9 @@ public class sergBellsStepDefs {
         }
     }
 
-    @And("^Delete SergBells TestAssignments with name \"([^\"]*)\"$")
-    public void deleteSergBellsTestAssignmentsWithName(String sergBellsAssignment) throws Throwable {
-        String xpathVar = "//*[contains(text(), '" + sergBellsAssignment + "')]";
+    @And("^Delete my Assignments with name \"([^\"]*)\"$")
+    public void deleteMyAssignmentsWithName(String assignment) throws Throwable {
+        String xpathVar = "//*[contains(text(), '" + assignment + "')]";
         getDriver().findElement(By.xpath("//h5[text()='Assignments']")).click();
         Thread.sleep(1000);
         int countAssignments = getDriver().findElements(By.xpath(xpathVar + "/..//*[contains(text(), 'more_vert')]")).size();
@@ -63,7 +63,5 @@ public class sergBellsStepDefs {
             Thread.sleep(1000);
         }
     }
-
-
 
 }
