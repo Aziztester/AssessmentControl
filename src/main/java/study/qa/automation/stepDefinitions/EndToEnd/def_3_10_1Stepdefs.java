@@ -102,4 +102,3 @@ public class def_3_10_1Stepdefs {
         Thread.sleep(1000);
     }
 }
-fitgit

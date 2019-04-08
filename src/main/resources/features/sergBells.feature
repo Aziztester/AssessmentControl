@@ -53,17 +53,17 @@ Feature: Serg Bells automated TCs
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
-    Then Verify that SergBells TestQuiz "SergBells TestQuiz_3_17_1" was assigned
-    Then Verify that SergBells TestQuiz "SergBells TestQuiz_3_17_2" was assigned
-    Then Verify that SergBells TestQuiz "SergBells TestQuiz_3_17_3" was assigned
+    Then Verify that my Quiz "SergBells TestQuiz_3_17_1" was assigned
+    Then Verify that my Quiz "SergBells TestQuiz_3_17_2" was assigned
+    Then Verify that my Quiz "SergBells TestQuiz_3_17_3" was assigned
     And Click Logout on left navigational panel
 #  // Login as teacher and delete Quizzes and Assignments
     And Type email "1suj@testerino.tk"
     And Type Password "12345"
     And Push Sign In button
-    And Delete SergBells TestQuiz with name "SergBells TestQuiz_3_17_1"
-    And Delete SergBells TestAssignments with name "SergBells TestQuiz_3_17_1"
-    And Delete SergBells TestQuiz with name "SergBells TestQuiz_3_17_2"
-    And Delete SergBells TestAssignments with name "SergBells TestQuiz_3_17_2"
-    And Delete SergBells TestQuiz with name "SergBells TestQuiz_3_17_3"
-    And Delete SergBells TestAssignments with name "SergBells TestQuiz_3_17_3"
+    And Delete my Quiz with name "SergBells TestQuiz_3_17_1"
+    And Delete my Assignments with name "SergBells TestQuiz_3_17_1"
+    And Delete my Quiz with name "SergBells TestQuiz_3_17_2"
+    And Delete my Assignments with name "SergBells TestQuiz_3_17_2"
+    And Delete my Quiz with name "SergBells TestQuiz_3_17_3"
+    And Delete my Assignments with name "SergBells TestQuiz_3_17_3"

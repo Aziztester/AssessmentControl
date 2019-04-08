@@ -17,7 +17,7 @@ public class userFNStepdefs {
     @Given("^I open url \"([^\"]*)\"$")
     public void iOpenUrl(String url) throws Throwable {
         getDriver().get(url);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     @Then("^I type First Name: \"([^\"]*)\"$")
