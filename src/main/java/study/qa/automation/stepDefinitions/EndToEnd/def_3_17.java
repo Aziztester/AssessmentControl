@@ -13,13 +13,13 @@ import static study.qa.automation.utils.TestContext.getDriver;
 
 public class def_3_17 {
     @Then("^Verify that my Quiz \"([^\"]*)\" was assigned$")
-    public void verifyThatMyQuizWasAssigned(String quiz) throws Throwable {
-        String xpathVar = "//h4[contains(text(), 'My Assignment')]/..//*[contains(text(), '" + quiz + "')]";
+    public void verifyThatMyQuizWasAssigned(String quiz1) throws Throwable {
+        String xpathVar = "//h4[contains(text(), 'My Assignment')]/..//*[contains(text(), '" + quiz1 + "')]";
         WebElement quiz = getDriver().findElement(By.xpath(xpathVar));
         String textFromQuiz = quiz.getText();
-        Assert.assertTrue(textFromQuiz.contains(quiz));
+        Assert.assertTrue(textFromQuiz.contains(quiz1));
         String name = getDriver().findElement(By.xpath("//div[@class='info']//h3")).getText();
-        if (textFromQuiz.contains(quiz)) {
+        if (textFromQuiz.contains(quiz1)) {
             System.out.println(name + " get assignment. ");
         }
     }
