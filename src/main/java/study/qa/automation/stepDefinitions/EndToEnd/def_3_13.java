@@ -1,5 +1,6 @@
 package study.qa.automation.stepDefinitions.EndToEnd;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,13 +21,11 @@ public class def_3_13 {
         getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).sendKeys(email);
         Thread.sleep(1000);
     }
-
-    @Then("^Type Password \"([^\"]*)\"$")
-    public void typePassword(String pass) throws Throwable {
-        getDriver().findElement(By.xpath("//input[@placeholder='Password *']")).sendKeys(pass);
-        Thread.sleep(1000);
-    }
-
+//    @And("^Type Password \"([^\"]*)\"$")
+//    public void typePassword(String pass) throws Throwable {
+//        getDriver().findElement(By.xpath("//input[@placeholder='Password *']")).sendKeys(pass);
+//        Thread.sleep(1000);
+//    }
     @And("^Push Sign In button$")
     public void pushSignInButton() throws Throwable {
         getDriver().findElement(By.xpath("//button[@type='submit']")).click();
@@ -54,7 +53,7 @@ public class def_3_13 {
     @And("^Click Add Question$")
     public void clickAddQuestion() throws Throwable {
         getDriver().findElement(By.xpath("//*[text()='add_circle']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     @And("^Select Single-Choice Type of question$")
@@ -192,4 +191,5 @@ public class def_3_13 {
             Thread.sleep(1000);
         }
     }
+
 }
