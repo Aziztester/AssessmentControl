@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import static study.qa.automation.utils.TestContext.getDriver;
 
-public class sergBellsStepDefs {
+public class def_3_17 {
     @Then("^Verify that my Quiz \"([^\"]*)\" was assigned$")
     public void verifyThatMyQuizWasAssigned(String quiz) throws Throwable {
         String xpathVar = "//h4[contains(text(), 'My Assignment')]/..//*[contains(text(), '" + quiz + "')]";
