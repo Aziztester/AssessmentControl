@@ -85,11 +85,11 @@ public class def_3_10_1Stepdefs {
         Thread.sleep(1000);
     }
 
-    @And("^Push \"([^\"]*)\" button on the right side$")
-    public void pushButtonOnTheRightSide(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(),'mat-button-ripple')]")).click();
-        Thread.sleep(1000);
-    }
+//    @And("^Push \"([^\"]*)\" button on the right side$")
+//    public void pushButtonOnTheRightSide(String arg0) throws Throwable {
+//        getDriver().findElement(By.xpath("//*[contains(text(),'mat-button-ripple')]")).click();
+//        Thread.sleep(1000);
+//    }
 
     @And("^Push \"([^\"]*)\" button on the Confirmation Pop-up$")
     public void pushButtonOnTheConfirmationPopUp(String arg0) throws Throwable {
