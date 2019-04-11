@@ -9,7 +9,7 @@ Feature: User-First Name
     And   I type Group Code: "001"
     And   I type Password:"12345"
     And   I type Confirm Password: "12345"
-    And   Push "Register Me" button
+    And   Push Register Me button
     Then "You have been registered" is displayed
     Then  I open url"http://local.school.portnov.com:4520/#/login"
     And I type Email: "1suj@testerin.tk"

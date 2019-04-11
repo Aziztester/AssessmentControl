@@ -16,11 +16,6 @@ public class def_3_10_1Stepdefs {
         Thread.sleep(1000);
     }
 
-    @And("^Type password \"([^\"]*)\"$")
-    public void typePassword(String pass) throws Throwable {
-      getDriver().findElement(By.xpath("//input[@type='password']")).sendKeys(pass);
-    }
-
     @And("^Click on \"([^\"]*)\" on left navigation panel$")
     public void clickOnOnLeftNavigationPanel(String arg0) throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();

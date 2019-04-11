@@ -3,7 +3,7 @@ Feature: 3.3
   @EndToEnd
   Scenario: Teacher Creates Quiz with 5 Textual questions
     When  Navigate to login page
-    And Type email "uproxy-stil503@8t0sznngp6aowxsrj.ml"
+    And Type email "7johnk@google-mail.ooo"
     And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel
