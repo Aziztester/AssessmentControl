@@ -64,15 +64,5 @@ public class def_3_1 {
         Thread.sleep(2000);
     }
 
-    @And("^I push on \"([^\"]*)\" button$")
-    public void iPushOnButton(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-//    @And("^I push button Register me$")
-//    public void iPushButtonRegisterMe() {
-
-//    }
 }
 
