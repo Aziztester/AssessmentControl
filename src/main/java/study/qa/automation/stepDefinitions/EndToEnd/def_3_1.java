@@ -9,14 +9,15 @@ import static study.qa.automation.utils.TestContext.getDriver;
 
 public class def_3_1 {
     @Then("^I push Register now button$")
-    public void iPushRegisterNowButton() {
-        getDriver().findElement(By.xpath("/span[contains(text(),'Register Me')]")).click();
+    public void iPushRegisterNowButton()throws Throwable {
+        getDriver().findElement(By.xpath("//span[contains(text(),'Register Now')]")).click();
+        Thread.sleep(1000);
     }
 
 
     @And("^I type First Name \"([^\"]*)\"$")
-    public void iTypeFirstName(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//input[@placeholder='First Name'])"));
+    public void iTypeFirstName(String fname) throws Throwable {
+        getDriver().findElement(By.xpath("//input[@formcontrolname='firstName']")).sendKeys(fname);
         throw new PendingException();
     }
 
@@ -50,9 +51,9 @@ public class def_3_1 {
         throw new PendingException();
     }
 
-    @And("^I push button Register me$")
-    public void iPushButtonRegisterMe() {
+//    @And("^I push button Register me$")
+//    public void iPushButtonRegisterMe() {
 
-    }
+//    }
 }
 
