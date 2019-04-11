@@ -1,12 +1,9 @@
 package study.qa.automation.stepDefinitions.ObjectPropertiesMethods;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import static study.qa.automation.utils.TestContext.getDriver;
 
