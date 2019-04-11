@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import static study.qa.automation.utils.TestContext.getDriver;
 
-public class userFNStepdefs {
+public class userFirstName {
 
 
 
@@ -55,8 +55,8 @@ public class userFNStepdefs {
         Thread.sleep(1000);
     }
 
-    @And("^Push \"([^\"]*)\" button$")
-    public void pushButton(String Push) throws Throwable {
+    @And("^Push Register Me button$")
+    public void pushRegisterMeButton() throws Throwable {
         getDriver().findElement(By.xpath("//span[contains(text(),'Register Me')]")).click();
         Thread.sleep(1000);
     }
@@ -106,4 +106,38 @@ public class userFNStepdefs {
         getDriver().findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(First);
         Thread.sleep(1000);
     }
+
+    @And("^Click \"([^\"]*)\" on left navigation panel$")
+    public void clickOnLeftNavigationPanel(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//mat-sidenav[@class='mat-drawer mat-sidenav ng-tns-c2-1 ng-trigger ng-trigger-transform ng-tns-c0-0 mat-drawer-side ng-star-inserted']//a[5]")).click();
+        Thread.sleep(1000);
+
+    }
+
+    @And("^Click \"([^\"]*)\"$")
+    public void click(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//div[contains(text(),'Teachers')]")).click();
+        Thread.sleep(1000);
+    }
+
+
+    @And("^Look for user \"([^\"]*)\" and click$")
+    public void lookForUserAndClick(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//h4[contains(text(),'Diana Brown')]")).click();
+        Thread.sleep(1000);
+    }
+
+    @And("^Push \"([^\"]*)\"$")
+    public void push(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//span[@class='mat-button-wrapper']")).click();
+        Thread.sleep(1000);
+    }
+
+    @Then("^Push \"([^\"]*)\" option$")
+    public void pushOption(String arg0) throws Throwable {
+       getDriver().findElement(By.xpath("//body//button[3]")).click();
+        Thread.sleep(1000);
+    }
+
+
 }

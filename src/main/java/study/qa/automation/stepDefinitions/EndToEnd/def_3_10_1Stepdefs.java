@@ -16,11 +16,6 @@ public class def_3_10_1Stepdefs {
         Thread.sleep(1000);
     }
 
-    @And("^Type password \"([^\"]*)\"$")
-    public void typePassword(String pass) throws Throwable {
-      getDriver().findElement(By.xpath("//input[@type='password']")).sendKeys(pass);
-    }
-
     @And("^Click on \"([^\"]*)\" on left navigation panel$")
     public void clickOnOnLeftNavigationPanel(String arg0) throws Throwable {
         getDriver().findElement(By.xpath("//h5[contains(text(),'Quizzes')]")).click();
@@ -90,11 +85,11 @@ public class def_3_10_1Stepdefs {
         Thread.sleep(1000);
     }
 
-    @And("^Push \"([^\"]*)\" button on the right side$")
-    public void pushButtonOnTheRightSide(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(),'mat-button-ripple')]")).click();
-        Thread.sleep(1000);
-    }
+//    @And("^Push \"([^\"]*)\" button on the right side$")
+//    public void pushButtonOnTheRightSide(String arg0) throws Throwable {
+//        getDriver().findElement(By.xpath("//*[contains(text(),'mat-button-ripple')]")).click();
+//        Thread.sleep(1000);
+//    }
 
     @And("^Push \"([^\"]*)\" button on the Confirmation Pop-up$")
     public void pushButtonOnTheConfirmationPopUp(String arg0) throws Throwable {
