@@ -64,9 +64,5 @@ public class def_3_1 {
         Thread.sleep(2000);
     }
 
-//    @And("^I push button Register me$")
-//    public void iPushButtonRegisterMe() {
-
-//    }
 }
 
