@@ -13,11 +13,10 @@ Feature: 3.1 Create User
 
 # // Log in as a teacher
     And I push on "Back to Login page" button
-    And I type "1suj@testerino.tk" in the email field
-    And I type "12345" in the password field
-    And I push "Sign in" button
-    And click on "User's Managment" on the left navigational panel
+    And Type email "1suj@testerino.tk"
+    And Type Password "12345"
+    And Push Sign In button
+    And click on User's Managment on the left navigational panel
     And select Sudent "Lena1 Shain1" from Students List
     When push “Options” button on the right side
-    And I push on "Delete User" button
 

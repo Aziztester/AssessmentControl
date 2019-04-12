@@ -3,6 +3,7 @@ package study.qa.automation.stepDefinitions.EndToEnd;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 
 import static study.qa.automation.utils.TestContext.getDriver;
@@ -64,5 +65,31 @@ public class def_3_1 {
         Thread.sleep(2000);
     }
 
+    @And("^I push on \"([^\"]*)\" button$")
+    public void iPushOnButton(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//*[contains(text(), 'Back to')]")).click();
+    }
+
+    @And("^click on User's Managment on the left navigational panel$")
+    public void clickOnUserSManagmentOnTheLeftNavigationalPanel() throws Throwable {
+        getDriver().findElement(By.xpath("//*[contains(text(),'Management')]")).click();
+        Thread.sleep(2000);
+    }
+
+    @And("^select Sudent \"([^\"]*)\" from Students List$")
+    public void selectSudentFromStudentsList(String nameStudent) throws Throwable {
+        getDriver().findElement(By.xpath("//*[contains(text(), 'Lena1 Shain1')]")).click();
+        Thread.sleep(2000);
+    }
+
+    @When("^push “Options” button on the right side$")
+    public void pushOptionsButtonOnTheRightSide() throws Throwable {
+        getDriver().findElement(By.xpath("//span[@class='mat-button-wrapper']")).click();
+        Thread.sleep(3000);
+        getDriver().findElement(By.xpath("//*[@role='menuitem'][4]")).click();
+        Thread.sleep(2000);
+        getDriver().findElement(By.xpath("//*[contains(text(), 'Delete')]")).click();
+        Thread.sleep(2000);
+    }
 }
 
