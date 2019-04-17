@@ -1,7 +1,7 @@
 Feature:3.10
   @EndToEnd_3.10
   Scenario:Create Quiz with 3 Textual, 3 Single- Choice, 3 Multiple-Choice question 90% passing rate.
-    Given I open url"http://local.school.portnov.com:4520/#/login"
+#    Given I open url"http://local.school.portnov.com:4520/#/login"
     Then Type email "7johnk@google-mail.ooo"
     And Type password "12345"
     Then Push "Sign In" button
