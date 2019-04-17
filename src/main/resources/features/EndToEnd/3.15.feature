@@ -2,7 +2,7 @@ Feature: 3.15
   @EndToEnd_3
   Scenario: Teacher creates Quiz. Student completes Quiz. Teacher gets submission.
     When  Navigate to login page
-    And Type email "uproxy-stil503@8t0sznngp6aowxsrj.ml"
+    And Type email "7johnk@google-mail.ooo"
     And Type Password "12345"
     And Push Sign In button
     And Click on Quizzes on left navigational panel

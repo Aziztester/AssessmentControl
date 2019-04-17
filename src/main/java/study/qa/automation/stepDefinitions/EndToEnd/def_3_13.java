@@ -1,5 +1,6 @@
 package study.qa.automation.stepDefinitions.EndToEnd;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,13 +21,11 @@ public class def_3_13 {
         getDriver().findElement(By.xpath("//input[@placeholder='Email *']")).sendKeys(email);
         Thread.sleep(1000);
     }
-
-    @Then("^Type Password \"([^\"]*)\"$")
+    @And("^Type Password \"([^\"]*)\"$")
     public void typePassword(String pass) throws Throwable {
-        getDriver().findElement(By.xpath("//input[@placeholder='Password *']")).sendKeys(pass);
+        getDriver().findElement(By.xpath("//*[@placeholder='Password *']")).sendKeys(pass);
         Thread.sleep(1000);
     }
-
     @And("^Push Sign In button$")
     public void pushSignInButton() throws Throwable {
         getDriver().findElement(By.xpath("//button[@type='submit']")).click();
@@ -81,11 +80,11 @@ public class def_3_13 {
         Thread.sleep(1000);
     }
 
-    @And("^Push Save button$")
-    public void pushSaveButton() throws Throwable {
-        getDriver().findElement(By.xpath("//span[contains(text(), 'Save')]")).click();
-        Thread.sleep(1000);
-    }
+//    @And("^Push Save button$")
+//    public void pushSaveButton() throws Throwable {
+//        getDriver().findElement(By.xpath("//span[contains(text(), 'Save')]")).click();
+//        Thread.sleep(1000);
+//    }
 
     @And("^Click Assignments on left navigational panel$")
     public void clickAssignmentsOnLeftNavigationalPanel() throws Throwable {
@@ -192,4 +191,5 @@ public class def_3_13 {
             Thread.sleep(1000);
         }
     }
+
 }
