@@ -25,6 +25,8 @@ public class def_3_15 {
     @And("^Push Submit My Answers button$")
     public void pushSubmitMyAnswersButton() throws Throwable {
         getDriver().findElement(By.xpath("//button[@type='button']")).click();
+        Thread.sleep(2000);
+        getDriver().findElement(By.xpath("//span[contains(text(),'Ok')]")).click();
         Thread.sleep(1000);
     }
 
