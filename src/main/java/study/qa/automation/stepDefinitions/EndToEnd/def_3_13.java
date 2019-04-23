@@ -29,7 +29,7 @@ public class def_3_13 {
     @And("^Push Sign In button$")
     public void pushSignInButton() throws Throwable {
         getDriver().findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     @And("^Click on Quizzes on left navigational panel$")
