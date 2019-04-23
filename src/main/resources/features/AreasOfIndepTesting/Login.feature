@@ -67,3 +67,38 @@ Feature: Login
     And I type Password "12345" in login page
     And I push "Sign In" button in login page
     Then error message "Should be a valid email address" appears under Email field
+
+
+  @regression8
+  Scenario: User types white space after Email.
+  Verify that entering a trailing space in the Email field should result in an error message
+
+    Given I open URL "http://local.school.portnov.com:4520/#/login"
+    When I type email "5cam@bskyb.ml "
+    And I type Password "12345" in login page
+    And I push "Sign In" button in login page
+    Then error message "Should be a valid email address" appears under Email field
+
+
+  @regression9
+  Scenario: User enters upper case letters to the Email field
+  Verify that email is not case sensitive
+    
+    Given I open URL "http://local.school.portnov.com:4520/#/login"
+    When I type email "5caM@bskyb.ml"
+    And I type Password "12345" in login page
+    And I push "Sign In" button in login page
+    Then user's name "Andrii" appears in left corner of the page
+
+
+  @regression10
+  Scenario: User enters white space in password field
+    Verify that white space are not allowed in password field
+    
+    Given I open URL "http://local.school.portnov.com:4520/#/login"
+    When I type email "5caM@bskyb.ml"
+    When I type Password "123 4" in login page
+    Then an error message "Whitespaces are not allowed" appears in login page
+
+
+    
