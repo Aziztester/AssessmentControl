@@ -66,7 +66,7 @@ public class def_3_22 {
     @When("^Push Save button Q$")
     public void pushSaveButtonQ() throws InterruptedException {
         getDriver().findElement(By.xpath("//*[contains(text(),'Save')]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
     }
 
     @Then("^Verify that Quiz \"([^\"]*)\" Status changed to \"([^\"]*)\"$")
