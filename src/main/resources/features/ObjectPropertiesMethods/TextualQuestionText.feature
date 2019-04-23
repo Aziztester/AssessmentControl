@@ -11,7 +11,7 @@ Feature: Textual Question - Text
     And Click Add Question
     Then Select Textual Type of question One
     And Type text in Question "Az#@$%*!"
-    And Push Save button
+    And Push on Save button
     Then Verify if Quiz "Alphanumeric and Special Characters" appears in the List of Quizzes
     And Delete this quiz "Alphanumeric and Special Characters"
 

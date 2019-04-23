@@ -43,7 +43,7 @@ public class def_3_22 {
 
     @And("^Click quiz \"([^\"]*)\" on List of Assignments window$")
     public void clickQuizOnListOfAssignmentsWindow(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(),'Yulia')]")).click();
+        getDriver().findElement(By.xpath("//*[contains(text(),'Testing Assignment')]")).click();
         Thread.sleep(1000);
     }
 
