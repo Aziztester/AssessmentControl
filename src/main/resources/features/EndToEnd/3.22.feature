@@ -14,17 +14,17 @@
     And Type text of Question "What is Quality?"
     And Type text in Options "Customer satisfaction? Subjective term. It will depend on who the 'customer' is. Each type of customer will have their own view on 'quality'" and "it is value"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
 # // Create Assignment
     And Click Assignments on left navigational panel
     And Push Create new Assignment button
     And Select Quiz "Testing Assignment/Failed change to Passed Yulia"
-    And Select Student "Ariel Mermaid*"
+    And Select Student "Dmitry Dmitriev"
     And Push Give Assignment button
     And Click Logout on left navigational panel
-# // Student "Ariel Mermaid*"
-    And Type email "1mustafalost2014d@rrqkd9t5fhvo5bgh.ga"
-    And Type Password "Test123*"
+# // Student "Dmitry Dmitriev"
+    And Type email "enoreddineelarror@ccgtoxu3wtyhgmgg6.cf"
+    And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel
 # // Student completes Quiz and it automatically graded as Failed
@@ -37,7 +37,7 @@
     When Click Logout on left navigational panel
 #  // Login as teacher and review the assignment and change the grade to Passed
     When Navigate to login page
-    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+    And Type email "7johnk@google-mail.ooo"
     And Type Password "12345"
     And Push Sign In button
     And Click Assignments on left navigational panel

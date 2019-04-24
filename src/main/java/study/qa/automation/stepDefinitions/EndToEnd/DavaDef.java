@@ -10,7 +10,7 @@ import static study.qa.automation.utils.TestContext.getDriver;
 public class DavaDef {
     @And("^Click quiz \"([^\"]*)\" from the list of Assignments$")
     public void clickQuizFromTheListOfAssignments(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//h4[contains(text(), 'My Assignment')]/..//*[contains(text(), 'Soccerone')]"));
+        getDriver().findElement(By.xpath("//mat-card[@class='page mat-card']//*[contains(text(), 'Soccerone')]"));
         throw new PendingException();
     }
 
@@ -71,5 +71,10 @@ public class DavaDef {
     @And("^Click on Go To Assessment button$")
     public void clickOnGoToAssessmentButton() {
         getDriver().findElement(By.xpath("//a[@href='/#/assessment/21180']//button[@class='mat-raised-button mat-primary']//span[@class='mat-button-wrapper'][contains(text(),'Go To Assessment')]"));
+    }
+
+    @And("^Select correct answer$")
+    public void selectCorrectAnswer() throws Throwable {
+        getDriver().findElement(By.xpath("//mat-radio-button[contains(@id,'mat-radio')][1]/label/div[1]")).click();
     }
 }
