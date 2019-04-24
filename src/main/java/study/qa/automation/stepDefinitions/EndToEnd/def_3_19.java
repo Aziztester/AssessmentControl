@@ -65,5 +65,18 @@ public class def_3_19 {
         getDriver().findElement(By.xpath("//h1[contains(text(), 'Confirm')]/../..//*[contains(text(),'Delete')]")).click();
         Thread.sleep(4000);
     }
+
+    @And("^Click to \"([^\"]*)\"$")
+    public void clickTo(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//input[@placeholder='Title Of The Quiz *']")).click();
+        Thread.sleep(2000);
+    }
+
+
+    @And("^Click to an \"([^\"]*)\" place$")
+    public void clickToAnPlace(String arg0) throws Throwable {
+        getDriver().findElement(By.xpath("//ac-quiz-builder-page[@class='ng-star-inserted']")).click();
+        Thread.sleep(2000);
+    }
 }
 
