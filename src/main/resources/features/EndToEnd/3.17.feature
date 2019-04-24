@@ -1,4 +1,4 @@
-Feature: Serg Bells automated TCs
+Feature: EndToEndTesting_3_17
 
   Scenario: EndToEndTesting_3_17
     Given Navigate to login page
@@ -14,7 +14,7 @@ Feature: Serg Bells automated TCs
     And Type text of Question "Single choice Question"
     And Type text in Options "Text of option 1" and "Text of option 2"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
 #  // Create Quizz 2
     And Push Create new Quiz button
     And Type Title of the Quiz "SergBells TestQuiz_3_17_2"
@@ -23,7 +23,7 @@ Feature: Serg Bells automated TCs
     And Type text of Question "Single choice Question"
     And Type text in Options "Text of option 1" and "Text of option 2"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
 #  // Create Quizz 3
     And Push Create new Quiz button
     And Type Title of the Quiz "SergBells TestQuiz_3_17_3"
@@ -32,7 +32,7 @@ Feature: Serg Bells automated TCs
     And Type text of Question "Single choice Question"
     And Type text in Options "Text of option 1" and "Text of option 2"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
 #  // Create Assignments
     And Click Assignments on left navigational panel
     And Push Create new Assignment button

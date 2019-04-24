@@ -14,7 +14,7 @@ Feature: 3.15
     And Type text of Question "Choose option A"
     And Type text in Options "Option A" and "Option B"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
  #  // Create Assignments
     And Click Assignments on left navigational panel
     And Push Create new Assignment button
