@@ -49,7 +49,7 @@ Feature: 3.10
     And Type text in Options Q9 "Text of option 1" and "Text of option 2"
     And Select first and second option as correct answer in Q9
     And Set Passing Rate to 90%
-    And Push Save button
+    And Push on Save button
     Then Verify that quiz "Quiz-3T/3S/3M-90%PR" appears in the list of Quizzes with passing rate 90%
 #  Delete Quiz
     And Delete created quiz "Quiz-3T/3S/3M-90%PR"
