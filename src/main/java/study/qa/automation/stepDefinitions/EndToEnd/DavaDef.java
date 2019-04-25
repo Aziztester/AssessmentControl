@@ -15,8 +15,8 @@ public class DavaDef {
     }
 
     @And("^Click Option (\\d+) radiobutton$")
-    public void clickOptionRadiobutton(int arg0) {
-        getDriver().findElement(By.xpath("//*[@id='mat-radio-2']")).click();
+    public void clickOptionRadiobutton() {
+        getDriver().findElement(By.xpath("//*[contains(@id,'mat-radio')][1]/label/div[1]")).click();
     }
 
     @And("^Click quiz \"([^\"]*)\" from list of Assignments$")
@@ -64,7 +64,7 @@ public class DavaDef {
 
     @Then("^Verify that quiz \"([^\"]*)\" was assigned in the list$")
     public void verifyThatQuizWasAssignedInTheList(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//h4[contains(text(),'My Assignments')]/..//*[contains(text(),'Soccer1')]"));
+        getDriver().findElement(By.xpath("//*[contains(text(),'Soccerone')]/.."));
         throw new PendingException();
     }
 
@@ -73,8 +73,4 @@ public class DavaDef {
         getDriver().findElement(By.xpath("//a[@href='/#/assessment/21180']//button[@class='mat-raised-button mat-primary']//span[@class='mat-button-wrapper'][contains(text(),'Go To Assessment')]"));
     }
 
-    @And("^Select correct answer$")
-    public void selectCorrectAnswer() throws Throwable {
-        getDriver().findElement(By.xpath("//mat-radio-button[contains(@id,'mat-radio')][1]/label/div[1]")).click();
-    }
 }

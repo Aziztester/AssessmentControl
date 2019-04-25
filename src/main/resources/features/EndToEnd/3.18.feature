@@ -55,44 +55,41 @@ Feature: 3.18
     And Click My Assignments on left navigational panel
     And Push Go To Assessment button
     And Click quiz "Soccerone" from the list of Assignments
-    And Select correct answer
-#    And Push Submit My Answers button
-#    And Click Ok on Success pop-up message
-#    And Click quiz "Soccertwo" from list of Assignments
-#    And Click Option 1 from options list
-#    And Push Submit My Answers button
-#    And Click Ok on Success pop-up message
-#    And Click quiz "Soccerthree" in Assignments
-#    And I click Option 1 from options
-#    And Push Submit My Answers button
-#    And Click Ok on Success pop-up message
-#    And Click Logout on left navigational panel
-#    #Teacher get submissions and delete quizzes
-#    And Type email "davidtestqaqa@gmail.com"
-#    And Type Password "davidtest111"
-#    And Push Sign In button
-#    And Click Submissions on left navigational panel
-#    And Click Automatically Graded tab
-#    Then Verify that Quiz "Soccerone" was submitted by student
-#    And Delete assignment with quiz name "Soccerone"
-#    Then Verify if Quiz "Soccertwo" was submitted by student
-#    And Delete assignment with quiz name "Soccertwo"
-#    Then Verify if Quiz "Soccerthree" was submit by student
-#    And Delete quiz with name "Soccerthree"
-#
-#
-#    @StudentCheckLogin
-#    Scenario: Test on Student side
-#      Given Navigate to login page
-#      And Type email "fmar@im-irsyad.tech"
-#      And Type Password "davadava"
-#      And Push Sign In button
-#      And Click My Assignments on left navigational panel
-#      Then Verify that quiz "Soccerone" was assigned in the list
-#      And Click on Go To Assessment button
-#      And Click Option 1 radiobutton
-#      And Push Submit My Answers button
-#      And Click Ok on Success pop-up message
+    And Click Option 1 radiobutton
+    And Push Submit My Answers button
+    And Click Ok on Success pop-up message
+    And Click quiz "Soccertwo" from list of Assignments
+    And Click Option 1 from options list
+    And Push Submit My Answers button
+    And Click Ok on Success pop-up message
+    And Click quiz "Soccerthree" in Assignments
+    And I click Option 1 from options
+    And Push Submit My Answers button
+    And Click Ok on Success pop-up message
+    And Click Logout on left navigational panel
+    #Teacher get submissions and delete quizzes
+    And Type email "davidtestqaqa@gmail.com"
+    And Type Password "davidtest111"
+    And Push Sign In button
+    And Click Submissions on left navigational panel
+    And Click Automatically Graded tab
+    Then Verify that Quiz "Soccerone" was submitted by student
+    And Delete assignment with quiz name "Soccerone"
+    Then Verify if Quiz "Soccertwo" was submitted by student
+    And Delete assignment with quiz name "Soccertwo"
+    Then Verify if Quiz "Soccerthree" was submit by student
+    And Delete quiz with name "Soccerthree"
 
-    
-    
+
+    @StudentCheckLogin
+    Scenario: Test on Student side
+      Given Navigate to login page
+      And Type email "fmar@im-irsyad.tech"
+      And Type Password "davadava"
+      And Push Sign In button
+      And Click My Assignments on left navigational panel
+      #Then Verify that quiz "Soccerone" was assigned in the list
+      And Click on Go To Assessment button with a name "Soccerone"
+      And Select Option first as correct
+      And Push Submit My Answers button
+      And Click Ok on Success pop-up message

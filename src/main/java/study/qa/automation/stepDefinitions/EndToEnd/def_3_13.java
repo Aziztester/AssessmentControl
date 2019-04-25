@@ -89,7 +89,7 @@ public class def_3_13 {
     @And("^Click Assignments on left navigational panel$")
     public void clickAssignmentsOnLeftNavigationalPanel() throws Throwable {
         getDriver().findElement(By.xpath("//h5[text()='Assignments']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
 
     @And("^Push Create new Assignment button$")
