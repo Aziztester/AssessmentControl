@@ -14,7 +14,7 @@ Feature: 3.13
     And Type text of Question "Single choice Question"
     And Type text in Options "Text of option 1" and "Text of option 2"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
 #  // Create Assignments
     And Click Assignments on left navigational panel
     And Push Create new Assignment button

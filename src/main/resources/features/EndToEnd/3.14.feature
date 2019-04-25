@@ -17,7 +17,7 @@ Feature: 3.14
     And Click Add Question
     And Select Textual Type of question
     And Type text for Question "What is SDLC?"
-    And Push Save button
+    And Push on Save button
 #  // Assign Quiz to group students
     And Click Assignments on left navigational panel
     And Push Create new Assignment button

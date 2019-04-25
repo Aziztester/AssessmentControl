@@ -43,7 +43,7 @@ public class def_3_22 {
 
     @And("^Click quiz \"([^\"]*)\" on List of Assignments window$")
     public void clickQuizOnListOfAssignmentsWindow(String arg0) throws Throwable {
-        getDriver().findElement(By.xpath("//*[contains(text(),'Yulia')]")).click();
+        getDriver().findElement(By.xpath("//*[contains(text(),'Testing Assignment')]")).click();
         Thread.sleep(1000);
     }
 
@@ -66,7 +66,7 @@ public class def_3_22 {
     @When("^Push Save button Q$")
     public void pushSaveButtonQ() throws InterruptedException {
         getDriver().findElement(By.xpath("//*[contains(text(),'Save')]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
     }
 
     @Then("^Verify that Quiz \"([^\"]*)\" Status changed to \"([^\"]*)\"$")

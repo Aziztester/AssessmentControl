@@ -93,17 +93,3 @@ Feature: 3.18
       And Select Option first as correct
       And Push Submit My Answers button
       And Click Ok on Success pop-up message
-    
-    
-
-
-
-
-    
-    
-
-    
-
-    
-    
-    

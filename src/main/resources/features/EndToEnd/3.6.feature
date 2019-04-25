@@ -52,6 +52,6 @@ Feature: 3.6
     And Type text in OptionsNine "Multiple-choice 1" and "Multiple-choice 2"
     And Select first and second option as correct answers questionNine
 
-    And Push Save button
+    And Push on Save button
     Then Verify that quiz "Testing Ig" was created
     And Delete quiz "Testing Ig"

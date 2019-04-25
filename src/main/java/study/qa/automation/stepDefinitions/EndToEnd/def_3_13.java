@@ -29,7 +29,7 @@ public class def_3_13 {
     @And("^Push Sign In button$")
     public void pushSignInButton() throws Throwable {
         getDriver().findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     @And("^Click on Quizzes on left navigational panel$")
@@ -132,7 +132,7 @@ public class def_3_13 {
 
     @And("^Click Logout on left navigational panel$")
     public void clickLogoutOnLeftNavigationalPanel() throws Throwable {
-        getDriver().findElement(By.xpath("//h5[contains(text(),'Log Out')]")).click();
+        getDriver().findElement(By.xpath("//*[contains(text(),'Log Out')]")).click();
         Thread.sleep(1000);
         getDriver().findElement(By.xpath("//span[contains(text(),'Log Out')]")).click();
         Thread.sleep(1000);
@@ -140,8 +140,8 @@ public class def_3_13 {
 
     @And("^Click My Assignments on left navigational panel$")
     public void clickMyAssignmentsOnLeftNavigationalPanel() throws Throwable {
-        getDriver().findElement(By.xpath("//h5[contains(text(),'My Assignments')]")).click();
-        Thread.sleep(1000);
+        getDriver().findElement(By.xpath("//h5[contains(text(),'Assignments')]")).click();
+        Thread.sleep(4000);
     }
 
     @Then("^Verify that quiz \"([^\"]*)\" was assign$")
