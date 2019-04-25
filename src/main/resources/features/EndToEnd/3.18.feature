@@ -14,7 +14,7 @@ Feature: 3.18
     And Type text of Q1 "England"
     And Type text in Options "Option Yes1" and "Option No1"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
     #Create a quiz 2
     And Push Create new Quiz button
     And Type Title of the Quiz "Soccertwo"
@@ -23,7 +23,7 @@ Feature: 3.18
     And Type text of Q1 "Germany"
     And Type text in Options "Option Yes2" and "Option No2"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
     #Create a quiz 3
     And Push Create new Quiz button
     And Type Title of the Quiz "Soccerthree"
@@ -32,7 +32,7 @@ Feature: 3.18
     And Type text of Q1 "Denmark"
     And Type text in Options "Option Yes3" and "Option No3"
     And Select first option as correct answer
-    And Push Save button
+    And Push on Save button
     #Create Assignments
     And Click Assignments on left navigational panel
     And Push Create new Assignment button
@@ -88,9 +88,9 @@ Feature: 3.18
       And Type Password "davadava"
       And Push Sign In button
       And Click My Assignments on left navigational panel
-      Then Verify that quiz "Soccerone" was assigned in the list
-      And Click on Go To Assessment button
-      And Click Option 1 radiobutton
+      #Then Verify that quiz "Soccerone" was assigned in the list
+      And Click on Go To Assessment button with a name "Soccerone"
+      And Select Option first as correct
       And Push Submit My Answers button
       And Click Ok on Success pop-up message
     
