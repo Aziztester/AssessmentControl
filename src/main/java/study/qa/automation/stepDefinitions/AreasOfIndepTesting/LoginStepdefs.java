@@ -1,13 +1,12 @@
 package study.qa.automation.stepDefinitions.AreasOfIndepTesting;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static study.qa.automation.utils.TestContext.getDriver;
-
-import cucumber.api.PendingException;
-import cucumber.api.java.en.When;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static study.qa.automation.utils.TestContext.getDriver;
 
 
 public class LoginStepdefs {

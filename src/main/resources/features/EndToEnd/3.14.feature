@@ -34,7 +34,7 @@ Feature: 3.14
     Then Verify that quiz for "Testing Assignment current date time 0310/10:28" was assigned
     And Click Logout on left navigational panel
 #  // Student 2 "Vladimir Vladimirov"in Group "CAB"
-    And Type email "ftopboytop-boy8@1euqhmw9xmzn.gq"
+    And Type email "kaha.king@lqghzkal4gr.ml"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on left navigational panel

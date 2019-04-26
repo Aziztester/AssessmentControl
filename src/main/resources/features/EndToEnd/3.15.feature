@@ -1,7 +1,7 @@
 Feature: 3.15
   @EndToEnd_3
   Scenario: Teacher creates Quiz. Student completes Quiz. Teacher gets submission.
-    When  Navigate to login page
+    When Navigate to login page
     And Type email "7johnk@google-mail.ooo"
     And Type Password "12345"
     And Push Sign In button
@@ -19,11 +19,11 @@ Feature: 3.15
     And Click Assignments on left navigational panel
     And Push Create new Assignment button
     And Select Quiz "Testing Assignment Katty"
-    And Select Student "Olga Stavina"
+    And Select Student "Peter Petrov"
     And Push Give Assignment button
     And Click Logout on left navigational panel
  #  // Student "Olga Stavina"
-    And Type email "tx.vats+5@gmail.com"
+    And Type email "qbboy.yagami.32@highsite.store"
     And Type Password "12345"
     And Push Sign In button
     And Click My Assignments on the left navigational panel
@@ -32,10 +32,9 @@ Feature: 3.15
     And Click Go To Assessment button
     And Click Option A radiobutton
     And Push Submit My Answers button
-    And Click Ok on Success pop-up message
     And Click Logout on left navigational panel
- # // Teacher gets submission and deletes assignment
-    And Type email "ksak.dody9@3g2bpbxdrbyieuv9n.cf"
+#  Teacher gets submission and deletes assignment
+    And Type email "7johnk@google-mail.ooo"
     And Type Password "12345"
     And Push Sign In button
     And Click Submissions on left navigational panel
